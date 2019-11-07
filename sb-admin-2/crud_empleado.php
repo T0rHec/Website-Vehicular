@@ -21,10 +21,11 @@
 		}
 
 		//obtiene el usuario para el login
-		public function obtenerEmpleado($nombre, $password){
+		public function obtenerEmpleado($nombre, $email, $password){
 			$db=Db::conectar();
-			$select=$db->prepare('SELECT * FROM EMPLEADO WHERE nombre=:nombre');//AND password=:password
+			$select=$db->prepare('SELECT * FROM EMPLEADO WHERE nombre=:nombre AND email=:email');
 			$select->bindValue('nombre',$nombre);
+			$select->bindValue('email',$email);
 			$select->execute();
 			$registro=$select->fetch();
 			$empleado=new Empleado();
@@ -33,6 +34,7 @@
 				//si es correcta, asigna los valores que trae desde la base de datos
 				$empleado->setEmpleadoId($registro['EmpleadoId']);
 				$empleado->setNombre($registro['Nombre']);
+				$empleado->setEmail($registro['Email']);
 				$empleado->setpassword($registro['Password']);
 			}
 			return $empleado;

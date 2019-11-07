@@ -20,22 +20,22 @@
 				<img src="images/form-v7.jfif" alt="form">
 				<p class="text-1">Login</p>
 			</div>
-			<form class="form-detail" action="#" method="post" id="myform">
+			<form class="form-detail" action="controller_login.php" method="post" id="myform">
 				<div class="form-row">
 					<label for="name">NOMBRE</label>
-					<input type="text" name="name" id="name" class="input-text">
+					<input type="text" name="name" id="name" class="input-text" required>
 				</div>
 				<div class="form-row">
 					<label for="your_email">E-MAIL</label>
-					<input type="text" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					<input type="text" name="email" id="email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
 				</div>
 				<div class="form-row">
 					<label for="password">CONTRASEÑA</label>
 					<input type="password" name="password" id="password" class="input-text" minlength="6" required>
 				</div>
 				<div class="form-row-last">
-					<input type="submit" name="login" class="register" value="Sign in">
-					<p>Or<a href="register.html">Sign up</a></p>
+					<button type="submit" name="entrar" id="entrar" value="entrar" class="register">Iniciar Sesión</button>
+					<p>Or<a href="register.html">Registrarse</a></p>
 				</div>
 			</form>
 		</div>
@@ -43,34 +43,6 @@
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
-	<script>
-		// just for the demos, avoids form submit
-		jQuery.validator.setDefaults({
-		  	debug: true,
-		  	success:  function(label){
-        		label.attr('id', 'valid');
-   		 	},
-		});
-		$( "#myform" ).validate({
-		  	rules: {
-			    your_email: {
-			      	required: true,
-			      	email: true
-			    },
-			    name: {
-			      	required: true,
-			    },
-			    password: "required",
-		  	},
-		  	messages: {
-		  		your_email: {
-		  			required: "Please provide an email"
-		  		},
-		  		password: {
-	  				required: "Please provide a password"
-		  		},
-		  	}
-		});
-	</script>
+
 </body>
 </html>
