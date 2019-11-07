@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if (!isset($_SESSION['name'])) {
+    header('Location: login.html');
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +16,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Clientes</title>
+  <title>Ventas</title>
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,7 +39,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -44,7 +51,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -66,17 +73,17 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Categorias:</h6>
-            <a class="collapse-item" href="vehiculo.html">Vehículos</a>
-            <a class="collapse-item" href="refaccion.html">Refacciones</a>
-            <a class="collapse-item" href="ropa.html">Ropa</a>
-            <a class="collapse-item" href="accesorio.html">Accesorios</a>
+            <a class="collapse-item" href="vehiculo.php">Vehículos</a>
+            <a class="collapse-item" href="refaccion.php">Refacciones</a>
+            <a class="collapse-item" href="ropa.php">Ropa</a>
+            <a class="collapse-item" href="accesorio.php">Accesorios</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Marcas -->
       <li class="nav-item">
-        <a class="nav-link" href="marca.html">
+        <a class="nav-link" href="marca.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Marcas</span></a>
       </li>
@@ -90,45 +97,45 @@
         <div id="collapseClientes" class="collapse" aria-labelledby="headingClientes" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Modulos:</h6>
-            <a class="collapse-item" href="cliente.html">Tabla de Clientes</a>
-            <a class="collapse-item" href="404.html">Bitacora del Cliente</a>
-            <a class="collapse-item" href="404.html">Listas de Deseos</a>
-            <a class="collapse-item" href="404.html">Carrito</a>
+            <a class="collapse-item" href="cliente.php">Tabla de Clientes</a>
+            <a class="collapse-item" href="404.php">Bitacora del Cliente</a>
+            <a class="collapse-item" href="404.php">Listas de Deseos</a>
+            <a class="collapse-item" href="404.php">Carrito</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Empleados -->
       <li class="nav-item">
-        <a class="nav-link" href="empleado.html">
+        <a class="nav-link" href="empleado.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Empleados</span></a>
       </li>
 
       <!-- Nav Item - Proveedores -->
       <li class="nav-item">
-        <a class="nav-link" href="proveedor.html">
+        <a class="nav-link" href="proveedor.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Proveedores</span></a>
       </li>
 
       <!-- Nav Item - Compras -->
       <li class="nav-item">
-        <a class="nav-link" href="compra.html">
+        <a class="nav-link" href="compra.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Compras</span></a>
       </li>
 
       <!-- Nav Item - Ventas -->
       <li class="nav-item">
-        <a class="nav-link" href="venta.html">
+        <a class="nav-link" href="venta.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Ventas</span></a>
       </li>
 
       <!-- Nav Item - Paqueterias -->
       <li class="nav-item">
-        <a class="nav-link" href="paqueteria.html">
+        <a class="nav-link" href="paqueteria.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Paqueterias</span></a>
       </li>
@@ -347,74 +354,44 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Clientes</h1>
+          <h1 class="h3 mb-2 text-gray-800">Ventas</h1>
           <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
-          <form action="adminCliente.php" method="POST" class="needs-validation" novalidate>
-            <div class="form-row">
-              <div class="col-md-4 mb-3">
-                <label for="validationCustom01">Nombre</label>
-                <input name="name" type="text" class="form-control" id="validationCustom01" placeholder="" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <label for="validationCustom02">Apellidos</label>
-                <input name="last_name" type="text" class="form-control" id="validationCustom02" placeholder="" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
-              </div>
-            </div>
+          <form action="adminVenta.php" method="POST" class="needs-validation" novalidate>
             <div class="form-row">
               <div class="col-md-3 mb-3">
-                <label for="validationCustom04">Telefono</label>
-                <input name="tel" type="text" class="form-control" id="validationCustom04" placeholder="" required>
+                <label for="validationCustom04">Fecha</label>
+                <input name="date" type="date" class="form-control" id="validationCustom04" placeholder="" required>
                 <div class="invalid-feedback">
                   Please provide a valid ID.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="validationCustom04">Domicilio</label>
-                <input name="address" type="text" class="form-control" id="validationCustom04" placeholder="" required>
+                <label for="validationCustom04">Importe</label>
+                <input name="importe" type="text" class="form-control" id="validationCustom04" placeholder="" required>
                 <div class="invalid-feedback">
                   Please provide a valid ID.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="validationCustom05">Email</label>
-                <input name="email" type="email" class="form-control" id="validationCustom04" placeholder="" required>
+                <label for="validationCustom04">ID Cliente</label>
+                <input name="clienteId" type="text" class="form-control" id="validationCustom04" placeholder="" required>
                 <div class="invalid-feedback">
                   Please provide a valid ID.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="validationCustom04">Password</label>
-                <input name="password" type="password" class="form-control" id="validationCustom04" placeholder="" required>
+                <label for="validationCustom04">ID Producto</label>
+                <input name="productoId" type="text" class="form-control" id="validationCustom04" placeholder="" required>
                 <div class="invalid-feedback">
                   Please provide a valid ID.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="validationCustom04">BitacoraClienteId</label>
-                <input name="bitacora" type="text" class="form-control" id="validationCustom04" placeholder="" required>
+                <label for="validationCustom04">ID Paqueteria</label>
+                <input name="paqueteriaId" type="text" class="form-control" id="validationCustom04" placeholder="" required>
                 <div class="invalid-feedback">
                   Please provide a valid ID.
-                </div>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="validationCustom04">ID Empleado</label>
-                <input name="empleadoId" type="text" class="form-control" id="validationCustom04" placeholder="" required>
-                <div class="invalid-feedback">
-                  Please provide a valid ID.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="validationCustom03">ID ListaDeseos</label>
-                <input name="listadeseosId" type="text" class="form-control" id="validationCustom03" placeholder="" required>
-                <div class="invalid-feedback">
-                  Please provide a valid color.
                 </div>
               </div>
             </div>
@@ -439,7 +416,7 @@
               </button>
               <div class="my-2"></div>
               <div class="col-md-3 mb-3">
-                <input name="clienteid" type="text" class="form-control" id="formGroupExampleInput" placeholder="ID Cliente">
+                <input name="ventaId" type="text" class="form-control" id="formGroupExampleInput" placeholder="ID Venta">
               </div>
           </form>
 
@@ -472,7 +449,7 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                  <iframe src="tablaCliente.php" width="100%" height="500px" frameborder="0"></iframe>
+                  <iframe src="tablaVenta.php" width="100%" height="500px" frameborder="0"></iframe>
               </div>
             </div>
           </div>
@@ -516,8 +493,10 @@
         </div>
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <form action="controller_login.php" method="post">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-primary" name="salir" value="salir">Logout</button>
+          </form>
         </div>
       </div>
     </div>
