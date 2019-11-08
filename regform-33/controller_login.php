@@ -15,7 +15,7 @@
 		$cliente->setApellido($_POST['last_name']);
 		$cliente->setEmail($_POST['email']);
 		$cliente->setTelefono($_POST['tel']);
-		$cliente->setDomicilio($_POST['Domicilio']);
+		$cliente->setDomicilio($_POST['domicilio']);
 		$cliente->setPassword($_POST['password']);
 		if ($crud->buscarCliente($_POST['name'])) {
 			$crud->insertar($cliente);
