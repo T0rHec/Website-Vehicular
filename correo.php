@@ -5,8 +5,7 @@
 	$tema = $_POST["tema"];
 	$mensaje = $_POST["mensaje"];
 	$contenido = "Nombre: ".$nombre ."\nCorreo: ".$correo ."\nTema: " .$tema ."\nMensaje: " .$mensaje ;
-	$mail= mail($destino, $tema, $contenido);
-	echo "meil enviado";
-	header("Location: index.html");
+	mail($destino, $tema, $contenido);
+	header("Location: contact.html");
 
 ?>
