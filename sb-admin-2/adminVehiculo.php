@@ -46,6 +46,6 @@ $newConn->openconn();
 $newConn->exequery($sql);
 $newConn->closeconn();
 
-header('Location: vehiculo.html');
+header('Location: vehiculo.php');
 
 ?>

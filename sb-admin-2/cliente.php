@@ -405,21 +405,21 @@
               </div>
               <div class="col-md-3 mb-3">
                 <label for="validationCustom04">BitacoraClienteId</label>
-                <input name="bitacora" type="text" class="form-control" id="validationCustom04" placeholder="" required>
+                <input name="bitacora" type="text" class="form-control" id="validationCustom04" placeholder="">
                 <div class="invalid-feedback">
                   Please provide a valid ID.
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="validationCustom04">ID Empleado</label>
-                <input name="empleadoId" type="text" class="form-control" id="validationCustom04" placeholder="" required>
+                <input name="empleadoId" type="text" class="form-control" id="validationCustom04" placeholder="">
                 <div class="invalid-feedback">
                   Please provide a valid ID.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationCustom03">ID ListaDeseos</label>
-                <input name="listadeseosId" type="text" class="form-control" id="validationCustom03" placeholder="" required>
+                <input name="listadeseosId" type="text" class="form-control" id="validationCustom03" placeholder="">
                 <div class="invalid-feedback">
                   Please provide a valid color.
                 </div>

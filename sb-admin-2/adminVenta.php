@@ -15,7 +15,7 @@ switch ($boton) {
 
 		$sql = "INSERT INTO venta(Fecha,Importe,ClientesId,ProductoId,PaqueteriaId) VALUES('" . $date . "','" . $importe . "','" . $clienteId . "','" . $productoId . "','" . $paqueteriaId . "')";
 
-		header('Location: venta.html');
+		header('Location: venta.php');
 
     break;
 
@@ -25,7 +25,7 @@ switch ($boton) {
 
 		$sql = "UPDATE venta SET Fecha = '$date' , Importe = $importe, ClientesId = $clienteId, ProductoId = $productoId, PaqueteriaId = $paqueteriaId WHERE VentaId = $ventaId; ";
 
-		header('Location: venta.html');
+		header('Location: venta.php');
 
     break;
 
@@ -37,7 +37,7 @@ switch ($boton) {
 
 		$sql = "DELETE FROM venta WHERE VentaId = $ventaId; ";
 
-		header('Location: venta.html');
+		header('Location: venta.php');
 
     break;
 

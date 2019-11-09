@@ -456,6 +456,10 @@
                 </span>
                 <span class="text">Borrar Registro</span>
               </button>
+              <div class="my-2"></div>
+              <div class="col-md-3 mb-3">
+                <input name="vehiculoId" type="text" class="form-control" id="formGroupExampleInput" placeholder="ID Vehiculo">
+              </div>
           </form>
 
           <script>

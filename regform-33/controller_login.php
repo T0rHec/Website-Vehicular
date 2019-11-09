@@ -28,12 +28,14 @@
 		$cliente=$crud->obtenerCliente($_POST['name'],$_POST['email'],$_POST['password']);
 		header('Location: ..');
 		// si el id del objeto retornado no es null, quiere decir que encontro un registro en la base
-		/*if ($cliente->getClienteId()!=NULL) {
+		if ($cliente->getClienteId()!=NULL) {
 			$_SESSION['name']=$cliente; //si el name se encuentra, crea la sesión de name
 			header('Location: ..'); //envia a la página
-		}*/
-	}/*elseif(isset($_POST['salir'])){ // cuando presiona el botòn salir
+		}else{
+			header('Location: login.html');
+		}
+	}elseif(isset($_POST['salir'])){ // cuando presiona el botòn salir
 		header('Location: login.html');
 		unset($_SESSION['name']); //destruye la sesión
-	}*/
+	}
 ?>

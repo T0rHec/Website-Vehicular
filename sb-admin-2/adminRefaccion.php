@@ -41,6 +41,6 @@ $newConn->openconn();
 $newConn->exequery($sql);
 $newConn->closeconn();
 
-header('Location: refaccion.html');
+header('Location: refaccion.php');
 
 ?>

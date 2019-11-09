@@ -19,12 +19,18 @@ switch ($boton) {
 
 		$sql = "INSERT INTO cliente(Nombre, Apellidos, Telefono, Domicilio, Email, Password, BitacoraClienteId, EmpleadoId, ListaDeseosId) VALUES('" . $name . "','" . $last_name . "','" . $tel . "'  ,'" . $address . "','" . $email . "','" . $password . "','" . $bitacora . "','" . $empleadoId . "','" . $listadeseosId . "')";
 
+        header('Location: cliente.php');
+
     break;
 
 
     case 'actualizar':
+
     	$clienteId = $_POST['clienteId'];
+
 		$sql = "UPDATE cliente SET Nombre = '$name' , Apellidos = '$last_name', Telefono = $tel, Domicilio = '$address', Email = '$email', Password = '$password', BitacoraClienteId = $bitacora, EmpleadoId = $empleadoId, ListaDeseosId = $listadeseosId WHERE ClienteId = $clienteId;";
+
+        header('Location: cliente.php');
 
     break;
 
@@ -32,7 +38,11 @@ switch ($boton) {
 
     case 'borrar':
 
+        $clienteId = $_POST['clienteId'];
+
 		$sql = "DELETE FROM cliente WHERE ClienteId = $clienteId; ";
+
+        header('Location: cliente.php');
 
     break;
 
@@ -44,7 +54,5 @@ switch ($boton) {
 $newConn->openconn();
 $newConn->exequery($sql);
 $newConn->closeconn();
-
-header('Location: cliente.html');
 
 ?>

@@ -21,7 +21,7 @@ switch ($boton) {
 		$sql = "INSERT INTO empleado(Nombre,Apellidos,Telefono,Email,Password,Salario,RFC) VALUES('" . $name . "','" . $last_name . "','" . $tel . "','" . $email . "'  ,'" . $password . "','" . $salario . "','" . $rfc . "')";
 
 		$newConn->exequery($sql);
-		header('Location: empleado.html');
+		header('Location: empleado.php');
 
     break;
 
@@ -34,7 +34,7 @@ switch ($boton) {
 		$sql = "UPDATE empleado SET Nombre = '$name' , Apellidos = '$last_name', Telefono = '$tel', Email = '$email', Password = '$passHash', Salario = $salario, RFC = '$rfc' WHERE EmpleadoId = $empleadoId; ";
 
 		$newConn->exequery($sql);
-		header('Location: empleado.html');
+		header('Location: empleado.php');
 
     break;
 
@@ -48,7 +48,7 @@ switch ($boton) {
 
 
 		$newConn->exequery($sql);
-		header('Location: empleado.html');
+		header('Location: empleado.php');
 
     break;
 

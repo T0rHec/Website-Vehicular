@@ -9,7 +9,7 @@
 		//inserta los datos del empleado
 		public function insertar($empleado){
 			$db=DB::conectar();
-			$insert=$db->prepare('INSERT INTO EMPLEADO VALUES(NULL,:Nombre, :Apellido, :Telefono, :Email, :Password, NULL, NULL)');
+			$insert=$db->prepare('INSERT INTO empleado VALUES(NULL,:Nombre, :Apellido, :Telefono, :Email, :Password, NULL, NULL)');
 			$insert->bindValue('Nombre',$empleado->getNombre());
 			$insert->bindValue('Apellido',$empleado->getApellido());
 			$insert->bindValue('Telefono',$empleado->getTelefono());
@@ -23,7 +23,7 @@
 		//obtiene el usuario para el login
 		public function obtenerEmpleado($nombre, $email, $password){
 			$db=Db::conectar();
-			$select=$db->prepare('SELECT * FROM EMPLEADO WHERE nombre=:nombre AND email=:email');
+			$select=$db->prepare('SELECT * FROM empleado WHERE nombre=:nombre AND email=:email');
 			$select->bindValue('nombre',$nombre);
 			$select->bindValue('email',$email);
 			$select->execute();
@@ -43,7 +43,7 @@
 		//busca el nombre del usuario si existe
 		public function buscarEmpleado($nombre){
 			$db=Db::conectar();
-			$select=$db->prepare('SELECT * FROM EMPLEADO WHERE nombre=:nombre');
+			$select=$db->prepare('SELECT * FROM empleado WHERE nombre=:nombre');
 			$select->bindValue('nombre',$nombre);
 			$select->execute();
 			$registro=$select->fetch();

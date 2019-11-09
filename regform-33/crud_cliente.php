@@ -9,7 +9,7 @@
 		//inserta los datos del cliente
 		public function insertar($cliente){
 			$db=DB::conectar();
-			$insert=$db->prepare('INSERT INTO CLIENTE VALUES(NULL, :Nombre, :Apellido, :Telefono, :Domicilio, :Email, :Password, NULL, NULL, NULL)');
+			$insert=$db->prepare('INSERT INTO cliente VALUES(NULL, :Nombre, :Apellido, :Telefono, :Domicilio, :Email, :Password, NULL, NULL, NULL)');
 			$insert->bindValue('Nombre',$cliente->getNombre());
 			$insert->bindValue('Apellido',$cliente->getApellido());
 			$insert->bindValue('Telefono',$cliente->getTelefono());

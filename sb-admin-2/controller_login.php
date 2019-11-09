@@ -18,7 +18,8 @@
 		$empleado->setPassword($_POST['password']);
 		if ($crud->buscarEmpleado($_POST['name'])) {
 			$crud->insertar($empleado);
-			header('Location: login.html');
+			$_SESSION['name']=$empleado; //si el name se encuentra, crea la sesión de name
+			header('Location: index.php'); //envia a la página
 		}else{
 			header('Location: register.html');
 		}
@@ -29,6 +30,8 @@
 		if ($empleado->getEmpleadoId()!=NULL) {
 			$_SESSION['name']=$empleado; //si el name se encuentra, crea la sesión de name
 			header('Location: index.php'); //envia a la página
+		}else{
+			header('Location: login.html');
 		}
 	}elseif(isset($_POST['salir'])){ // cuando presiona el botòn salir
 		header('Location: login.html');

@@ -12,7 +12,7 @@ switch ($boton) {
 
 		$sql = "INSERT INTO marca(Nombre,Pais) VALUES('" . $name . "','" . $pais . "')";
 
-		header('Location: marca.html');
+		header('Location: marca.php');
 
     break;
 
@@ -22,7 +22,7 @@ switch ($boton) {
 
 		$sql = "UPDATE marca SET Nombre = '$name' , Pais = '$pais' WHERE MarcaId = $marcaId; ";
 
-		header('Location: marca.html');
+		header('Location: marca.php');
 
     break;
 
@@ -34,7 +34,7 @@ switch ($boton) {
 
 		$sql = "DELETE FROM marca WHERE MarcaId = $marcaId; ";
 
-		header('Location: marca.html');
+		header('Location: marca.php');
 
     break;
 

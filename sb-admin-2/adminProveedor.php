@@ -13,7 +13,7 @@ switch ($boton) {
 
 		$sql = "INSERT INTO proveedor(Nombre,Domicilio,Telefono) VALUES('" . $name . "','" . $address . "','" . $tel . "')";
 
-		header('Location: proveedor.html');
+		header('Location: proveedor.php');
 
     break;
 
@@ -23,7 +23,7 @@ switch ($boton) {
 
 		$sql = "UPDATE proveedor SET Nombre = '$name' , Domicilio = '$address', Telefono = $tel WHERE ProveedorId = $proveedorId; ";
 
-		header('Location: proveedor.html');
+		header('Location: proveedor.php');
 
     break;
 
@@ -35,7 +35,7 @@ switch ($boton) {
 
 		$sql = "DELETE FROM proveedor WHERE ProveedorId = $proveedorId; ";
 
-		header('Location: proveedor.html');
+		header('Location: proveedor.php');
 
     break;
 
