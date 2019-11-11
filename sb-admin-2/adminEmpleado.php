@@ -14,11 +14,12 @@ switch ($boton) {
 		$last_name = $_POST["last_name"];
 		$tel = $_POST["tel"];
 		$password = $_POST["password"];
+		$passHash = password_hash($password, PASSWORD_DEFAULT);
 
 		$salario = $_POST["salario"];
 		$rfc = $_POST["rfc"];
 
-		$sql = "INSERT INTO empleado(Nombre,Apellidos,Telefono,Email,Password,Salario,RFC) VALUES('" . $name . "','" . $last_name . "','" . $tel . "','" . $email . "'  ,'" . $password . "','" . $salario . "','" . $rfc . "')";
+		$sql = "INSERT INTO empleado(Nombre,Apellidos,Telefono,Email,Password,Salario,RFC) VALUES('" . $name . "','" . $last_name . "','" . $tel . "','" . $email . "'  ,'" . $passHash . "','" . $salario . "','" . $rfc . "')";
 
 		$newConn->exequery($sql);
 		header('Location: empleado.php');
