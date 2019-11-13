@@ -42,6 +42,6 @@ $newConn->openconn();
 $newConn->exequery($sql);
 $newConn->closeconn();
 
-header('Location: ropa.html');
+header('Location: ropa.php');
 
 ?>

@@ -12,7 +12,7 @@ switch ($boton) {
 
 		$sql = "INSERT INTO paqueteria(Nombre,Domicilio) VALUES('" . $name . "','" . $address . "')";
 
-		header('Location: paqueteria.html');
+		header('Location: paqueteria.php');
 
     break;
 
@@ -22,7 +22,7 @@ switch ($boton) {
 
 		$sql = "UPDATE paqueteria SET Nombre = '$name' , Domicilio = '$address' WHERE PaqueteriaId = $paqueteriaId; ";
 
-		header('Location: paqueteria.html');
+		header('Location: paqueteria.php');
 
     break;
 
@@ -34,7 +34,7 @@ switch ($boton) {
 
 		$sql = "DELETE FROM paqueteria WHERE PaqueteriaId = $paqueteriaId; ";
 
-		header('Location: paqueteria.html');
+		header('Location: paqueteria.php');
 
     break;
 
