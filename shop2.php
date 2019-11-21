@@ -94,7 +94,7 @@
     			<div class="col-md-8 col-lg-10 order-md-last">
     				<div class="row">
 					<?php
-						$sentencia=$pdo->prepare("SELECT Modelo, Precio, Imagen FROM vehiculo");
+						$sentencia=$pdo->prepare("SELECT Nombre, Precio, Imagen FROM accesorio");
 						$sentencia->execute();
 						$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 						//print_r($listaProductos);
@@ -120,7 +120,7 @@
 			    							</p>
 			    						</div>
 			    					</div>
-		    						<h3><a href="product-single.html"><?php echo $producto['Modelo'];?></a></h3>
+		    						<h3><a href="product-single.html"><?php echo $producto['Nombre'];?></a></h3>
 		    						<div class="pricing">
 			    						<p class="price"><span>$<?php echo $producto['Precio'];?></span></p>
 			    					</div>
@@ -151,14 +151,14 @@
                      <div class="panel panel-default">
                          <div class="panel-heading" role="tab" id="headingOne">
                              <h4 class="panel-title">
-                                 <a href="shop.php">Vehículos</a>
+                                 <a class="collapsed" href="shop.php">Vehículos</a>
                              </h4>
                          </div>
                      </div>
                      <div class="panel panel-default">
                          <div class="panel-heading" role="tab" id="headingTwo">
                              <h4 class="panel-title">
-                                 <a class="collapsed" href="shop2.php">Accesorios</a>
+                                 <a href="shop2.php">Accesorios</a>
                              </h4>
                          </div>
                      </div>
