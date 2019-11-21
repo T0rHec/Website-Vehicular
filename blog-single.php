@@ -50,26 +50,26 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html" style="color: white">Vehicular</a>
+	      <a class="navbar-brand" href="index.php" style="color: white">Vehicular</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menú
 	      </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.html" class="nav-link" style="color: white">Inicio</a></li>
-            <li class="nav-item"><a href="shop.html" class="nav-link" style="color: white">Catálogo</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link" style="color: white">Nosotros</a></li>
-            <li class="nav-item active"><a href="blog.html" class="nav-link" style="color: white">Blog</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link" style="color: white">Inicio</a></li>
+            <li class="nav-item"><a href="shop.php" class="nav-link" style="color: white">Catálogo</a></li>
+            <li class="nav-item"><a href="about.php" class="nav-link" style="color: white">Nosotros</a></li>
+            <li class="nav-item active"><a href="blog.php" class="nav-link" style="color: white">Blog</a></li>
 <<<<<<< HEAD
-            <li class="nav-item"><a href="contact.html" class="nav-link" style="color: white">Contact</a></li>
-            <li class="nav-item"><a href="faq.html" class="nav-link" style="color: white">FAQ</a></li>
+            <li class="nav-item"><a href="contact.php" class="nav-link" style="color: white">Contact</a></li>
+            <li class="nav-item"><a href="faq.php" class="nav-link" style="color: white">FAQ</a></li>
 =======
-            <li class="nav-item"><a href="contact.html" class="nav-link" style="color: white">Contacto</a></li>
+            <li class="nav-item"><a href="contact.php" class="nav-link" style="color: white">Contacto</a></li>
 >>>>>>> 07c2f2a79597922485888aa01a1fc30e650da57a
-            <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
+            <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
               <li class="nav-item dropdown">
-                <li class="nav-item"><a href="wishlist.html" class="nav-link"style="color: white">Lista de deseos</a></li>
+                <li class="nav-item"><a href="wishlist.php" class="nav-link"style="color: white">Lista de deseos</a></li>
               <li class="nav-item"><a href="regform-33/login.html" class="nav-link" style="color: white">Ingresar</a></li>
             </li>
 

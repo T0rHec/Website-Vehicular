@@ -1,3 +1,6 @@
+<?php
+	include 'conexion.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,21 +53,21 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Vehicular</a>
+	      <a class="navbar-brand" href="index.php">Vehicular</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
-              <li class="nav-item"><a href="shop.html" class="nav-link">Catálogo</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Nosotros</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-	          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-	          <li class="nav-item"><a href="wishlist.html" class="nav-link">Lista de Deseos</a></li>
+	          <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
+              <li class="nav-item"><a href="shop.php" class="nav-link">Catálogo</a></li>
+	          <li class="nav-item"><a href="about.php" class="nav-link">Nosotros</a></li>
+	          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="contact.php" class="nav-link">Contacto</a></li>
+	          <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item"><a href="wishlist.php" class="nav-link">Lista de Deseos</a></li>
               <li class="nav-item"><a href="regform-33/login.html" class="nav-link">Ingresar</a></li>
 
 	        </ul>
@@ -185,15 +188,24 @@
     	</div>
     	<div class="container">
     		<div class="row">
+    		<?php
+    			$sentencia=$pdo->prepare("SELECT Modelo, Precio, Imagen FROM vehiculo");
+				$sentencia->execute();
+				$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+				//print_r($listaProductos);
+    		?>
+
+    		<?php foreach($listaProductos as $producto){ ?>
     			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
     				<div class="product d-flex flex-column">
-    					<a href="product-single.html" class="img-prod"><img class="img-fluid" src="images/mclaren2.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
+    					<a href="product-single2.html" class="img-prod"><img class="img-fluid"
+    						src="<?php echo $producto['Imagen'];?>" alt="Colorlib Template">
+
     					</a>
     					<div class="text py-3 pb-4 px-3">
     						<div class="d-flex">
     							<div class="cat">
-		    						<span>Estilo de vida</span>
+		    						<span>`Calificación</span>
 		    					</div>
 		    					<div class="rating">
 	    							<p class="text-right mb-0">
@@ -205,40 +217,9 @@
 	    							</p>
 	    						</div>
 	    					</div>
-    						<h3><a href="product-single.html">McLaren 600LT Coupé</a></h3>
-    						<div class="pricing">
-	    						<p class="price"><span>$4,447,700.00</span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-    							<a href="blog.html" class="add-to-cart text-center py-2 mr-1"><span>Visitar Blog<i class="ion-ios-add ml-1"></i></span></a>
-
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product d-flex flex-column">
-    					<a href="product-single2.html" class="img-prod"><img class="img-fluid" src="images/Tesla2.jpg" alt="Colorlib Template">
-
-    					</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span>Estilo de vida</span>
-		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right mb-0">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
-	    					</div>
-    						<h3><a href="product-single2.html">Tesla Model X</a></h3>
+    						<h3><a href="product-single2.html"><?php echo $producto['Modelo'];?></a></h3>
   							<div class="pricing">
-	    						<p class="price"><span class="price-sale">$2,064,500.00</span></p>
+	    						<p class="price"><span class="price-sale">$<?php echo $producto['Precio'];?></span></p>
 	    					</div>
 	    					<p class="bottom-area d-flex px-3">
     							<a href="cart.html" class="add-to-cart text-center py-2 mr-1"><span>Añadir al carrito<i class="ion-ios-add ml-1"></i></span></a>
@@ -247,193 +228,9 @@
     					</div>
     				</div>
     			</div>
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product">
-    					<a href="product-single.html" class="img-prod"><img class="img-fluid" src="images/RR3.jpg" alt="Colorlib Template">
-	    					<div class="overlay"></div>
-	    				</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span>Estilo de vida</span>
-		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right mb-0">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
-	    					</div>
-    						<h3><a href="product-single.html">ROLLS ROYCE PHANTOM</a></h3>
-  							<div class="pricing">
-	    						<p class="price"><span>$10,200,000.00</span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-    							<a href="cart.html" class="add-to-cart text-center py-2 mr-1"><span>Añadir al carrito<i class="ion-ios-add ml-1"></i></span></a>
-    							<a href="product-single.html" class="buy-now text-center py-2">Compra ahora<span><i class="ion-ios-cart ml-1"></i></span></a>
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product">
-    					<a href="product-single3.html" class="img-prod"><img class="img-fluid" src="images/mustangEco.png" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span>Estilo de vida</span>
-		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right mb-0">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
-	    					</div>
-    						<h3><a href="product-single3.html">FORD MUSTANG ECOBOOST</a></h3>
-  							<div class="pricing">
-	    						<p class="price"><span>$677,100.00</span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-    							<a href="cart.html" class="add-to-cart text-center py-2 mr-1"><span>Añadir al carrito <i class="ion-ios-add ml-1"></i></span></a>
-    							<a href="product-single3.html" class="buy-now text-center py-2">Compra ahora<span><i class="ion-ios-cart ml-1"></i></span></a>
-    						</p>
-    					</div>
-    				</div>
-    			</div>
 
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product d-flex flex-column">
-    					<a href="product-single10.html" class="img-prod"><img class="img-fluid" src="images/ferrari2.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span>Estilo de vida</span>
-		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right mb-0">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
-	    					</div>
-    						<h3><a href="product-single10.html">Ferrari 488 GTB</a></h3>
-    						<div class="pricing">
-	    						<p class="price"><span>$6,418,000.00</span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-    							<a href="cart.html" class="add-to-cart text-center py-2 mr-1"><span>Añadir al carrito<i class="ion-ios-add ml-1"></i></span></a>
-    							<a href="product-single10.html" class="buy-now text-center py-2">Compra ahora<span><i class="ion-ios-cart ml-1"></i></span></a>
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product d-flex flex-column">
-    					<a href="product-single.html" class="img-prod"><img class="img-fluid" src="images/car5.jpg" alt="Colorlib Template">
+    		<?php } ?>
 
-    					</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span>Estilo de vida</span>
-		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right mb-0">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
-	    					</div>
-    						<h3><a href="product-single.html">Porshe</a></h3>
-  							<div class="pricing">
-	    						<p class="price"><span class="price-sale">$1,918,000.00</span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-    							<a href="blog.html" class="add-to-cart text-center py-2 mr-1"><span>Visitar Blog<i class="ion-ios-add ml-1"></i></span></a>
-
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product">
-    					<a href="product-single18.html" class="img-prod"><img class="img-fluid" src="images/jaguar2.jpg" alt="Colorlib Template">
-	    					<div class="overlay"></div>
-	    				</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span>Estilo de vida</span>
-		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right mb-0">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
-	    					</div>
-    						<h3><a href="product-single18.html">Jaguar XJ</a></h3>
-  							<div class="pricing">
-	    						<p class="price"><span>$1,988,744.00</span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-    							<a href="cart.html" class="add-to-cart text-center py-2 mr-1"><span>Añadir al carrito <i class="ion-ios-add ml-1"></i></span></a>
-    							<a href="product-single18.html" class="buy-now text-center py-2">Compra ahora<span><i class="ion-ios-cart ml-1"></i></span></a>
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product">
-    					<a href="product-single.html" class="img-prod"><img class="img-fluid" src="images/car12.jpg" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span>Estilo de vida</span>
-		    					</div>
-		    					<div class="rating">
-	    							<p class="text-right mb-0">
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    								<a href="#"><span class="ion-ios-star-outline"></span></a>
-	    							</p>
-	    						</div>
-	    					</div>
-    						<h3><a href="product-single.html">Renault</a></h3>
-  							<div class="pricing">
-	    						<p class="price"><span>$960,000.00</span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-    							<a href="blog.html" class="add-to-cart text-center py-2 mr-1"><span>Visitar Blog<i class="ion-ios-add ml-1"></i></span></a>
-
-    						</p>
-    					</div>
-    				</div>
-    			</div>
     		</div>
     	</div>
     </section>

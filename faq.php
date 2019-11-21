@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Vehicular</title>
+<html>
+<head>
+	<title>FAQ</title>
+
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -24,36 +26,22 @@
 
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="goto-here">
-    <!-- Load Facebook SDK for JavaScript -->
-      <div id="fb-root"></div>
-      <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v5.0'
-          });
-        };
+    <link rel="stylesheet" href="css/style2.css">
 
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
 
-      <!-- Your customer chat code -->
-      <div class="fb-customerchat"
-        attribution=setup_tool
-        page_id="112331033551307"
-  theme_color="#ff7e29"
-  logged_in_greeting="Bienvenido! ¿Cómo podemos ayudarte?"
-  logged_out_greeting="Bienvenido! ¿Cómo podemos ayudarte?">
-      </div>
-
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+	$('.acc h3').click(function(){
+		$(this).next('.content').slideToggle();
+		$(this).parent().toggleClass('active');
+		$(this).parent().siblings().children('.content').slideUp();
+		$(this).parent().siblings().removeClass('active');
+	});
+});
+		</script>
+</head>
+<body class="goto-here">
 		<div class="py-1 bg-black">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -65,7 +53,7 @@
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">pvehicular007@gmail.com</span>
+						    <span class="text">youremail@email.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
 						    <span class="text">5 a 20 días habiles de envío</span>
@@ -84,86 +72,105 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.html" class="nav-link" style="color: white">Inicio</a></li>
-            <li class="nav-item"><a href="shop.html" class="nav-link" style="color: white">Catálogo</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link" style="color: white">Nosotros</a></li>
-            <li class="nav-item"><a href="blog.html" class="nav-link" style="color: white">Blog</a></li>
-            <li class="nav-item active"><a href="contact.html" class="nav-link" style="color: white">Contacto</a></li>
-            <li class="nav-item"><a href="faq.html" class="nav-link" style="color: white">FAQ</a></li>
-            <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
+            <li class="nav-item"><a href="index.php" class="nav-link" style="color: white">Inicio</a></li>
+            <li class="nav-item"><a href="shop.php" class="nav-link" style="color: white">Catálogo</a></li>
+            <li class="nav-item"><a href="about.php" class="nav-link" style="color: white">Nosotros</a></li>
+            <li class="nav-item"><a href="blog.php" class="nav-link" style="color: white">Blog</a></li>
+            <li class="nav-item active"><a href="contact.php" class="nav-link" style="color: white">Contacto</a></li>
+            <li class="nav-item"><a href="faq.php" class="nav-link" style="color: white">FAQ</a></li>
+            <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
               <li class="nav-item dropdown">
-                <li class="nav-item"><a href="wishlist.html" class="nav-link"style="color: white">Lista de deseos</a></li>
+                <li class="nav-item"><a href="wishlist.php" class="nav-link"style="color: white">Lista de deseos</a></li>
               <li class="nav-item"><a href="regform-33/login.html" class="nav-link" style="color: white">Ingresar</a></li>
             </li>
 
-	        </ul>
-	      </div>
+          </ul>
+        </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_g.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
           	<p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: white">Inicio</a></span>
-            <h1 class="mb-0 bread" style="color: white">Contáctanos</h1>
+            <h1 class="mb-0 bread" style="color: white">FAQ <br>(Preguntas Frecuentes)</h1>
           </div>
         </div>
       </div>
     </div>
+    <section class="containere">
 
-    <section class="ftco-section contact-section bg-light">
-      <div class="container">
-      	<div class="row d-flex mb-5 contact-info">
-          <div class="w-100"></div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Dirección:</span>Av. Adolfo López Mateos #1801, Ote Fracc, Bona Gens, 20256 Aguascalientes, Ags.</p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Teléfono:</span> <a href="tel://1234567920">+52 4492589637</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Correo electrónico:</span> <a href="mailto:info@yoursite.com">pvehicular007@gmail.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Sitio Web</span> <a href="#">Vehicular.com</a></p>
-	          </div>
-          </div>
-        </div>
-        <div class="row block-9">
-          <div class="col-md-6 order-md-last d-flex">
-            <form action="correo.php" method="post" class="bg-white p-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" name="correo" placeholder="Correo Electrónico" required>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="tema" placeholder="Tema" required>
-              </div>
-              <div class="form-group">
-                <textarea name="mensaje" id="mensaje" cols="30" rows="7" name="mensaje" class="form-control" placeholder="Mensaje" required></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Enviar mensaje" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
+		<h1>PREGUNTAS FRECUENTES</h1>
 
-          </div>
 
-          <div class="col-md-6 d-flex">
-            <iframe class="map-wrap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3702.495665434041!2d-102.2641563856268!3d21.876980863657085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee069d6cf307%3A0xd93b5294c07171a7!2sInstituto+Tecnol%C3%B3gico+De+Aguascalientes!5e0!3m2!1ses!2smx!4v1524844351958/sistema" width="100%" height="600" frameborder="0" style="width:100%; height: 445px;" id="map"></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="ftco-gallery ftco-section ftco-no-pb">
+		<div class="acc">
+			<h3>¿Cómo puedo encontrar información acerca del modelo de automóvil que me interesa?</h3>
+			<div class="content">
+				<div class="content-inner">
+					<p>Debes hacer clic sobre el nombre catálogo que esta en la parte superior, al darle clic pordras visualizar la información de que necesitas: texto, imágenes y especificaciones.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="acc">
+			<h3>¿Cómo puedo encontrar los accesorios?</h3>
+			<div class="content">
+				<div class="content-inner">
+					<p>Puedes encontrar todos los accesorios disponibles en el sitio . Accede a la sección de catálogo, aparte de mostrarte los automóviles  se te muestran los accesorios que tenemos.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="acc">
+			<h3>¿Cómo puedo encontrar comentarios de clientes para ayudar a decidirme?</h3>
+			<div class="content">
+				<div class="content-inner">
+					<p>Al darle clic a uno de nuestros productos en la parte inferior se muestran los comentarios de clientes que han comprado esos mismos articulos y compartieron su experiencia .</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="acc">
+			<h3>¿Comó puedo comunicarme con ustedes?</h3>
+			<div class="content">
+				<div class="content-inner">
+					<p>Nos puedes contactar las 24 horas del día, durante los 365 días del año; y desde cualquier punto para consultar tus dudas o quieras conocer mas información al respecto de cualquier producto. Nos pueden encontrar en un chat en línea, por correo(pvehicular007@gmail.com), por llamada al  449-258-96-37</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="acc">
+			<h3>¿Cuáles son los servicios que ofrece?</h3>
+			<div class="content">
+				<div class="content-inner">
+					<p>Ofrecemos una gama de servicios ante y posteriores a la compra de tu vehículo para que lo puedas conservar como nuevo.Como son:<br>Atención personalizada
+<br>Refacciones
+<br>Herramientas especializadas
+<br>Centros de servicio con la más alta tecnología
+<br>Diagnósticos específicos
+<br>Cambio de aceite o filtro
+<br>Mantenimiento de frenos
+<br>Estos servicios se te ofrecen con un precios adicional</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="acc">
+			<h3>¿Qué cobertura y duración tiene mi garantía?</h3>
+			<div class="content">
+				<div class="content-inner">
+					<p>La garantía de tu automovil varía de acuerdo al modelo. Puedes obtener más información al contactarte con nostros.</p>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</section>
+</body>
+<section class="ftco-gallery ftco-section ftco-no-pb">
     	<div class="container">
     		<div class="row justify-content-center">
     			<div class="col-md-8 heading-section text-center mb-4 ftco-animate">
@@ -246,10 +253,10 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menú</h2>
               <ul class="list-unstyled">
-                <li><a href="shop.html" class="py-2 d-block">Tienda</a></li>
-                <li><a href="about.html" class="py-2 d-block">Nosotros</a></li>
-                <li><a href="blog.html" class="py-2 d-block">Diario</a></li>
-                <li><a href="contact.html" class="py-2 d-block">Contactanos</a></li>
+                <li><a href="#" class="py-2 d-block">Tienda</a></li>
+                <li><a href="#" class="py-2 d-block">Nosotros</a></li>
+                <li><a href="#" class="py-2 d-block">Diario</a></li>
+                <li><a href="#" class="py-2 d-block">Contactanos</a></li>
               </ul>
             </div>
           </div>
@@ -257,15 +264,15 @@
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Ayuda</h2>
               <div class="d-flex">
-                <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-                  <li><a href="#" class="py-2 d-block">Información de envío</a></li>
+	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
+	                <li><a href="#" class="py-2 d-block">Información de envío</a></li>
                   <li><a href="#" class="py-2 d-block">Regresos y cambios</a></li>
                   <li><a href="#" class="py-2 d-block">Terminos y condiciones</a></li>
                   <li><a href="#" class="py-2 d-block">Política de privacidad</a></li>
-                </ul>
-                <ul class="list-unstyled">
-                  <li><a href="contact.html" class="py-2 d-block">Preguntas frecuentes</a></li>
-                  <li><a href="contact.html" class="py-2 d-block">Contacto</a></li>
+	              </ul>
+	              <ul class="list-unstyled">
+	                <li><a href="#" class="py-2 d-block">Preguntas frecuentes</a></li>
+                  <li><a href="#" class="py-2 d-block">Contacto</a></li>
 	              </ul>
 	            </div>
             </div>
@@ -318,5 +325,4 @@
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
-  </body>
 </html>

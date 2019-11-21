@@ -1,9 +1,10 @@
+<?php
+	include 'conexion.php';
+?>
 <!DOCTYPE html>
-<html>
-<head>
-	<title>FAQ</title>
-
-
+<html lang="en">
+  <head>
+    <title>Vehicular</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,22 +27,9 @@
 
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style2.css">
-
-
-		<script src="js/jquery.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-	$('.acc h3').click(function(){
-		$(this).next('.content').slideToggle();
-		$(this).parent().toggleClass('active');
-		$(this).parent().siblings().children('.content').slideUp();
-		$(this).parent().siblings().removeClass('active');
-	});
-});
-		</script>
-</head>
-<body class="goto-here">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="goto-here">
 		<div class="py-1 bg-black">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -53,7 +41,7 @@
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">youremail@email.com</span>
+						    <span class="text">pvehicular007@gmail.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
 						    <span class="text">5 a 20 días habiles de envío</span>
@@ -65,27 +53,22 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html" style="color: white">Vehicular</a>
+	      <a class="navbar-brand" href="index.php" style="color: white">Vehicular</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menú
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.html" class="nav-link" style="color: white">Inicio</a></li>
-            <li class="nav-item"><a href="shop.html" class="nav-link" style="color: white">Catálogo</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link" style="color: white">Nosotros</a></li>
-            <li class="nav-item"><a href="blog.html" class="nav-link" style="color: white">Blog</a></li>
-            <li class="nav-item active"><a href="contact.html" class="nav-link" style="color: white">Contacto</a></li>
-            <li class="nav-item"><a href="faq.html" class="nav-link" style="color: white">FAQ</a></li>
-            <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="index.php" class="nav-link" style="color: white">Inicio</a></li>
+	          <li class="nav-item active"><a href="shop.php" class="nav-link" style="color: white">Catálogo</a></li>
+	          <li class="nav-item"><a href="about.php" class="nav-link" style="color: white">Nosotros</a></li>
+	          <li class="nav-item"><a href="blog.php" class="nav-link" style="color: white">Blog</a></li>
+	          <li class="nav-item"><a href="contact.php" class="nav-link" style="color: white">Contacto</a></li>
+	          <li class="nav-item"><a href="faq.php" class="nav-link" style="color: white">FAQ</a></li>
+	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
               <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingresar</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="login.html">Como cliente</a>
-                <a class="dropdown-item" href="sb-admin-2/login.html">Como adminstrador</a>
-                <a class="dropdown-item" href="sb-admin-gh/login.html">Como Manager</a>
-              </div>
+              <li class="nav-item"><a href="regform-33/login.html" class="nav-link" style="color: white">Ingresar</a></li>
             </li>
 
 	        </ul>
@@ -94,91 +77,157 @@
 	  </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_g.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
           	<p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: white">Inicio</a></span>
-            <h1 class="mb-0 bread" style="color: white">FAQ <br>(Preguntas Frecuentes)</h1>
+            <h1 class="mb-0 bread" style="color: white">Tienda</h1>
           </div>
         </div>
       </div>
     </div>
-    <section class="containere">
 
-		<h1>PREGUNTAS FRECUENTES</h1>
+    <section class="ftco-section bg-light">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-8 col-lg-10 order-md-last">
+    				<div class="row">
+					<?php
+						$sentencia=$pdo->prepare("SELECT Modelo, Precio, Imagen FROM vehiculo");
+						$sentencia->execute();
+						$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+						//print_r($listaProductos);
+					?>
+					<?php foreach($listaProductos as $producto){ ?>
+						<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
+		    				<div class="product d-flex flex-column">
+		    					<a href="product-single.html" class="img-prod"><img class="img-fluid" src="<?php echo $producto['Imagen'];?>" alt="Colorlib Template">
+		    						<div class="overlay"></div>
+		    					</a>
+		    					<div class="text py-3 pb-4 px-3">
+		    						<div class="d-flex">
+		    							<div class="cat">
+				    						<span>Estilo de vida</span>
+				    					</div>
+				    					<div class="rating">
+			    							<p class="text-right mb-0">
+			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+			    								<a href="#"><span class="ion-ios-star-outline"></span></a>
+			    							</p>
+			    						</div>
+			    					</div>
+		    						<h3><a href="product-single.html"><?php echo $producto['Modelo'];?></a></h3>
+		    						<div class="pricing">
+			    						<p class="price"><span>$<?php echo $producto['Precio'];?></span></p>
+			    					</div>
+			    					<p class="bottom-area d-flex px-3">
+		    							<a href="cart.html" class="add-to-cart text-center py-2 mr-1"><span>Añadir al carrito <i class="ion-ios-add ml-1"></i></span></a>
+		    							<a href="product-single.html" class="buy-now text-center py-2">Compra ahora<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    						</p>
+		    					</div>
+		    				</div>
+		    			</div>
+    				<?php } ?>
 
-
-		<div class="acc">
-			<h3>¿Cómo puedo encontrar información acerca del modelo de automóvil que me interesa?</h3>
-			<div class="content">
-				<div class="content-inner">
-					<p>Debes hacer clic sobre el nombre catálogo que esta en la parte superior, al darle clic pordras visualizar la información de que necesitas: texto, imágenes y especificaciones.</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="acc">
-			<h3>¿Cómo puedo encontrar los accesorios?</h3>
-			<div class="content">
-				<div class="content-inner">
-					<p>Puedes encontrar todos los accesorios disponibles en el sitio . Accede a la sección de catálogo, aparte de mostrarte los automóviles  se te muestran los accesorios que tenemos.</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="acc">
-			<h3>¿Cómo puedo encontrar comentarios de clientes para ayudar a decidirme?</h3>
-			<div class="content">
-				<div class="content-inner">
-					<p>Al darle clic a uno de nuestros productos en la parte inferior se muestran los comentarios de clientes que han comprado esos mismos articulos y compartieron su experiencia .</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="acc">
-			<h3>¿Comó puedo comunicarme con ustedes?</h3>
-			<div class="content">
-				<div class="content-inner">
-					<p>Nos puedes contactar las 24 horas del día, durante los 365 días del año; y desde cualquier punto para consultar tus dudas o quieras conocer mas información al respecto de cualquier producto. Nos pueden encontrar en un chat en línea, por correo(pvehicular007@gmail.com), por llamada al  449-258-96-37</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="acc">
-			<h3>¿Cuáles son los servicios que ofrece?</h3>
-			<div class="content">
-				<div class="content-inner">
-					<p>Ofrecemos una gama de servicios ante y posteriores a la compra de tu vehículo para que lo puedas conservar como nuevo.Como son:<br>Atención personalizada
-<br>Refacciones
-<br>Herramientas especializadas
-<br>Centros de servicio con la más alta tecnología
-<br>Diagnósticos específicos
-<br>Cambio de aceite o filtro
-<br>Mantenimiento de frenos
-<br>Estos servicios se te ofrecen con un precios adicional</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="acc">
-			<h3>¿Qué cobertura y duración tiene mi garantía?</h3>
-			<div class="content">
-				<div class="content-inner">
-					<p>La garantía de tu automovil varía de acuerdo al modelo. Puedes obtener más información al contactarte con nostros.</p>
-				</div>
-			</div>
-		</div>
+		    		</div>
 
 
-	</div>
-</section>
-</body>
-<section class="ftco-gallery ftco-section ftco-no-pb">
+
+
+
+
+	        </div>
+
+		    	<div class="col-md-4 col-lg-2">
+		    		<div class="sidebar">
+							<div class="sidebar-box-2">
+								<h2 class="heading">Categorías</h2>
+								<div class="fancy-collapse-panel">
+                  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                     <div class="panel panel-default">
+                         <div class="panel-heading" role="tab" id="headingOne">
+                             <h4 class="panel-title">
+                                 <a href="#">Vehículos</a>
+                             </h4>
+                         </div>
+                     </div>
+                     <div class="panel panel-default">
+                         <div class="panel-heading" role="tab" id="headingTwo">
+                             <h4 class="panel-title">
+                                 <a class="collapsed" href="#">Accesorios</a>
+                             </h4>
+                         </div>
+                     </div>
+                     <div class="panel panel-default">
+                         <div class="panel-heading" role="tab" id="headingThree">
+                             <h4 class="panel-title">
+                                 <a class="collapsed" href="#">Prendas</a>
+                             </h4>
+                         </div>
+                     </div>
+                     <div class="panel panel-default">
+                         <div class="panel-heading" role="tab" id="headingFour">
+                             <h4 class="panel-title">
+                                 <a class="collapsed" href="#">Refacciones</a>
+                             </h4>
+                         </div>
+                     </div>
+               </div>
+							</div>
+							<div class="sidebar-box-2">
+								<h2 class="heading">Rango de precios</h2>
+								<form method="post" class="colorlib-form-2">
+		              <div class="row">
+		                <div class="col-md-12">
+		                  <div class="form-group">
+		                    <label for="guests">Precio desde:</label>
+		                    <div class="form-field">
+		                      <i class="icon icon-arrow-down3"></i>
+		                      <select name="people" id="people" class="form-control">
+		                        <option value="#">100</option>
+		                        <option value="#">200</option>
+		                        <option value="#">300</option>
+		                        <option value="#">400</option>
+		                        <option value="#">1,000</option>
+		                        <option value="#">100,000</option>
+		                      </select>
+		                    </div>
+		                  </div>
+		                </div>
+		                <div class="col-md-12">
+		                  <div class="form-group">
+		                    <label for="guests">Precio hasta:</label>
+		                    <div class="form-field">
+		                      <i class="icon icon-arrow-down3"></i>
+		                      <select name="people" id="people" class="form-control">
+		                        <option value="#">1,000</option>
+		                        <option value="#">4,000</option>
+		                        <option value="#">600,000</option>
+		                        <option value="#">800,000</option>
+		                        <option value="#">5,000,000</option>
+		                        <option value="#">10,000,000</option>
+		                      </select>
+		                    </div>
+		                  </div>
+		                </div>
+		              </div>
+		            </form>
+							</div>
+						</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+		<section class="ftco-gallery">
     	<div class="container">
     		<div class="row justify-content-center">
     			<div class="col-md-8 heading-section text-center mb-4 ftco-animate">
-            <h2 class="mb-4">Síguenos en Instagram!</h2>
+            <h2 class="mb-4">Siguenos en Instagram!</h2>
             <p>Ahí podrás encontrar las noticias más recientes de nuestro negocio, fotos, campañas, ofertas especiales y mucho más</p>
           </div>
     		</div>
@@ -227,7 +276,7 @@
     					</div>
 						</a>
 					</div>
-        </div>
+        	</div>
     	</div>
     </section>
 
@@ -257,10 +306,10 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menú</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Tienda</a></li>
-                <li><a href="#" class="py-2 d-block">Nosotros</a></li>
-                <li><a href="#" class="py-2 d-block">Diario</a></li>
-                <li><a href="#" class="py-2 d-block">Contactanos</a></li>
+                <li><a href="shop.html" class="py-2 d-block">Tienda</a></li>
+                <li><a href="about.html" class="py-2 d-block">Nosotros</a></li>
+                <li><a href="blog.html" class="py-2 d-block">Diario</a></li>
+                <li><a href="contact.html" class="py-2 d-block">Contactanos</a></li>
               </ul>
             </div>
           </div>
@@ -270,13 +319,13 @@
               <div class="d-flex">
 	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
 	                <li><a href="#" class="py-2 d-block">Información de envío</a></li>
-                  <li><a href="#" class="py-2 d-block">Regresos y cambios</a></li>
-                  <li><a href="#" class="py-2 d-block">Terminos y condiciones</a></li>
-                  <li><a href="#" class="py-2 d-block">Política de privacidad</a></li>
+	                <li><a href="#" class="py-2 d-block">Regresos y cambios</a></li>
+	                <li><a href="#" class="py-2 d-block">Terminos y condiciones</a></li>
+	                <li><a href="#" class="py-2 d-block">Política de privacidad</a></li>
 	              </ul>
 	              <ul class="list-unstyled">
-	                <li><a href="#" class="py-2 d-block">Preguntas frecuentes</a></li>
-                  <li><a href="#" class="py-2 d-block">Contacto</a></li>
+	                <li><a href="contact.html" class="py-2 d-block">Preguntas frecuentes</a></li>
+	                <li><a href="contact.html" class="py-2 d-block">Contacto</a></li>
 	              </ul>
 	            </div>
             </div>
@@ -287,8 +336,8 @@
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon icon-map-marker"></span><span class="text">Av. Adolfo López Mateos #1801, Ote Fracc, Bona Gens, 20256 Aguascalientes, Ags.</span></li>
-                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+52 4492589637</span></a></li>
-                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">Vehicular@vehiculos.com</span></a></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+52 4492589637</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">Vehicular@vehiculos.com</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -298,8 +347,7 @@
           <div class="col-md-12 text-center">
 
             <p>
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Esta plantilla fue hecha con <i class="icon-heart color-danger" aria-hidden="true"></i> por <a href="https://colorlib.com" target="_blank">Equipo vehicular</a>
-
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Esta plantilla fue hecha con <i class="icon-heart color-danger" aria-hidden="true"></i> por <a href="https://colorlib.com" target="_blank">Equipo vehicular</a>
 						</p>
           </div>
         </div>
@@ -329,4 +377,5 @@
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
+  </body>
 </html>
