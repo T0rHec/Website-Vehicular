@@ -479,7 +479,80 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                  <iframe src="tablaCliente.php" width="100%" height="500px" frameborder="0"></iframe>
+              <?php
+
+              grid();
+
+              function grid(){
+
+              include("conexion.php");
+
+
+              $sql = "SELECT * FROM cliente";
+
+              if(!$resultado = $db->query($sql)){
+                  die('Ocurrio un error ejecutando el query [' . $db->error . ']');
+              }
+
+              echo "<table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+                  <thead>
+                    <tr>
+                      <th>ClienteId</th>
+                      <th>Nombre</th>
+                      <th>Apellidos</th>
+                      <th>Telefono</th>
+                      <th>Domicilio</th>
+                      <th>Email</th>
+                      <th>Password</th>
+                      <th>BitacoraClienteId</th>
+                      <th>EmpleadoId</th>
+                      <th>ListaDeseosId</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>ClienteId</th>
+                      <th>Nombre</th>
+                      <th>Apellidos</th>
+                      <th>Telefono</th>
+                      <th>Domicilio</th>
+                      <th>Email</th>
+                      <th>Password</th>
+                      <th>BitacoraClienteId</th>
+                      <th>EmpleadoId</th>
+                      <th>ListaDeseosId</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>";
+
+
+              while($fila = $resultado->fetch_assoc()){
+
+                  // $fila es un arreglo asociativo con todos los campos que se pusieron en el select
+
+                  echo  " <tr>
+                        <td>".$fila['ClienteId']." </td>
+                        <td>".$fila['Nombre']." </td>
+                        <td>".$fila['Apellidos']." </td>
+                        <td>".$fila['Telefono']." </td>
+                        <td>".$fila['Domicilio']." </td>
+                        <td>".$fila['Email']." </td>
+                        <td>".$fila['Password']." </td>
+                        <td>".$fila['BitacoraClienteId']." </td>
+                        <td>".$fila['EmpleadoId']." </td>
+                        <td>".$fila['ListaDeseosId'].'</td>
+                      </tr>';
+
+              }
+
+              echo "</tbody>";
+              echo "</table>";
+
+              $db->close();
+
+              }
+
+               ?>
               </div>
             </div>
           </div>

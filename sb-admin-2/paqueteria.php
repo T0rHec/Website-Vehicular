@@ -428,7 +428,59 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                  <iframe src="tablaPaqueteria.php" width="100%" height="500px" frameborder="0"></iframe>
+              <?php
+
+              grid();
+
+              function grid(){
+
+              include("conexion.php");
+
+
+              $sql = "SELECT * FROM paqueteria";
+
+              if(!$resultado = $db->query($sql)){
+                  die('Ocurrio un error ejecutando el query [' . $db->error . ']');
+              }
+
+              echo "<table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+                  <thead>
+                    <tr>
+                      <th>PaqueteriaId</th>
+                      <th>Nombre</th>
+                      <th>Domicilio</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>PaqueteriaId</th>
+                      <th>Nombre</th>
+                      <th>Domicilio</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>";
+
+
+              while($fila = $resultado->fetch_assoc()){
+
+                  // $fila es un arreglo asociativo con todos los campos que se pusieron en el select
+
+                  echo  " <tr>
+                        <td>".$fila['PaqueteriaId']." </td>
+                        <td>".$fila['Nombre']." </td>
+                        <td>".$fila['Domicilio'].'</td>
+                      </tr>';
+
+              }
+
+              echo "</tbody>";
+              echo "</table>";
+
+              $db->close();
+
+              }
+
+               ?>
               </div>
             </div>
           </div>

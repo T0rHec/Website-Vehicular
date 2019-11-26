@@ -426,7 +426,59 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                  <iframe src="tablaMarca.php" width="100%" height="710px" frameborder="0" allowfullscreen></iframe>
+              <?php
+
+              grid();
+
+              function grid(){
+
+              include("conexion.php");
+
+
+              $sql = "SELECT * FROM marca";
+
+              if(!$resultado = $db->query($sql)){
+                  die('Ocurrio un error ejecutando el query [' . $db->error . ']');
+              }
+
+              echo "<table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+                  <thead>
+                    <tr>
+                      <th>MarcaId</th>
+                      <th>Nombre</th>
+                      <th>Pais</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>MarcaId</th>
+                      <th>Nombre</th>
+                      <th>Pais</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>";
+
+
+              while($fila = $resultado->fetch_assoc()){
+
+                  // $fila es un arreglo asociativo con todos los campos que se pusieron en el select
+
+                  echo  " <tr>
+                        <td>".$fila['MarcaId']." </td>
+                        <td>".$fila['Nombre']." </td>
+                        <td>".$fila['Pais'].'</td>
+                      </tr>';
+
+              }
+
+              echo "</tbody>";
+              echo "</table>";
+
+              $db->close();
+
+              }
+
+               ?>
               </div>
             </div>
           </div>
