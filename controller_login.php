@@ -26,11 +26,11 @@
 
 	}elseif (isset($_POST['entrar'])) { //verifica si la variable entrar está definida
 		$cliente=$crud->obtenerCliente($_POST['name'],$_POST['email'],$_POST['password']);
-		header('Location: ..');
+		header('Location: index.php');
 		// si el id del objeto retornado no es null, quiere decir que encontro un registro en la base
 		if ($cliente->getClienteId()!=NULL) {
 			$_SESSION['name']=$cliente; //si el name se encuentra, crea la sesión de name
-			header('Location: ..'); //envia a la página
+			header('Location: index.php'); //envia a la página
 		}else{
 			header('Location: login.html');
 		}

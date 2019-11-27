@@ -68,7 +68,7 @@
 	          <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 	          <li class="nav-item"><a href="wishlist.php" class="nav-link">Lista de Deseos</a></li>
-              <li class="nav-item"><a href="regform-33/login.html" class="nav-link">Ingresar</a></li>
+              <li class="nav-item"><a href="login.html" class="nav-link">Ingresar</a></li>
 
 	        </ul>
 	      </div>
