@@ -79,7 +79,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: white">Inicio</a></span>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php" style="color: white">Inicio</a></span>
             <h1 class="mb-0 bread" style="color: white">Blog</h1>
           </div>
         </div>
@@ -93,7 +93,7 @@
 						<div class="row">
 							<div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.html" class="block-20" style="background-image: url('images/bmwvsmb.jpg');">
+		              <a href="blog-single.php" class="block-20" style="background-image: url('images/bmwvsmb.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -102,13 +102,13 @@
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 5 </a></div>
 		                </div>
 		                <h3 class="heading"><a href="#">BMW 2 Serie Gran Coupé vs Mercedes-Benz CLA. Primera comparación!</p>
-		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Leer más</a></p>
+		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Leer más</a></p>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.html" class="block-20" style="background-image: url('images/EQS.jpg');">
+		              <a href="blog-single.php" class="block-20" style="background-image: url('images/EQS.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -117,13 +117,13 @@
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 16 </a></div>
 		                </div>
 		                <h3 class="heading"><a href="#">Todos los detalles del nuevo Mercedes-Benz VISION EQS 2019</p>
-		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Leer más</a></p>
+		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Leer más</a></p>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.html" class="block-20" style="background-image: url('images/Tesla.jpg');">
+		              <a href="blog-single.php" class="block-20" style="background-image: url('images/Tesla.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -132,13 +132,13 @@
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 8 </a></div>
 		                </div>
 		                <h3 class="heading"><a href="#">Tesla: El sueño de muchos al alcance de pocos</p>
-		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Leer más</a></p>
+		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Leer más</a></p>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.html" class="block-20" style="background-image: url('images/MustangS.jpg');">
+		              <a href="blog-single.php" class="block-20" style="background-image: url('images/MustangS.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -147,13 +147,13 @@
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 5 </a></div>
 		                </div>
 		                <h3 class="heading"><a href="#">Detalles del nuevo Ford Mustang GT500 Shelby 2020</p>
-		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Leer más</a></p>
+		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Leer más</a></p>
 		              </div>
 		            </div>
 		          </div>
 		          <div class="col-md-12 d-flex ftco-animate">
 		            <div class="blog-entry align-self-stretch d-md-flex">
-		              <a href="blog-single.html" class="block-20" style="background-image: url('images/bmw.jpg');">
+		              <a href="blog-single.php" class="block-20" style="background-image: url('images/bmw.jpg');">
 		              </a>
 		              <div class="text d-block pl-md-4">
 		              	<div class="meta mb-3">
@@ -162,7 +162,7 @@
 		                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 15 </a></div>
 		                </div>
 		                <h3 class="heading"><a href="#">Vehículos que llegarán a México en el 2019!</p>
-		                <p><a href="blog-single.html" class="btn btn-primary py-2 px-3">Leer más</a></p>
+		                <p><a href="blog-single.php" class="btn btn-primary py-2 px-3">Leer más</a></p>
 		              </div>
 		            </div>
 		          </div>
@@ -349,10 +349,10 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menú</h2>
               <ul class="list-unstyled">
-                <li><a href="shop.html" class="py-2 d-block">Tienda</a></li>
-                <li><a href="about.html" class="py-2 d-block">Nosotros</a></li>
-                <li><a href="blog.html" class="py-2 d-block">Diario</a></li>
-                <li><a href="contact.html" class="py-2 d-block">Contactanos</a></li>
+                <li><a href="shop.php" class="py-2 d-block">Tienda</a></li>
+                <li><a href="about.php" class="py-2 d-block">Nosotros</a></li>
+                <li><a href="blog.php" class="py-2 d-block">Diario</a></li>
+                <li><a href="contact.php" class="py-2 d-block">Contactanos</a></li>
               </ul>
             </div>
           </div>
@@ -367,8 +367,8 @@
 	                <li><a href="#" class="py-2 d-block">Política de privacidad</a></li>
 	              </ul>
 	              <ul class="list-unstyled">
-	                <li><a href="contact.html" class="py-2 d-block">Preguntas frecuentes</a></li>
-	                <li><a href="contact.html" class="py-2 d-block">Contacto</a></li>
+	                <li><a href="contact.php" class="py-2 d-block">Preguntas frecuentes</a></li>
+	                <li><a href="contact.php" class="py-2 d-block">Contacto</a></li>
 	              </ul>
 	            </div>
             </div>

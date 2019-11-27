@@ -81,7 +81,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: white">Inicio</a></span>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php" style="color: white">Inicio</a></span>
             <h1 class="mb-0 bread" style="color: white">Tienda</h1>
           </div>
         </div>
@@ -102,7 +102,7 @@
 					<?php foreach($listaProductos as $producto){ ?>
 						<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
 		    				<div class="product d-flex flex-column">
-		    					<a href="product-single.html" class="img-prod"><img class="img-fluid" src="<?php echo $producto['Imagen'];?>" alt="Colorlib Template">
+		    					<a href="product-single.php" class="img-prod"><img class="img-fluid" src="<?php echo $producto['Imagen'];?>" alt="Colorlib Template">
 		    						<div class="overlay"></div>
 		    					</a>
 		    					<div class="text py-3 pb-4 px-3">
@@ -120,13 +120,13 @@
 			    							</p>
 			    						</div>
 			    					</div>
-		    						<h3><a href="product-single.html"><?php echo $producto['Modelo'];?></a></h3>
+		    						<h3><a href="product-single.php"><?php echo $producto['Modelo'];?></a></h3>
 		    						<div class="pricing">
 			    						<p class="price"><span>$<?php echo $producto['Precio'];?></span></p>
 			    					</div>
 			    					<p class="bottom-area d-flex px-3">
-		    							<a href="cart.html" class="add-to-cart text-center py-2 mr-1"><span>Añadir al carrito <i class="ion-ios-add ml-1"></i></span></a>
-		    							<a href="product-single.html" class="buy-now text-center py-2">Compra ahora<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    							<a href="cart.php" class="add-to-cart text-center py-2 mr-1"><span>Añadir al carrito <i class="ion-ios-add ml-1"></i></span></a>
+		    							<a href="product-single.php" class="buy-now text-center py-2">Compra ahora<span><i class="ion-ios-cart ml-1"></i></span></a>
 		    						</p>
 		    					</div>
 		    				</div>
@@ -306,10 +306,10 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menú</h2>
               <ul class="list-unstyled">
-                <li><a href="shop.html" class="py-2 d-block">Tienda</a></li>
-                <li><a href="about.html" class="py-2 d-block">Nosotros</a></li>
-                <li><a href="blog.html" class="py-2 d-block">Diario</a></li>
-                <li><a href="contact.html" class="py-2 d-block">Contactanos</a></li>
+                <li><a href="shop.php" class="py-2 d-block">Tienda</a></li>
+                <li><a href="about.php" class="py-2 d-block">Nosotros</a></li>
+                <li><a href="blog.php" class="py-2 d-block">Diario</a></li>
+                <li><a href="contact.php" class="py-2 d-block">Contactanos</a></li>
               </ul>
             </div>
           </div>
@@ -324,8 +324,8 @@
 	                <li><a href="#" class="py-2 d-block">Política de privacidad</a></li>
 	              </ul>
 	              <ul class="list-unstyled">
-	                <li><a href="contact.html" class="py-2 d-block">Preguntas frecuentes</a></li>
-	                <li><a href="contact.html" class="py-2 d-block">Contacto</a></li>
+	                <li><a href="contact.php" class="py-2 d-block">Preguntas frecuentes</a></li>
+	                <li><a href="contact.php" class="py-2 d-block">Contacto</a></li>
 	              </ul>
 	            </div>
             </div>

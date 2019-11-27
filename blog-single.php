@@ -61,12 +61,7 @@
             <li class="nav-item"><a href="shop.php" class="nav-link" style="color: white">Catálogo</a></li>
             <li class="nav-item"><a href="about.php" class="nav-link" style="color: white">Nosotros</a></li>
             <li class="nav-item active"><a href="blog.php" class="nav-link" style="color: white">Blog</a></li>
-<<<<<<< HEAD
-            <li class="nav-item"><a href="contact.php" class="nav-link" style="color: white">Contact</a></li>
-            <li class="nav-item"><a href="faq.php" class="nav-link" style="color: white">FAQ</a></li>
-=======
             <li class="nav-item"><a href="contact.php" class="nav-link" style="color: white">Contacto</a></li>
->>>>>>> 07c2f2a79597922485888aa01a1fc30e650da57a
             <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
               <li class="nav-item dropdown">
                 <li class="nav-item"><a href="wishlist.php" class="nav-link"style="color: white">Lista de deseos</a></li>
@@ -83,7 +78,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: white">Inicio</a></span>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php" style="color: white">Inicio</a></span>
             <h1 class="mb-0 bread" style="color: white">BMW 2 Serie Gran Coupé vs Mercedes-Benz CLA. Primera comparación!</h1>
           </div>
         </div>
@@ -402,10 +397,10 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menú</h2>
               <ul class="list-unstyled">
-                <li><a href="shop.html" class="py-2 d-block">Tienda</a></li>
-                <li><a href="about.html" class="py-2 d-block">Nosotros</a></li>
-                <li><a href="blog.html" class="py-2 d-block">Diario</a></li>
-                <li><a href="contact.html" class="py-2 d-block">Contactanos</a></li>
+                <li><a href="shop.php" class="py-2 d-block">Tienda</a></li>
+                <li><a href="about.php" class="py-2 d-block">Nosotros</a></li>
+                <li><a href="blog.php" class="py-2 d-block">Diario</a></li>
+                <li><a href="contact.php" class="py-2 d-block">Contactanos</a></li>
               </ul>
             </div>
           </div>
@@ -420,8 +415,8 @@
                   <li><a href="#" class="py-2 d-block">Política de privacidad</a></li>
                 </ul>
                 <ul class="list-unstyled">
-                  <li><a href="contact.html" class="py-2 d-block">Preguntas frecuentes</a></li>
-                  <li><a href="contact.html" class="py-2 d-block">Contacto</a></li>
+                  <li><a href="contact.php" class="py-2 d-block">Preguntas frecuentes</a></li>
+                  <li><a href="contact.php" class="py-2 d-block">Contacto</a></li>
 	              </ul>
 	            </div>
             </div>

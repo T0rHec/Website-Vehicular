@@ -65,7 +65,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html" style="color: white">Vehicular</a>
+	      <a class="navbar-brand" href="index.php" style="color: white">Vehicular</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menú
 	      </button>
@@ -94,7 +94,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: white">Inicio</a></span>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php" style="color: white">Inicio</a></span>
             <h1 class="mb-0 bread" style="color: white">FAQ <br>(Preguntas Frecuentes)</h1>
           </div>
         </div>

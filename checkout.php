@@ -66,7 +66,7 @@
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
               <li class="nav-item dropdown">
               	<li class="nav-item"><a href="wishlist.php" class="nav-link"style="color: white">Lista de deseos</a></li>
-              <li class="nav-item"><a href="regform-33/login.html" class="nav-link" style="color: white">Ingresar</a></li>
+              <li class="nav-item"><a href="regform-33/login.php" class="nav-link" style="color: white">Ingresar</a></li>
             </li>
 
 	        </ul>
@@ -79,7 +79,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: white">Home</a></span>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php" style="color: white">Home</a></span>
             <h1 class="mb-0 bread" style="color: white">Checkout</h1>
           </div>
         </div>

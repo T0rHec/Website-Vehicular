@@ -78,7 +78,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: white">Inicio</a></span>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php" style="color: white">Inicio</a></span>
             <h1 class="mb-0 bread" style="color: white">Tienda</h1>
           </div>
         </div>
@@ -145,7 +145,7 @@
 	          		<p style="color: #fff;">2 en existencia</p>
 	          	</div>
           	</div>
-          	<p><a href="cart.html" class="btn btn-black py-3 px-5 mr-2">Añadir al carrito</a><a href="cart.html" class="btn btn-primary py-3 px-5">Compra ahora</a></p>
+          	<p><a href="cart.php" class="btn btn-black py-3 px-5 mr-2">Añadir al carrito</a><a href="cart.php" class="btn btn-primary py-3 px-5">Compra ahora</a></p>
     			</div>
     		</div>
 
@@ -341,10 +341,10 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menú</h2>
               <ul class="list-unstyled">
-                <li><a href="shop.html" class="py-2 d-block">Tienda</a></li>
-                <li><a href="about.html" class="py-2 d-block">Nosotros</a></li>
-                <li><a href="blog.html" class="py-2 d-block">Diario</a></li>
-                <li><a href="contact.html" class="py-2 d-block">Contactanos</a></li>
+                <li><a href="shop.php" class="py-2 d-block">Tienda</a></li>
+                <li><a href="about.php" class="py-2 d-block">Nosotros</a></li>
+                <li><a href="blog.php" class="py-2 d-block">Diario</a></li>
+                <li><a href="contact.php" class="py-2 d-block">Contactanos</a></li>
               </ul>
             </div>
           </div>
@@ -359,8 +359,8 @@
 	                <li><a href="#" class="py-2 d-block">Política de privacidad</a></li>
 	              </ul>
 	              <ul class="list-unstyled">
-	                <li><a href="contact.html" class="py-2 d-block">Preguntas frecuentes</a></li>
-	                <li><a href="contact.html" class="py-2 d-block">Contacto</a></li>
+	                <li><a href="contact.php" class="py-2 d-block">Preguntas frecuentes</a></li>
+	                <li><a href="contact.php" class="py-2 d-block">Contacto</a></li>
 	              </ul>
 	            </div>
             </div>
