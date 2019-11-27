@@ -77,7 +77,7 @@
                      <div class="panel panel-default">
                          <div class="panel-heading" role="tab" id="headingOne">
                              <h4 class="panel-title">
-                                 <a href="shop.php">Vehículos</a>
+                                 <a class="collapsed" href="shop.php">Vehículos</a>
                              </h4>
                          </div>
                      </div>
@@ -98,7 +98,7 @@
                      <div class="panel panel-default">
                          <div class="panel-heading" role="tab" id="headingFour">
                              <h4 class="panel-title">
-                                 <a class="collapsed" href="shop4.php">Refacciones</a>
+                                 <a href="shop4.php">Refacciones</a>
                              </h4>
                          </div>
                      </div>
