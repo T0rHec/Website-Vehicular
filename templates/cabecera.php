@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,9 +53,9 @@
       <div class="fb-customerchat"
         attribution=setup_tool
         page_id="112331033551307"
-  theme_color="#ff7e29"
-  logged_in_greeting="Bienvenido! ¿Cómo podemos ayudarte?"
-  logged_out_greeting="Bienvenido! ¿Cómo podemos ayudarte?">
+        theme_color="#ff7e29"
+        logged_in_greeting="Bienvenido! ¿Cómo podemos ayudarte?"
+        logged_out_greeting="Bienvenido! ¿Cómo podemos ayudarte?">
       </div>
 
         <div class="py-1 bg-black">
@@ -93,9 +96,22 @@
             <li class="nav-item"><a href="faq.php" class="nav-link" style="color: white">FAQ</a></li>
             <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
               <li class="nav-item dropdown">
-                <li class="nav-item"><a href="wishlist.php" class="nav-link"style="color: white">Lista de deseos</a></li>
-              <li class="nav-item"><a href="login.html" class="nav-link" style="color: white">Ingresar</a></li>
-            </li>
+                <li class="nav-item"><a href="wishlist.php" class="nav-link" style="color: white">Lista de deseos</a></li>
+                <?php
+                  if (!isset($_SESSION['name'])) {
+                    echo '<li class="nav-item"><a href="login.html" class="nav-link" style="color: white">Ingresar</a></li>';
+                  }
+                  elseif (isset($_SESSION['name'])) {
+                    echo '
+                    <form action="controller_login.php" method="post">
+                    <p></p>
+                    <button class="btn btn-danger" name="salir" value="salir">Salir</button>
+                    </form>
+                    ';
+                  }
+                ?>
+
+              </li>
 
             </ul>
           </div>

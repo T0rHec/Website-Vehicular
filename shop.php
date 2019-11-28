@@ -20,7 +20,7 @@
     			<div class="col-md-8 col-lg-10 order-md-last">
     				<div class="row">
 					<?php
-						$sentencia=$pdo->prepare("SELECT Modelo, Precio, Imagen FROM vehiculo");
+						$sentencia=$pdo->prepare("SELECT Nombre, Precio, Imagen FROM vehiculo");
 						$sentencia->execute();
 						$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 						//print_r($listaProductos);
@@ -34,7 +34,7 @@
 		    					<div class="text py-3 pb-4 px-3">
 		    						<div class="d-flex">
 		    							<div class="cat">
-				    						<span>Estilo de vida</span>
+				    						<span>Calificación</span>
 				    					</div>
 				    					<div class="rating">
 			    							<p class="text-right mb-0">
@@ -46,7 +46,7 @@
 			    							</p>
 			    						</div>
 			    					</div>
-		    						<h3><a href="product-single.php"><?php echo $producto['Modelo'];?></a></h3>
+		    						<h3><a href="product-single.php"><?php echo $producto['Nombre'];?></a></h3>
 		    						<div class="pricing">
 			    						<p class="price"><span>$<?php echo $producto['Precio'];?></span></p>
 			    					</div>
@@ -60,10 +60,6 @@
     				<?php } ?>
 
 		    		</div>
-
-
-
-
 
 
 	        </div>

@@ -1,4 +1,4 @@
-<?php
+ 	<?php
 	require_once('clienteClass.php');
 	require_once('crud_cliente.php');
 	require_once('conexionPDO.php');
@@ -35,7 +35,7 @@
 			header('Location: login.html');
 		}
 	}elseif(isset($_POST['salir'])){ // cuando presiona el botòn salir
-		header('Location: login.html');
+		header('Location: index.php');
 		unset($_SESSION['name']); //destruye la sesión
 	}
 ?>

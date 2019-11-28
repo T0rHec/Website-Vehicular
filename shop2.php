@@ -34,7 +34,7 @@
 		    					<div class="text py-3 pb-4 px-3">
 		    						<div class="d-flex">
 		    							<div class="cat">
-				    						<span>Estilo de vida</span>
+				    						<span>Calificación</span>
 				    					</div>
 				    					<div class="rating">
 			    							<p class="text-right mb-0">

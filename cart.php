@@ -1,5 +1,6 @@
 <?php
   include 'templates/cabecera.php';
+  include 'conexion.php';
 ?>
 
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
@@ -32,18 +33,13 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr class="text-center">
+                              <tr class="text-center">
 						        <td><a ></span></a></td>
 
 						        <td class="image-prod"><div class="img" style="background-image:url(images/karrito.png);"></div></td>
 
-
 						        <td class="product-name">
 						        	<h3>Aun no hay nada en su carrito de compra</h3>
-
-
-
-
 
 						      </tr><!-- END TR-->
 						    </tbody>

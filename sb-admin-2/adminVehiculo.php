@@ -18,14 +18,14 @@ $newConn = new dbconn();
 switch ($boton) {
 	case 'insertar':
 
-		$sql = "INSERT INTO vehiculo(ProductoId, Modelo, Color, Usado, Kilometraje, Ano, Precio, Tipo, MarcaId, CompraId) VALUES('V" . $productoid . "','" . $model . "','" . $color . "','" . $used . "'  ,'" . $kilometer . "','" . $ano . "','" . $price . "','" . $type . "','" . $marcaId . "','" . $compraId . "')";
+		$sql = "INSERT INTO vehiculo(ProductoId, Nombre, Color, Usado, Kilometraje, Ano, Precio, Tipo, MarcaId, CompraId) VALUES('V" . $productoid . "','" . $model . "','" . $color . "','" . $used . "'  ,'" . $kilometer . "','" . $ano . "','" . $price . "','" . $type . "','" . $marcaId . "','" . $compraId . "')";
 
     break;
 
 
     case 'actualizar':
 
-		$sql = "UPDATE vehiculo SET Modelo = '$model' , Color = '$color', Usado = '$used', Kilometraje = $kilometer, Ano = $ano, Precio = $price, Tipo = '$type', MarcaId = $marcaId, CompraId = $compraId WHERE ProductoId = 'V$productoid'; ";
+		$sql = "UPDATE vehiculo SET Nombre = '$model' , Color = '$color', Usado = '$used', Kilometraje = $kilometer, Ano = $ano, Precio = $price, Tipo = '$type', MarcaId = $marcaId, CompraId = $compraId WHERE ProductoId = 'V$productoid'; ";
 
     break;
 

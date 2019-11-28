@@ -1,5 +1,6 @@
 <?php
 	include 'conexion.php';
+	session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +69,19 @@
 	          <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
 	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 	          <li class="nav-item"><a href="wishlist.php" class="nav-link">Lista de Deseos</a></li>
-              <li class="nav-item"><a href="login.html" class="nav-link">Ingresar</a></li>
+				<?php
+					if (!isset($_SESSION['name'])) {
+						echo '<li class="nav-item"><a href="login.html" class="nav-link">Ingresar</a></li>';
+					}
+				elseif (isset($_SESSION['name'])) {
+						echo '
+							<form action="controller_login.php" method="post">
+								<p></p>
+								<button class="btn btn-danger" name="salir" value="salir">Salir</button>
+							</form>
+						';
+					}
+				?>
 
 	        </ul>
 	      </div>
@@ -89,7 +102,7 @@
 		          		<div class="horizontal">
 				            <h1 class="mb-4 mt-3">Mercedes Benz AMG GT</h1>
 				            <p class="mb-4">La declaración de principios de Affalterbach. Su capó largo, un habitáculo en posición muy atrasada y un trasero ancho y poderoso describen las proporciones básicas de un automóvil deportivo de Mercedes-AMG. Su mirada acechante a poca altura sobre el suelo es reflejo de un ímpetu irrefrenable..</p>
-				            <p><a href="#" class="btn-custom">Descubre ahora!</a></p>
+				            <p><a href="#seccion_vehiculos" class="btn-custom">Descubre ahora!</a></p>
 				          </div>
 		            </div>
 		          </div>
@@ -107,7 +120,7 @@
 		          		<div class="horizontal">
 				            <h1 class="mb-4 mt-3">Mustang <p>EcoBoost TA</p></h1>
 				            <p class="mb-4">Fue creado para entregar el mejor desempeño ante cualquier situación, su diseño aerodinámico e imponente fue desarrollado con el propósito de mejorar la agilidad y destreza del emblemático deportivo</p>
-				            <p><a href="#" class="btn-custom">Descubre ahora!</a></p>
+				            <p><a href="#seccion_vehiculos" class="btn-custom">Descubre ahora!</a></p>
 				          </div>
 		            </div>
 		          </div>
@@ -127,7 +140,7 @@
 				            <h1 class="mb-4 mt-3">Bentley Continental GT</h1>
 				            <p class="mb-4">Un coupé en configuración 2+2 plazas que se caracteriza por ofrecer un concepto donde priman el máximo lujo y las más altas prestaciones..</p>
 
-				            <p><a href="#" class="btn-custom">Descubre ahora!</a></p>
+				            <p><a href="#seccion_vehiculos" class="btn-custom">Descubre ahora!</a></p>
 				          </div>
 		            </div>
 		          </div>
@@ -176,7 +189,7 @@
         </div>
 			</div>
 		</section>
-
+    <a name="seccion_vehiculos"></a>
     <section class="ftco-section bg-light">
     	<div class="container">
 				<div class="row justify-content-center mb-3 pb-3">
@@ -189,7 +202,7 @@
     	<div class="container">
     		<div class="row">
     		<?php
-    			$sentencia=$pdo->prepare("SELECT Modelo, Precio, Imagen FROM vehiculo");
+    			$sentencia=$pdo->prepare("SELECT ProductoId, Nombre, Precio, Imagen FROM vehiculo");
 				$sentencia->execute();
 				$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 				//print_r($listaProductos);
@@ -205,7 +218,7 @@
     					<div class="text py-3 pb-4 px-3">
     						<div class="d-flex">
     							<div class="cat">
-		    						<span>`Calificación</span>
+		    						<span>Calificación</span>
 		    					</div>
 		    					<div class="rating">
 	    							<p class="text-right mb-0">
@@ -217,14 +230,27 @@
 	    							</p>
 	    						</div>
 	    					</div>
-    						<h3><a href="product-single.php"><?php echo $producto['Modelo'];?></a></h3>
+    						<h3><a href="product-single.php"><?php echo $producto['Nombre'];?></a></h3>
   							<div class="pricing">
 	    						<p class="price"><span class="price-sale">$<?php echo $producto['Precio'];?></span></p>
 	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-    							<a href="cart.php" class="add-to-cart text-center py-2 mr-1"><span>Añadir al carrito<i class="ion-ios-add ml-1"></i></span></a>
-    							<a href="product-single2.html" class="buy-now text-center py-2">Compra ahora<span><i class="ion-ios-cart ml-1"></i></span></a>
-    						</p>
+	    					<form id="myform" action="agregarProducto.php" method="post">
+    							<input type="hidden" name="id" id="id"
+								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
+
+								<input type="hidden" name="nombre" id="nombre"
+								value="<?php echo openssl_encrypt($producto['Nombre'], COD, KEY);?>">
+
+								<input type="hidden" name="precio" id="precio"
+								value="<?php echo openssl_encrypt($producto['Precio'], COD, KEY);?>">
+
+								<input type="hidden" name="cantidad" id="cantidad"
+								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
+								<p class="bottom-area d-flex px-3">
+	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span>Añadir al carrito<i class="ion-ios-add ml-1"></i></span></button>
+	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Comprar ahora<i class="ion-ios-cart ml-1"></i></span></button>
+	    						</p>
+	    					</form>
     					</div>
     				</div>
     			</div>
