@@ -3,7 +3,7 @@
   	$newConn = new dbconn();
 
   	define("KEY", "vehicular");
-	define("COD", "AES-128-ECB");
+    define("COD", "AES-128-ECB");
 
     $id = openssl_decrypt($_POST["id"], COD, KEY);
     $nombre = openssl_decrypt($_POST["nombre"], COD, KEY);

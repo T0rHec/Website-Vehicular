@@ -30,6 +30,7 @@
 		// si el id del objeto retornado no es null, quiere decir que encontro un registro en la base
 		if ($cliente->getClienteId()!=NULL) {
 			$usuario = array(
+				'Id' => $cliente->getClienteId(),
 				'Nombre' => $cliente->getNombre(),
 				'Email' => $cliente->getEmail(),
 				'Password' => $cliente->getPassword()

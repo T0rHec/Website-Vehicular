@@ -1,7 +1,22 @@
 <?php
   include 'templates/cabecera.php';
-?>
 
+  	define("KEY", "vehicular");
+    define("COD", "AES-128-ECB");
+
+    $nombre = openssl_decrypt($_POST["nombre"], COD, KEY);
+    $precio = openssl_decrypt($_POST["precio"], COD, KEY);
+    $imagen = openssl_decrypt($_POST["imagen"], COD, KEY);
+    $color = openssl_decrypt($_POST["color"], COD, KEY);
+    $tipo = openssl_decrypt($_POST["tipo"], COD, KEY);
+    $descripcion = openssl_decrypt($_POST["descripcion"], COD, KEY);
+    $TipoMotor = openssl_decrypt($_POST["TipoMotor"], COD, KEY);
+    $potencia = openssl_decrypt($_POST["potencia"], COD, KEY);
+    $torque = openssl_decrypt($_POST["torque"], COD, KEY);
+    $traccion = openssl_decrypt($_POST["traccion"], COD, KEY);
+    $TipoTransmision = openssl_decrypt($_POST["TipoTransmision"], COD, KEY);
+    $rendimiento = openssl_decrypt($_POST["rendimiento"], COD, KEY);
+?>
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -17,10 +32,10 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-lg-6 mb-5 ftco-animate">
-    				<a href="images/RR.jpg" class="image-popup prod-img-bg"><img src="images/RR.jpg" class="img-fluid" alt="Colorlib Template"></a>
+    				<a href="images/RR.jpg" class="image-popup prod-img-bg"><img src="<?php echo($imagen);?>" class="img-fluid" alt="Colorlib Template"></a>
     			</div>
     			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-    				<h3>Rolls Royce Phantom</h3>
+    				<h3><?php echo($nombre);?></h3>
     				<div class="rating d-flex">
 							<p class="text-left mr-4">
 								<a href="#" class="mr-2">5.0</a>
@@ -33,24 +48,14 @@
 							<p class="text-left mr-4">
 								<a href="#" class="mr-2" style="color: #fff;">100 <span style="color: #bbb;">Calificación</span></a>
 							</p>
-							<p class="text-left">
-								<a href="#" class="mr-2" style="color: #fff;">2 <span style="color: #bbb;">Vendidos</span></a>
-							</p>
 						</div>
-    				<p class="price"><span>$10,200,000.00</span></p>
-    				<p>El Rolls-Royce Phantom es uno de los coches más lujosos del mundo, quizás el que más. Es un sedán que supera con creces los 5 metros de longitud, y se acerca a los 6 metros según la versión.
+    				<p class="price"><span>$<?php echo($precio);?></span></p>
+    				<p><?php echo($descripcion);?>
 						</p>
 						<div class="row mt-4">
 							<div class="col-md-6">
 								<div class="form-group d-flex">
-		              <div class="select-wrap">
-	                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-	                  <select name="" id="" class="form-control">
-	                  	<option value="">Blanco</option>
-	                    <option value="">Negro</option>
-	                    <option value="">Azul</option>
-	                    <option value="">Gris</option>
-	                  </select>
+		             <div class="select-wrap">
 	                </div>
 		            </div>
 							</div>
@@ -69,9 +74,6 @@
 	             	</span>
 	          	</div>
 	          	<div class="w-100"></div>
-	          	<div class="col-md-12">
-	          		<p style="color: #fff;">2 en existencia</p>
-	          	</div>
           	</div>
           	<p><a href="cart.php" class="btn btn-black py-3 px-5 mr-2">Añadir al carrito</a><a href="cart.php" class="btn btn-primary py-3 px-5">Compra ahora</a></p>
     			</div>
@@ -97,7 +99,7 @@
 
               <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
               	<div class="p-4">
-	              	<h3 class="mb-4">Rolls Royce Phantom</h3>
+	              	<h3 class="mb-4"><?php echo($nombre);?></h3>
 	              	<p>Carrocería: Berlina, Puertas: 4, Plazas: 5, Potecia 460 cv</p>
               	</div>
               </div>
