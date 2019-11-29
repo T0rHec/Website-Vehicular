@@ -1,8 +1,5 @@
 <?php
-	/*
-	*
-	*
-	*/
+
 	class Cliente{
 		private $EmpleadoId;
 		private $Nombre;

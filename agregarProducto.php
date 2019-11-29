@@ -12,7 +12,7 @@
 
     $sql = "INSERT INTO carrito(ProductoId,Producto, Precio, Cantidad) VALUES('" . $id . "','" . $nombre . "','" . $precio . "','" . $cantidad . "')";
 
-echo "$sql";
+    header('Location: cart.php');
 
 	$newConn->openconn();
 	$newConn->exequery($sql);

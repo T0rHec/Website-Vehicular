@@ -30,7 +30,7 @@
 			$select->execute();
 			$registro=$select->fetch();
 			$cliente=new Cliente();
-			//verifica si la password es conrrecta
+			//verifica si la password es correcta
 			if (password_verify($password, $registro['Password'])) {
 				//si es correcta, asigna los valores que trae desde la base de datos
 				$cliente->setClienteId($registro['ClienteId']);

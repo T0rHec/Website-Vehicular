@@ -60,30 +60,42 @@
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
-              <li class="nav-item"><a href="shop.php" class="nav-link">Catálogo</a></li>
-	          <li class="nav-item"><a href="about.php" class="nav-link">Nosotros</a></li>
-	          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.php" class="nav-link">Contacto</a></li>
-	          <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-	          <li class="nav-item"><a href="wishlist.php" class="nav-link">Lista de Deseos</a></li>
-				<?php
-					if (!isset($_SESSION['name'])) {
-						echo '<li class="nav-item"><a href="login.html" class="nav-link">Ingresar</a></li>';
-					}
-				elseif (isset($_SESSION['name'])) {
-						echo '
-							<form action="controller_login.php" method="post">
-								<p></p>
-								<button class="btn btn-danger" name="salir" value="salir">Salir</button>
-							</form>
-						';
-					}
-				?>
-
-	        </ul>
+	      <?php
+	      	if (!isset($_SESSION['usuario'])) {
+				echo '<ul class="navbar-nav ml-auto">
+			          <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
+		              <li class="nav-item"><a href="shop.php" class="nav-link">Catálogo</a></li>
+			          <li class="nav-item"><a href="about.php" class="nav-link">Nosotros</a></li>
+			          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+			          <li class="nav-item"><a href="contact.php" class="nav-link">Contacto</a></li>
+			          <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
+			          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+			          <li class="nav-item"><a href="wishlist.php" class="nav-link">Lista de Deseos</a></li>
+			          <li class="nav-item"><a href="login.html" class="nav-link">Ingresar</a></li>
+			          </ul>
+		        	';
+			}
+	      	elseif (isset($_SESSION['usuario'])) {
+	      		echo '<ul class="navbar-nav ml-auto">
+			          <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
+		              <li class="nav-item"><a href="shop.php" class="nav-link">Catálogo</a></li>
+			          <li class="nav-item"><a href="about.php" class="nav-link">Nosotros</a></li>
+			          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+			          <li class="nav-item"><a href="contact.php" class="nav-link">Contacto</a></li>
+			          <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
+			          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+			          <li class="nav-item"><a href="wishlist.php" class="nav-link">Lista de Deseos</a></li>
+			          <li class="nav-item dropdown">
+		              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'; echo $_SESSION['usuario']['Nombre']; echo '</a>
+		              <div class="dropdown-menu" aria-labelledby="dropdown04">
+		              <form action="controller_login.php" method="post">
+		              	<button class="dropdown-item" name="salir" value="salir">Salir</button>
+		              </form>
+		              </div>
+		              </li>
+			         ';
+	      	}
+	      ?>
 	      </div>
 	    </div>
 	  </nav>
@@ -205,7 +217,7 @@
     			$sentencia=$pdo->prepare("SELECT ProductoId, Nombre, Precio, Imagen FROM vehiculo");
 				$sentencia->execute();
 				$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-				//print_r($listaProductos);
+				//print_r($listaProductos)
     		?>
 
     		<?php foreach($listaProductos as $producto){ ?>
@@ -530,7 +542,7 @@
     					</div>
 						</a>
 					</div>
-        </div>
+        	</div>
     	</div>
     </section>
 

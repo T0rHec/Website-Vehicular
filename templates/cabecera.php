@@ -87,33 +87,44 @@
           </button>
 
           <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.php" class="nav-link" style="color: white">Inicio</a></li>
-            <li class="nav-item"><a href="shop.php" class="nav-link" style="color: white">Catálogo</a></li>
-            <li class="nav-item"><a href="about.php" class="nav-link" style="color: white">Nosotros</a></li>
-            <li class="nav-item"><a href="blog.php" class="nav-link" style="color: white">Blog</a></li>
-            <li class="nav-item"><a href="contact.php" class="nav-link" style="color: white">Contacto</a></li>
-            <li class="nav-item"><a href="faq.php" class="nav-link" style="color: white">FAQ</a></li>
-            <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
-              <li class="nav-item dropdown">
-                <li class="nav-item"><a href="wishlist.php" class="nav-link" style="color: white">Lista de deseos</a></li>
-                <?php
-                  if (!isset($_SESSION['name'])) {
-                    echo '<li class="nav-item"><a href="login.html" class="nav-link" style="color: white">Ingresar</a></li>';
-                  }
-                  elseif (isset($_SESSION['name'])) {
-                    echo '
+        <?php
+          if (!isset($_SESSION['usuario'])) {
+          echo '<ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="index.php" class="nav-link" style="color: white">Inicio</a></li>
+                  <li class="nav-item"><a href="shop.php" class="nav-link" style="color: white">Catálogo</a></li>
+                <li class="nav-item"><a href="about.php" class="nav-link" style="color: white">Nosotros</a></li>
+                <li class="nav-item"><a href="blog.php" class="nav-link" style="color: white">Blog</a></li>
+                <li class="nav-item"><a href="contact.php" class="nav-link" style="color: white">Contacto</a></li>
+                <li class="nav-item"><a href="faq.php" class="nav-link" style="color: white">FAQ</a></li>
+                <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart" style="color: white"></span>[0]</a></li>
+                <li class="nav-item"><a href="wishlist.php" class="nav-link" style="color: white">Lista de Deseos</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link" style="color: white">Ingresar</a></li>
+                </ul>
+              ';
+          }
+          elseif (isset($_SESSION['usuario'])) {
+            echo '<ul class="navbar-nav ml-auto">
+                  <li class="nav-item active"><a href="index.php" class="nav-link" style="color: white">Inicio</a></li>
+                    <li class="nav-item"><a href="shop.php" class="nav-link" style="color: white">Catálogo</a></li>
+                  <li class="nav-item"><a href="about.php" class="nav-link" style="color: white">Nosotros</a></li>
+                  <li class="nav-item"><a href="blog.php" class="nav-link" style="color: white">Blog</a></li>
+                  <li class="nav-item"><a href="contact.php" class="nav-link" style="color: white">Contacto</a></li>
+                  <li class="nav-item"><a href="faq.php" class="nav-link" style="color: white">FAQ</a></li>
+                  <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
+                  <li class="nav-item"><a href="wishlist.php" class="nav-link" style="color: white">Lista de Deseos</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">'; echo $_SESSION['usuario']['Nombre']; echo '</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown04">
                     <form action="controller_login.php" method="post">
-                    <p></p>
-                    <button class="btn btn-danger" name="salir" value="salir">Salir</button>
+                      <button class="dropdown-item" name="salir" value="salir">Salir</button>
                     </form>
-                    ';
-                  }
-                ?>
-
-              </li>
-
-            </ul>
+                    </div>
+                    </li>
+               ';
+          }
+        ?>
+        </div>
+      </div>
           </div>
         </div>
       </nav>

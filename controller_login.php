@@ -29,13 +29,18 @@
 		header('Location: index.php');
 		// si el id del objeto retornado no es null, quiere decir que encontro un registro en la base
 		if ($cliente->getClienteId()!=NULL) {
-			$_SESSION['name']=$cliente; //si el name se encuentra, crea la sesión de name
+			$usuario = array(
+				'Nombre' => $cliente->getNombre(),
+				'Email' => $cliente->getEmail(),
+				'Password' => $cliente->getPassword()
+			 	);
+			$_SESSION['usuario']=$usuario; //si el name se encuentra, crea la sesión de usuario
 			header('Location: index.php'); //envia a la página
 		}else{
 			header('Location: login.html');
 		}
 	}elseif(isset($_POST['salir'])){ // cuando presiona el botòn salir
 		header('Location: index.php');
-		unset($_SESSION['name']); //destruye la sesión
+		unset($_SESSION['usuario']); //destruye la sesión
 	}
 ?>
