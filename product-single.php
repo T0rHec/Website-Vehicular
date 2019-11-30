@@ -1,15 +1,16 @@
 <?php
   include 'templates/cabecera.php';
+ 
 
   	define("KEY", "vehicular");
     define("COD", "AES-128-ECB");
-
+    
     $nombre = openssl_decrypt($_POST["nombre"], COD, KEY);
     $precio = openssl_decrypt($_POST["precio"], COD, KEY);
     $imagen = openssl_decrypt($_POST["imagen"], COD, KEY);
-    $color = openssl_decrypt($_POST["color"], COD, KEY);
-    $tipo = openssl_decrypt($_POST["tipo"], COD, KEY);
-    $descripcion = openssl_decrypt($_POST["descripcion"], COD, KEY);
+    //$color = openssl_decrypt($_POST["color"], COD, KEY);
+     $tipo = openssl_decrypt($_POST["tipo"], COD, KEY);
+   	$descripcion = openssl_decrypt($_POST["descripcion"], COD, KEY);
     $TipoMotor = openssl_decrypt($_POST["TipoMotor"], COD, KEY);
     $potencia = openssl_decrypt($_POST["potencia"], COD, KEY);
     $torque = openssl_decrypt($_POST["torque"], COD, KEY);
@@ -50,7 +51,7 @@
 							</p>
 						</div>
     				<p class="price"><span>$<?php echo($precio);?></span></p>
-    				<p><?php echo($descripcion);?>
+    				<p><?php echo($tipo);?>
 						</p>
 						<div class="row mt-4">
 							<div class="col-md-6">
@@ -75,7 +76,8 @@
 	          	</div>
 	          	<div class="w-100"></div>
           	</div>
-          	<p><a href="cart.php" class="btn btn-black py-3 px-5 mr-2">Añadir al carrito</a><a href="cart.php" class="btn btn-primary py-3 px-5">Compra ahora</a></p>
+          	<p><a href="cart.php" class="btn btn-black py-3 px-5 mr-2">Añadir al carrito</a>
+          		<a href="cart.php" class="btn btn-primary py-3 px-5">Compra ahora</a></p>
     			</div>
     		</div>
 
@@ -100,7 +102,13 @@
               <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="day-1-tab">
               	<div class="p-4">
 	              	<h3 class="mb-4"><?php echo($nombre);?></h3>
-	              	<p>Carrocería: Berlina, Puertas: 4, Plazas: 5, Potecia 460 cv</p>
+	              	<p><?php echo($descripcion);?></p>
+	              	<p><?php echo($TipoMotor);?></p>
+	              	<p><?php echo($potencia);?></p>
+	              	<p><?php echo($torque);?></p>
+	              	<p><?php echo($traccion);?></p>
+	              	<p><?php echo($TipoTransmision);?></p>
+	              	<p><?php echo($rendimiento);?></p>
               	</div>
               </div>
 
@@ -131,7 +139,7 @@
 							   					</span>
 							   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
 								   			</p>
-	              	<p>No existe ningún otro coche que pueda ofrecer una combinación de lujo y espacio como esta. Los más cercanos bien podrían ser el Bentley Mulsanne, el Mercedes Clase S en su versión Maybach, o las versiones más equipadas y personalizadas de Audi A8 y BMW Serie 7. Pero insisto en que ninguno de ellos es tan lujoso, ostentoso, personalizable y caro como el Rolls-Royce Phantom.</p>
+	              	<p>No existe ningún otro coche que pueda ofrecer una combinación de lujo y espacio como esta. Es simplemente hermoso.</p>
 								   			</p>
 								   		</div>
 								   	</div>
@@ -139,7 +147,7 @@
 								   		<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
 								   		<div class="desc">
 								   			<h4>
-								   				<span class="text-left">Brenda</span>
+								   				<span class="text-left">Dante</span>
 								   				<span class="text-right">28 Agosto 2019</span>
 								   			</h4>
 								   			<p class="star">
@@ -152,7 +160,7 @@
 							   					</span>
 							   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
 								   			</p>
-								   			<p>El mejor vehículo que Rolls Royce ha desarrollado en mucho tiempo.</p>
+								   			<p>El mejor vehículo que se ha desarrollado en mucho tiempo.</p>
 								   		</div>
 								   	</div>
 								   	<div class="review">
@@ -172,7 +180,7 @@
 							   					</span>
 							   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
 								   			</p>
-								   			<p>A pesar de su alto precio, comprarse un Rolls Royce es lograr una meta increible.</p>
+								   			<p>A pesar de su alto precio, comprarse un automovil como este es lograr una meta increible.</p>
 								   		</div>
 								   	</div>
 						   		</div>
