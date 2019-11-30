@@ -5,6 +5,7 @@ $name = $_POST['name'];;
 $price = $_POST['price'];
 $marcaid = $_POST['marcaid'];
 $compraid = $_POST['compraid'];
+$imagen = $_POST['imagen'];
 $boton = $_POST['boton'];
 
 require ('validation.php');
@@ -13,7 +14,7 @@ $newConn = new dbconn();
 switch ($boton) {
 	case 'insertar':
 
-		$sql = "INSERT INTO refaccion(ProductoId,Nombre,Precio,MarcaId,CompraId) VALUES('R" . $productoid . "','" . $name . "','" . $price . "','" . $marcaid . "','" . $compraid . "')";
+		$sql = "INSERT INTO refaccion(ProductoId,Nombre,Precio,MarcaId,CompraId,Imagen) VALUES('R" . $productoid . "','" . $name . "','" . $price . "','" . $marcaid . "','" . $compraid . "')";
 
     break;
 
@@ -42,5 +43,4 @@ $newConn->exequery($sql);
 $newConn->closeconn();
 
 header('Location: refaccion.php');
-
 ?>

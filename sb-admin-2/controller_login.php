@@ -28,7 +28,13 @@
 		$empleado=$crud->obtenerEmpleado($_POST['name'],$_POST['email'],$_POST['password']);
 		// si el id del objeto retornado no es null, quiere decir que encontro un registro en la base
 		if ($empleado->getEmpleadoId()!=NULL) {
-			$_SESSION['name']=$empleado; //si el name se encuentra, crea la sesión de name
+			$name = array(
+				'Id' => $empleado->getEmpleadoId(),
+				'Nombre' => $empleado->getNombre(),
+				'Email' => $empleado->getEmail(),
+				'Password' => $empleado->getPassword()
+			 	);
+			$_SESSION['name']=$name; //si el name se encuentra, crea la sesión de name
 			header('Location: index.php'); //envia a la página
 		}else{
 			header('Location: login.html');

@@ -96,7 +96,7 @@
                 <li class="nav-item"><a href="blog.php" class="nav-link" style="color: white">Blog</a></li>
                 <li class="nav-item"><a href="contact.php" class="nav-link" style="color: white">Contacto</a></li>
                 <li class="nav-item"><a href="faq.php" class="nav-link" style="color: white">FAQ</a></li>
-                <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart" style="color: white"></span>[0]</a></li>
+                <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link" style="color: white"><span class="icon-shopping_cart"></span>[0]</a></li>
                 <li class="nav-item"><a href="wishlist.php" class="nav-link" style="color: white">Lista de Deseos</a></li>
                 <li class="nav-item"><a href="login.html" class="nav-link" style="color: white">Ingresar</a></li>
                 </ul>
