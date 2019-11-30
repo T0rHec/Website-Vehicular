@@ -63,36 +63,54 @@
 	      <?php
 	      	if (!isset($_SESSION['usuario'])) {
 				echo '<ul class="navbar-nav ml-auto">
-			          <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
-		              <li class="nav-item"><a href="shop.php" class="nav-link">Catálogo</a></li>
-			          <li class="nav-item"><a href="about.php" class="nav-link">Nosotros</a></li>
-			          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
-			          <li class="nav-item"><a href="contact.php" class="nav-link">Contacto</a></li>
-			          <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
-			          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-			          <li class="nav-item"><a href="wishlist.php" class="nav-link">Lista de Deseos</a></li>
-			          <li class="nav-item"><a href="login.html" class="nav-link">Ingresar</a></li>
+						<li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
+						<li class="nav-item"><a href="shop.php" class="nav-link">Catálogo</a></li>
+						<li class="nav-item"><a href="about.php" class="nav-link">Nosotros</a></li>
+						<li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+						<li class="nav-item"><a href="contact.php" class="nav-link">Contacto</a></li>
+						<li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
+			            <li class="nav-item dropdown">
+			              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
+			              <div class="dropdown-menu" aria-labelledby="dropdown04">
+			              	<a class="dropdown-item" href="login.html">Ingresar</a>
+			                <a class="dropdown-item" href="wishlist.php">Lista de Deseos</a>
+			                <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[0]</a>
+			              </div>
+			            </li>
+			            <li class="nav-item">
+				            <form class="nav-link" action="">
+				            <i class="fas fa-search" aria-hidden="true"></i>
+								<input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Buscar" aria-label="Search">
+							</form>
+			            </li>
 			          </ul>
 		        	';
 			}
 	      	elseif (isset($_SESSION['usuario'])) {
 	      		echo '<ul class="navbar-nav ml-auto">
-			          <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
-		              <li class="nav-item"><a href="shop.php" class="nav-link">Catálogo</a></li>
-			          <li class="nav-item"><a href="about.php" class="nav-link">Nosotros</a></li>
-			          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
-			          <li class="nav-item"><a href="contact.php" class="nav-link">Contacto</a></li>
-			          <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
-			          <li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-			          <li class="nav-item"><a href="wishlist.php" class="nav-link">Lista de Deseos</a></li>
-			          <li class="nav-item dropdown">
-		              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'; echo $_SESSION['usuario']['Nombre']; echo '</a>
-		              <div class="dropdown-menu" aria-labelledby="dropdown04">
-		              <form action="controller_login.php" method="post">
-		              	<button class="dropdown-item" name="salir" value="salir">Salir</button>
-		              </form>
-		              </div>
-		              </li>
+				          <li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
+			              <li class="nav-item"><a href="shop.php" class="nav-link">Catálogo</a></li>
+				          <li class="nav-item"><a href="about.php" class="nav-link">Nosotros</a></li>
+				          <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+				          <li class="nav-item"><a href="contact.php" class="nav-link">Contacto</a></li>
+				          <li class="nav-item"><a href="faq.php" class="nav-link">FAQ</a></li>
+				          <li class="nav-item dropdown">
+				              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'; echo $_SESSION['usuario']['Nombre']; echo '</a>
+				              <div class="dropdown-menu" aria-labelledby="dropdown04">
+				              <a class="dropdown-item" href="wishlist.php">Lista de Deseos</a>
+				              <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[0]</a>
+				              <form action="controller_login.php" method="post">
+				              	<button class="dropdown-item" name="salir" value="salir">Salir</button>
+				              </form>
+				              </div>
+			              </li>
+			              <li class="nav-item">
+				            <form class="nav-link" action="">
+				            <i class="fas fa-search" aria-hidden="true"></i>
+								<input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Buscar" aria-label="Search">
+							</form>
+	           		 	  </li>
+		              </ul>
 			         ';
 	      	}
 	      ?>

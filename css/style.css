@@ -68,13 +68,14 @@ hr {
   height: 0;
   overflow: visible; }
 
-h1, h2, h3, h4, h5, h6 {
+ h2, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+color:#393838;}
 
 abbr[title],
 abbr[data-original-title] {
@@ -300,7 +301,7 @@ template {
 [hidden] {
   display: none !important; }
 
-h1, h2, h3, h4, h5, h6,
+h2, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -394,8 +395,7 @@ mark,
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
-}
+  height: auto; }
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -8776,11 +8776,11 @@ h1, h2, h3, h4, h5,
         color: #fff; }
   .btn.btn-black {
     background: #000000;
-    border: 1px solid #ffc107;
+    border: 1px solid #dacb8e;
     color: #fff; }
     .btn.btn-black:hover {
-      background: #ffc107;
-      border: 1px solid #ffc107;
+      background: #dbcc8f;
+      border: 1px solid #dbcc8f;
       color: #fff; }
     .btn.btn-black.btn-outline-white {
       border: 1px solid #000000;
@@ -9518,7 +9518,7 @@ h1, h2, h3, h4, h5,
         display: none; } }
 
 .form-control {
-  height: 52px !important;
+  height: 30px !important;
   background: #242119 !important;
   color: #ffffff !important;
   font-size: 18px;
@@ -10669,3 +10669,58 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+.acc h3 {
+    font-size: 25px;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 15px;
+    margin: 0;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.acc h3:after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.acc.active h3:after {
+  content: '-';
+}
+
+.content {
+    background-color: #fff;
+    display: none;
+}
+
+.content-inner {
+    padding: 15px;
+}
+
+.content * {
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+.acc {
+    border-bottom: 1px solid #fff;
+}
+.containere {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 70px 0 20px;
+    width: 100%;
+}
+ h1 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    margin: 50px 0 0;
+    color: #BCBABA;
+}

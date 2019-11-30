@@ -48,7 +48,7 @@
 			<h3>¿Comó puedo comunicarme con ustedes?</h3>
 			<div class="content">
 				<div class="content-inner">
-					<p>Nos puedes contactar las 24 horas del día, durante los 365 días del año; y desde cualquier punto para consultar tus dudas o quieras conocer mas información al respecto de cualquier producto. Nos pueden encontrar en un chat en línea, por correo(pvehicular007@gmail.com), por llamada al  449-258-96-37</p>
+					<p>Nos puedes contactar las 24 horas del día, durante los 365 días del año; y desde cualquier punto para consultar tus dudas o quieras conocer mas información al respecto de cualquier producto. Nos pueden encontrar en un chat en línea, por correo (pvehicular007@gmail.com), por llamada al  449-258-96-37</p>
 				</div>
 			</div>
 		</div>
@@ -57,14 +57,19 @@
 			<h3>¿Cuáles son los servicios que ofrece?</h3>
 			<div class="content">
 				<div class="content-inner">
-					<p>Ofrecemos una gama de servicios ante y posteriores a la compra de tu vehículo para que lo puedas conservar como nuevo.Como son:<br>Atención personalizada
-<br>Refacciones
-<br>Herramientas especializadas
-<br>Centros de servicio con la más alta tecnología
-<br>Diagnósticos específicos
-<br>Cambio de aceite o filtro
-<br>Mantenimiento de frenos
-<br>Estos servicios se te ofrecen con un precios adicional</p>
+					<p>
+						Ofrecemos una gama de servicios ante y posteriores a la compra de tu vehículo para que lo puedas conservar como nuevo.
+						<br>
+						<br><strong>Como son:</strong>
+						<br>Atención personalizada
+						<br>Refacciones
+						<br>Herramientas especializadas
+						<br>Centros de servicio con la más alta tecnología
+						<br>Diagnósticos específicos
+						<br>Cambio de aceite o filtro
+						<br>Mantenimiento de frenos
+						<br>Estos servicios se te ofrecen con un precios adicional
+					</p>
 				</div>
 			</div>
 		</div>
