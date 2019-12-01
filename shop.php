@@ -29,7 +29,7 @@
 		    		<?php foreach($listaProductos as $producto){ ?>
 		    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
 		    				<div class="product d-flex flex-column">
-		    					<a href="product-single.php" class="img-prod"><img class="img-fluid"
+		    					<a href="#" class="img-prod"><img class="img-fluid"
 		    						src="<?php echo $producto['Imagen'];?>" alt="Colorlib Template">
 		    					</a>
 		    					<div class="text py-3 pb-4 px-3">
@@ -47,7 +47,7 @@
 			    							</p>
 			    						</div>
 			    					</div>
-		    						<h3><a href="product-single.php"><?php echo $producto['Nombre'];?></a></h3>
+		    						<h3><a href="#"><?php echo $producto['Nombre'];?></a></h3>
 		  							<div class="pricing">
 			    						<p class="price"><span class="price-sale">$<?php echo $producto['Precio'];?></span></p>
 			    					</div>
@@ -89,7 +89,7 @@
 										<p class="bottom-area d-flex px-3">
 			    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span><i class="ion-ios-add ml-1"></i>Detalles</span></button>
 			    						</p>
-			    					</form>
+		    						</form>
 			    					<form id="formProducto" action="agregarProducto.php" method="post">
 			    						<input type="hidden" name="id" id="id"
 										value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
