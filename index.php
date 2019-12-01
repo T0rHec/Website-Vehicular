@@ -222,20 +222,20 @@
     <a name="seccion_vehiculos"></a>
     <section class="ftco-section bg-light">
     	<div class="container">
-				<div class="row justify-content-center mb-3 pb-3">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Llegada de nuevos vehículos!</h2>
-            <p>Conoce los vehículos que nos han llegado</p>
-          </div>
-        </div>
+			<div class="row justify-content-center mb-3 pb-3">
+	          <div class="col-md-12 heading-section text-center ftco-animate">
+	            <h2 class="mb-4">Llegada de nuevos vehículos!</h2>
+	            <p>Conoce los vehículos que nos han llegado</p>
+	          </div>
+	        </div>
     	</div>
     	<div class="container">
     		<div class="row">
     		<?php
-    			$sentencia=$pdo->prepare("SELECT * FROM vehiculo");
+    			$sentencia=$pdo->prepare("SELECT Nombre, Precio, Imagen, Descripcion, Tipo, TipoMotor, Potencia, Torque, Traccion, TipoTransmision, Rendimiento, vehiculo.ProductoId, vehiculo.CompraId, compra.Fecha  FROM compra, vehiculo WHERE compra.CompraId = vehiculo.CompraId AND compra.Fecha > '2019-10-01'");
 				$sentencia->execute();
 				$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-				//print_r($listaProductos)
+				//print_r($listaProductos);
     		?>
 
     		<?php foreach($listaProductos as $producto){ ?>
@@ -279,9 +279,6 @@
 								<input type="hidden" name="tipo" id="tipo"
 								value="<?php echo openssl_encrypt($producto['Tipo'], COD, KEY);?>">
 
-								<input type="hidden" name="descripcion" id="descripcion" 
-								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
-
 								<input type="hidden" name="TipoMotor" id="TipoMotor"
 								value="<?php echo openssl_encrypt($producto['TipoMotor'], COD, KEY);?>">
 
@@ -297,7 +294,7 @@
 								<input type="hidden" name="TipoTransmision" id="TipoTransmision"
 								value="<?php echo openssl_encrypt($producto['TipoTransmision'], COD, KEY);?>">
 
-								<input type="hidden" name="rendimiento" id="rendimiento" 
+								<input type="hidden" name="rendimiento" id="rendimiento"
 								value="<?php echo openssl_encrypt($producto['Rendimiento'], COD, KEY);?>">
 
 								<p class="bottom-area d-flex px-3">

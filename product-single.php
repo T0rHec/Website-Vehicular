@@ -1,15 +1,14 @@
 <?php
   include 'templates/cabecera.php';
- 
 
   	define("KEY", "vehicular");
     define("COD", "AES-128-ECB");
-    
+
     $nombre = openssl_decrypt($_POST["nombre"], COD, KEY);
     $precio = openssl_decrypt($_POST["precio"], COD, KEY);
     $imagen = openssl_decrypt($_POST["imagen"], COD, KEY);
     //$color = openssl_decrypt($_POST["color"], COD, KEY);
-     $tipo = openssl_decrypt($_POST["tipo"], COD, KEY);
+    $tipo = openssl_decrypt($_POST["tipo"], COD, KEY);
    	$descripcion = openssl_decrypt($_POST["descripcion"], COD, KEY);
     $TipoMotor = openssl_decrypt($_POST["TipoMotor"], COD, KEY);
     $potencia = openssl_decrypt($_POST["potencia"], COD, KEY);
