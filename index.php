@@ -234,7 +234,7 @@
     	<div class="container">
     		<div class="row">
     		<?php
-    			$sentencia=$pdo->prepare("SELECT Nombre, Precio, Imagen, Descripcion, Tipo, TipoMotor, Potencia, Torque, Traccion, TipoTransmision, Rendimiento, vehiculo.ProductoId, vehiculo.CompraId, compra.Fecha  FROM compra, vehiculo WHERE compra.CompraId = vehiculo.CompraId AND compra.Fecha > '2019-10-01'");
+    			$sentencia=$pdo->prepare("SELECT Nombre, Precio, Imagen, Descripcion, Tipo, TipoMotor, Potencia, Torque, Traccion, TipoTransmision, Rendimiento, vehiculo.ProductoId, vehiculo.CompraId, compra.Fecha, marca.Nombre, marca.Informacion FROM marca, compra, vehiculo WHERE vehiculo.MarcaId = marca.MarcaId, compra.CompraId = vehiculo.CompraId AND compra.Fecha > '2019-10-01'");
 				$sentencia->execute();
 				$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 				//print_r($listaProductos);
@@ -298,6 +298,12 @@
 
 								<input type="hidden" name="rendimiento" id="rendimiento"
 								value="<?php echo openssl_encrypt($producto['Rendimiento'], COD, KEY);?>">
+
+								<input type="hidden" name="nombremar" id="nombremar"
+								value="<?php echo openssl_encrypt($producto['marca.Nombre'], COD, KEY);?>">
+
+								<input type="hidden" name="informacion" id="informacion"
+								value="<?php echo openssl_encrypt($producto['marca.Informacion'], COD, KEY);?>">
 
 								<p class="bottom-area d-flex px-3">
 	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span><i class="ion-ios-add ml-1"></i>Detalles</span></button>
