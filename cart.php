@@ -137,6 +137,7 @@
                     <td class="total">$<?php echo number_format($articulo['precio']*$articulo['cantidad'],2);?></td>
                   </tr><!-- END TR-->
                   <?php $total=$total+($articulo['precio']*$articulo['cantidad']); ?>
+
                   <?php }?>
 
                 </tbody>
@@ -189,13 +190,13 @@
                 <span>$<?php echo number_format($total+100,2); ?></span>
               </p>
             </div>
-            <?php
-              if (!isset($_SESSION['usuario'])) {
-                echo '<p class="text-center"><a href="login.html" class="btn btn-primary py-3 px-4">Inicia sesión para continuar >></a></p>';
-              }else {
-                echo '<p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Proceder al pago</a></p>';
-              }
-            ?>
+
+            <?php if (!isset($_SESSION['usuario'])) { ?>
+                <p class="text-center"><a href="login.html" class="btn btn-primary py-3 px-4">Inicia sesión para continuar >></a></p>
+              <?php }else { ?>
+                <p class="text-center"><a href="pagar.php" class="btn btn-primary py-3 px-4">Proceder al pago</a></p>
+            <?php }?>
+
           </div>
         </div>
       </div>

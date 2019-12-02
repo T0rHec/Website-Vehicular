@@ -242,10 +242,10 @@
     	<div class="container">
     		<div class="row">
     		<?php
-    			$sentencia=$pdo->prepare("SELECT vehiculo.Nombre, Precio, Imagen, Descripcion, Tipo, TipoMotor, Potencia, Torque, Traccion, TipoTransmision, Rendimiento, vehiculo.ProductoId, vehiculo.CompraId, compra.Fecha, marca.Nombre, marca.Informacion FROM marca, compra, vehiculo WHERE vehiculo.MarcaId = marca.MarcaId AND compra.CompraId = vehiculo.CompraId AND compra.Fecha > '2019-10-01'");
+    			$sentencia=$pdo->prepare("SELECT Nombre, Precio, Imagen, Descripcion, Tipo, TipoMotor, Potencia, Torque, Traccion, TipoTransmision, Rendimiento, vehiculo.ProductoId, vehiculo.CompraId, Fecha, NombreMarca, Informacion FROM marca, compra, vehiculo WHERE vehiculo.MarcaId = marca.MarcaId AND compra.CompraId = vehiculo.CompraId AND compra.Fecha > '2019-10-01'");
 				$sentencia->execute();
 				$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-				//print_r($_SESSION['carrito']);
+				//print_r($listaProductos);
     		?>
 
     		<?php foreach($listaProductos as $producto){ ?>

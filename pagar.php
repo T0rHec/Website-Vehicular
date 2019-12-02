@@ -1,20 +1,20 @@
 <?php
+    session_start();
   	include 'validation.php';
   	$newConn = new dbconn();
 
-  	define("KEY", "vehicular");
-    define("COD", "AES-128-ECB");
+    $newConn->openconn();
 
-    $id = openssl_decrypt($_POST["id"], COD, KEY);
-    $nombre = openssl_decrypt($_POST["nombre"], COD, KEY);
-    $precio = openssl_decrypt($_POST["precio"], COD, KEY);
-    $cantidad = openssl_decrypt($_POST["cantidad"], COD, KEY);
+    foreach($_SESSION['carrito'] as $indice=>$articulo){
 
-    $sql = "INSERT INTO `venta`(`Fecha`, `Importe`, `ClientesId`, `ProductoId`, `PaqueteriaId`) VALUES('NOW()','" . $id . "','" . $nombre . "','" . $precio . "','5')";
+      $sql = "INSERT INTO `venta`(`Fecha`, `Importe`, `ClientesId`, `ProductoId`, `PaqueteriaId`) VALUES(NOW(),'" . $articulo['precio'] . "','" . $_SESSION['usuario']['Id'] . "','" . $articulo['id'] . "','5')";
 
-    header('Location: cart.php');
+      header('Location: index.php');
 
-	$newConn->openconn();
-	$newConn->exequery($sql);
-	$newConn->closeconn();
+
+      $newConn->exequery($sql);
+    }
+
+    $newConn->closeconn();
+
 ?>

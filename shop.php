@@ -20,7 +20,7 @@
     			<div class="col-md-8 col-lg-10 order-md-last">
     				<div class="row">
 		    		<?php
-		    			$sentencia=$pdo->prepare("SELECT vehiculo.Nombre, Precio, Imagen, Descripcion, Tipo, TipoMotor, Potencia, Torque, Traccion, TipoTransmision, Rendimiento, vehiculo.ProductoId, vehiculo.CompraId, compra.Fecha, marca.Nombre, marca.Informacion FROM marca, compra, vehiculo WHERE vehiculo.MarcaId = marca.MarcaId AND compra.CompraId = vehiculo.CompraId");
+		    			$sentencia=$pdo->prepare("SELECT Nombre, Precio, Imagen, Descripcion, Tipo, TipoMotor, Potencia, Torque, Traccion, TipoTransmision, Rendimiento, vehiculo.ProductoId, vehiculo.CompraId, Fecha, NombreMarca, Informacion FROM marca, compra, vehiculo WHERE vehiculo.MarcaId = marca.MarcaId AND compra.CompraId = vehiculo.CompraId");
 						$sentencia->execute();
 						$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 						//print_r($_SESSION['carrito']);
