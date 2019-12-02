@@ -10,7 +10,7 @@
     $precio = openssl_decrypt($_POST["precio"], COD, KEY);
     $cantidad = openssl_decrypt($_POST["cantidad"], COD, KEY);
 
-    $sql = "INSERT INTO carrito(ProductoId,Producto, Precio, Cantidad) VALUES('" . $id . "','" . $nombre . "','" . $precio . "','" . $cantidad . "')";
+    $sql = "INSERT INTO `venta`(`Fecha`, `Importe`, `ClientesId`, `ProductoId`, `PaqueteriaId`) VALUES('NOW()','" . $id . "','" . $nombre . "','" . $precio . "','5')";
 
     header('Location: cart.php');
 

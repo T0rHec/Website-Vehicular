@@ -41,17 +41,23 @@
               //print_r($_SESSION['carrito']);
             }
             elseif (isset($_SESSION['carrito'])) {
-              $numeroProductos=count($_SESSION['carrito']);
-              $producto= array(
-                'id'=>$id,
-                'nombre'=>$nombre,
-                'precio'=>$precio,
-                'cantidad'=>$cantidad,
-                'descripcion'=>$descripcion,
-                'imagen'=>$imagen,
-              );
-              $_SESSION['carrito'][$numeroProductos]=$producto;
-              //print_r($_SESSION['carrito']);
+              $idProductos=array_column($_SESSION['carrito'], "id");
+
+              if (in_array($id, $idProductos)) {
+                echo "<script>alert('Ya está este producto..')</script>";
+              }else{
+                $numeroProductos=count($_SESSION['carrito']);
+                $producto= array(
+                  'id'=>$id,
+                  'nombre'=>$nombre,
+                  'precio'=>$precio,
+                  'cantidad'=>$cantidad,
+                  'descripcion'=>$descripcion,
+                  'imagen'=>$imagen,
+                );
+                $_SESSION['carrito'][$numeroProductos]=$producto;
+                //print_r($_SESSION['carrito']);
+              }
             }
 
         break;
@@ -77,7 +83,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: white">Home</a></span> <span style="color: white">Cart</span></p>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.php" style="color: white">Home</a></span> <span style="color: white">Cart</span></p>
             <h1 class="mb-0 bread" style="color: white">Carrito</h1>
           </div>
         </div>
@@ -96,9 +102,9 @@
                   <tr class="text-center">
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
                     <th>Total</th>
                   </tr>
                 </thead>
@@ -126,11 +132,7 @@
 
                     <td class="price">$<?php echo number_format($articulo['precio'],2);?></td>
 
-                    <td class="quantity">
-                      <div class="input-group mb-3">
-                        <input type="text" name="quantity" class="quantity form-control input-number" value="<?php echo $articulo['cantidad'];?>" min="1" max="100">
-                      </div>
-                    </td>
+                    <td class="quantity"><?php echo $articulo['cantidad'];?></td>
 
                     <td class="total">$<?php echo number_format($articulo['precio']*$articulo['cantidad'],2);?></td>
                   </tr><!-- END TR-->
@@ -187,7 +189,13 @@
                 <span>$<?php echo number_format($total+100,2); ?></span>
               </p>
             </div>
-            <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+            <?php
+              if (!isset($_SESSION['usuario'])) {
+                echo '<p class="text-center"><a href="login.html" class="btn btn-primary py-3 px-4">Inicia sesión para continuar >></a></p>';
+              }else {
+                echo '<p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Proceder al pago</a></p>';
+              }
+            ?>
           </div>
         </div>
       </div>
@@ -206,8 +214,9 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Minishop</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+              <h2 class="ftco-heading-2">Tienda</h2>
+              <p>Tienda especializada en vehículos.</p>
+              <p>Información completa de diferentes marcas y vehículos</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="https://twitter.com"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="https://facebook.com/?lang=es"><span class="icon-facebook"></span></a></li>
@@ -217,40 +226,40 @@
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Menu</h2>
+              <h2 class="ftco-heading-2">Menú</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Shop</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Journal</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                <li><a href="shop.php" class="py-2 d-block">Tienda</a></li>
+                <li><a href="about.php" class="py-2 d-block">Nosotros</a></li>
+                <li><a href="blog.php" class="py-2 d-block">Diario</a></li>
+                <li><a href="contact.php" class="py-2 d-block">Contactanos</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md-4">
              <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Help</h2>
+              <h2 class="ftco-heading-2">Ayuda</h2>
               <div class="d-flex">
                 <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-                  <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
-                  <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
-                  <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
-                  <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
+                  <li><a href="#" class="py-2 d-block">Información de envío</a></li>
+                  <li><a href="#" class="py-2 d-block">Regresos y cambios</a></li>
+                  <li><a href="#" class="py-2 d-block">Terminos y condiciones</a></li>
+                  <li><a href="#" class="py-2 d-block">Política de privacidad</a></li>
                 </ul>
                 <ul class="list-unstyled">
-                  <li><a href="#" class="py-2 d-block">FAQs</a></li>
-                  <li><a href="#" class="py-2 d-block">Contact</a></li>
+                  <li><a href="contact.php" class="py-2 d-block">Preguntas frecuentes</a></li>
+                  <li><a href="contact.php" class="py-2 d-block">Contacto</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <h2 class="ftco-heading-2">¿Tienes preguntas?</h2>
               <div class="block-23 mb-3">
                 <ul>
-                  <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Av. Adolfo López Mateos #1801, Ote Fracc, Bona Gens, 20256 Aguascalientes, Ags.</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+52 4492589637</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">Vehicular@vehiculos.com</span></a></li>
                 </ul>
               </div>
             </div>
@@ -259,9 +268,9 @@
         <div class="row">
           <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p>
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Esta plantilla fue hecha con <i class="icon-heart color-danger" aria-hidden="true"></i> por <a href="https://colorlib.com" target="_blank">Equipo vehicular</a>
+
             </p>
           </div>
         </div>
