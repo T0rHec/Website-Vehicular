@@ -16,6 +16,8 @@
     $traccion = openssl_decrypt($_POST["traccion"], COD, KEY);
     $TipoTransmision = openssl_decrypt($_POST["TipoTransmision"], COD, KEY);
     $rendimiento = openssl_decrypt($_POST["rendimiento"], COD, KEY);
+   // $nombremar = openssl_decrypt($_POST["nombremar"], COD, KEY);
+    //$informacion = openssl_decrypt($_POST["informacion"], COD, KEY);
 ?>
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">
@@ -88,9 +90,9 @@
             <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Descripción</a>
 
-              <a class="nav-link ftco-animate mr-lg-1" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Manufactura</a>
+          
 
-              <a class="nav-link ftco-animate" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Comentarios</a>
+              <a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Comentarios</a>
 
             </div>
           </div>
@@ -111,13 +113,8 @@
               	</div>
               </div>
 
+              
               <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
-              	<div class="p-4">
-	              	<h3 class="mb-4">Hecho por Rolls Royce</h3>
-	              	<p>Desde los años veinte, Rolls-Royce ha comercializado diferentes generaciones del Rolls-Royce Phantom. La última se ha presentado en 2017, con una plataforma completamente nuevo, un diseño continuista que moderniza levemente su imagen y, sobre todo, mucha tecnología y el foco puesto aún más en el confort de los pasajeros y la personalización.</p>
-              	</div>
-              </div>
-              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-day-3-tab">
               	<div class="row p-4">
 						   		<div class="col-md-7">
 						   			<h3 class="mb-4">23 Comentarios</h3>
