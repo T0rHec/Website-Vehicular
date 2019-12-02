@@ -74,7 +74,11 @@
 			              <div class="dropdown-menu" aria-labelledby="dropdown04">
 			              	<a class="dropdown-item" href="login.html">Ingresar</a>
 			                <a class="dropdown-item" href="wishlist.php">Lista de Deseos</a>
-			                <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[0]</a>
+			                <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[
+
+				              '; echo (empty($_SESSION['carrito']))?0:count($_SESSION['carrito']);
+
+				              echo ']</a>
 			              </div>
 			            </li>
 			            <li class="nav-item">
@@ -98,7 +102,11 @@
 				              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'; echo $_SESSION['usuario']['Nombre']; echo '</a>
 				              <div class="dropdown-menu" aria-labelledby="dropdown04">
 				              <a class="dropdown-item" href="wishlist.php">Lista de Deseos</a>
-				              <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[0]</a>
+				              <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[
+
+				              '; echo (empty($_SESSION['carrito']))?0:count($_SESSION['carrito']);
+
+				              echo ']</a>
 				              <form action="controller_login.php" method="post">
 				              	<button class="dropdown-item" name="salir" value="salir">Salir</button>
 				              </form>
@@ -237,7 +245,7 @@
     			$sentencia=$pdo->prepare("SELECT Nombre, Precio, Imagen, Descripcion, Tipo, TipoMotor, Potencia, Torque, Traccion, TipoTransmision, Rendimiento, vehiculo.ProductoId, vehiculo.CompraId, compra.Fecha  FROM compra, vehiculo WHERE compra.CompraId = vehiculo.CompraId AND compra.Fecha > '2019-10-01'");
 				$sentencia->execute();
 				$listaProductos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-				//print_r($listaProductos);
+				//print_r($_SESSION['carrito']);
     		?>
 
     		<?php foreach($listaProductos as $producto){ ?>
@@ -263,7 +271,7 @@
 	    					</div>
     						<h3><a href=""><?php echo $producto['Nombre'];?></a></h3>
   							<div class="pricing">
-	    						<p class="price"><span class="price-sale">$<?php echo $producto['Precio'];?></span></p>
+	    						<p class="price"><span class="price-sale">$<?php echo number_format($producto['Precio']);?></span></p>
 	    					</div>
 	    					<form id="formProducto" action="product-single.php" method="post">
 								<input type="hidden" name="nombre" id="nombre"
@@ -303,7 +311,7 @@
 	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span><i class="ion-ios-add ml-1"></i>Detalles</span></button>
 	    						</p>
 	    					</form>
-	    					<form action="agregarProducto.php" method="post">
+	    					<form action="cart.php" method="post">
 	    						<input type="hidden" name="id" id="id"
 								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
 
@@ -312,6 +320,12 @@
 
 								<input type="hidden" name="precio" id="precio"
 								value="<?php echo openssl_encrypt($producto['Precio'], COD, KEY);?>">
+
+								<input type="hidden" name="descripcion" id="descripcion"
+								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
+
+								<input type="hidden" name="imagen" id="imagen"
+								value="<?php echo openssl_encrypt($producto['Imagen'], COD, KEY);?>">
 
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
@@ -406,7 +420,7 @@
 	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span><i class="ion-ios-add ml-1"></i>Detalles</span></button>
 	    						</p>
 	    					</form>
-	    					<form action="agregarProducto.php" method="post">
+	    					<form action="cart.php" method="post">
 	    						<input type="hidden" name="id" id="id"
 								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
 
@@ -415,6 +429,12 @@
 
 								<input type="hidden" name="precio" id="precio"
 								value="<?php echo openssl_encrypt($producto['Precio'], COD, KEY);?>">
+
+								<input type="hidden" name="descripcion" id="descripcion"
+								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
+
+								<input type="hidden" name="imagen" id="imagen"
+								value="<?php echo openssl_encrypt($producto['Imagen'], COD, KEY);?>">
 
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
@@ -509,7 +529,7 @@
 	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span><i class="ion-ios-add ml-1"></i>Detalles</span></button>
 	    						</p>
 	    					</form>
-	    					<form action="agregarProducto.php" method="post">
+	    					<form action="cart.php" method="post">
 	    						<input type="hidden" name="id" id="id"
 								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
 
@@ -518,6 +538,12 @@
 
 								<input type="hidden" name="precio" id="precio"
 								value="<?php echo openssl_encrypt($producto['Precio'], COD, KEY);?>">
+
+								<input type="hidden" name="descripcion" id="descripcion"
+								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
+
+								<input type="hidden" name="imagen" id="imagen"
+								value="<?php echo openssl_encrypt($producto['Imagen'], COD, KEY);?>">
 
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
@@ -612,7 +638,7 @@
 	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span><i class="ion-ios-add ml-1"></i>Detalles</span></button>
 	    						</p>
 	    					</form>
-	    					<form action="agregarProducto.php" method="post">
+	    					<form action="cart.php" method="post">
 	    						<input type="hidden" name="id" id="id"
 								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
 
@@ -621,6 +647,12 @@
 
 								<input type="hidden" name="precio" id="precio"
 								value="<?php echo openssl_encrypt($producto['Precio'], COD, KEY);?>">
+
+								<input type="hidden" name="descripcion" id="descripcion"
+								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
+
+								<input type="hidden" name="imagen" id="imagen"
+								value="<?php echo openssl_encrypt($producto['Imagen'], COD, KEY);?>">
 
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">

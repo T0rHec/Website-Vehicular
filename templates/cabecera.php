@@ -100,7 +100,11 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                       <a class="dropdown-item" href="login.html">Ingresar</a>
                       <a class="dropdown-item" href="wishlist.php">Lista de Deseos</a>
-                      <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[0]</a>
+                      <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[
+
+                      '; echo (empty($_SESSION['carrito']))?0:count($_SESSION['carrito']);
+
+                      echo ']</a>
                     </div>
                   </li>
                   <li class="nav-item">
@@ -124,7 +128,11 @@
                       <a style="color: white" class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'; echo $_SESSION['usuario']['Nombre']; echo '</a>
                       <div class="dropdown-menu" aria-labelledby="dropdown04">
                       <a class="dropdown-item" href="wishlist.php">Lista de Deseos</a>
-                      <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[0]</a>
+                      <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[
+
+                      '; echo (empty($_SESSION['carrito']))?0:count($_SESSION['carrito']);
+
+                      echo ']</a>
                       <form action="controller_login.php" method="post">
                         <button class="dropdown-item" name="salir" value="salir">Salir</button>
                       </form>
