@@ -2,6 +2,7 @@
   include 'templates/cabecera.php';
   define("KEY", "vehicular");
   define("COD", "AES-128-ECB");
+  $total=0;
 
   if (isset($_POST['btnAccion'])) {
 
@@ -103,7 +104,6 @@
                 </thead>
                 <tbody>
 
-                  <?php $total=0; ?>
                   <?php foreach($_SESSION['carrito'] as $indice=>$articulo) {?>
                   <tr class="text-center">
                     <td class="product-remove">
@@ -175,20 +175,16 @@
               <h3>Cart Totals</h3>
               <p class="d-flex">
                 <span>Subtotal</span>
-                <span>$20.60</span>
+                <span>$<?php echo number_format($total,2); ?></span>
               </p>
               <p class="d-flex">
                 <span>Delivery</span>
-                <span>$0.00</span>
-              </p>
-              <p class="d-flex">
-                <span>Discount</span>
-                <span>$3.00</span>
+                <span>$100.00</span>
               </p>
               <hr>
               <p class="d-flex total-price">
                 <span>Total</span>
-                <span><?php echo number_format($total,2); ?></span>
+                <span>$<?php echo number_format($total+100,2); ?></span>
               </p>
             </div>
             <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
