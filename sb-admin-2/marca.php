@@ -190,7 +190,7 @@
 
                   echo  " <tr>
                         <td>".$fila['MarcaId']." </td>
-                        <td>".$fila['Nombre']." </td>
+                        <td>".$fila['NombreMarca']." </td>
                         <td>".$fila['Pais'].'</td>
                       </tr>';
 

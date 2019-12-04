@@ -10,7 +10,7 @@ $newConn = new dbconn();
 switch ($boton) {
 	case 'insertar':
 
-		$sql = "INSERT INTO marca(Nombre,Pais) VALUES('" . $name . "','" . $pais . "')";
+		$sql = "INSERT INTO marca(NombreMarca,Pais) VALUES('" . $name . "','" . $pais . "')";
 
 		header('Location: marca.php');
 

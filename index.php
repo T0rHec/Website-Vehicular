@@ -31,6 +31,32 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="goto-here">
+    <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v5.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your customer chat code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="112331033551307"
+        theme_color="#ff7e29"
+        logged_in_greeting="Bienvenido! ¿Cómo podemos ayudarte?"
+        logged_out_greeting="Bienvenido! ¿Cómo podemos ayudarte?">
+      </div>
 		<div class="py-1 bg-black">
     	<div class="container">
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -336,7 +362,8 @@
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
 								<p></p>
-								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Añadir al carrito<i class="ion-ios-cart ml-1"></i></span></button>
+								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+								<button name="btnAccion" value="wishlist" type="submit" class="btn btn-black px-3 py-2"><span>Whislist<i class="ion-ios-add ml-1"></i></span></button>
     						</form>
     					</div>
     				</div>
@@ -445,7 +472,8 @@
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
 								<p></p>
-								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Añadir al carrito<i class="ion-ios-cart ml-1"></i></span></button>
+								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+								<button name="btnAccion" value="wishlist" type="submit" class="btn btn-black px-3 py-2"><span>Whislist<i class="ion-ios-add ml-1"></i></span></button>
     						</form>
     					</div>
     				</div>
@@ -554,7 +582,8 @@
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
 								<p></p>
-								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Añadir al carrito<i class="ion-ios-cart ml-1"></i></span></button>
+								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+								<button name="btnAccion" value="wishlist" type="submit" class="btn btn-black px-3 py-2"><span>Whislist<i class="ion-ios-add ml-1"></i></span></button>
     						</form>
     					</div>
     				</div>
@@ -663,7 +692,8 @@
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
 								<p></p>
-								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Añadir al carrito<i class="ion-ios-cart ml-1"></i></span></button>
+								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+								<button name="btnAccion" value="wishlist" type="submit" class="btn btn-black px-3 py-2"><span>Whislist<i class="ion-ios-add ml-1"></i></span></button>
     						</form>
     					</div>
     				</div>

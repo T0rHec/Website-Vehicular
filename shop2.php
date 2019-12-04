@@ -108,7 +108,8 @@
 										<input type="hidden" name="cantidad" id="cantidad"
 										value="<?php echo openssl_encrypt(1, COD, KEY);?>">
 										<p></p>
-										<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Añadir al carrito<i class="ion-ios-cart ml-1"></i></span></button>
+										<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+										<button name="btnAccion" value="wishlist" type="submit" class="btn btn-black px-3 py-2"><span>Whislist<i class="ion-ios-add ml-1"></i></span></button>
 		    						</form>
 		    					</div>
 		    				</div>
