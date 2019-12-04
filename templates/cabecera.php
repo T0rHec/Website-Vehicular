@@ -99,7 +99,6 @@
                     <a style="color: white" class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                       <a class="dropdown-item" href="login.html">Ingresar</a>
-                      <a class="dropdown-item" href="wishlist.php">Lista de Deseos</a>
                       <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[
 
                       '; echo (empty($_SESSION['carrito']))?0:count($_SESSION['carrito']);

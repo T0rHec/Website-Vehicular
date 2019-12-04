@@ -4,6 +4,7 @@
   	define("KEY", "vehicular");
     define("COD", "AES-128-ECB");
 
+    $id = openssl_decrypt($_POST["id"], COD, KEY);
     $nombre = openssl_decrypt($_POST["nombre"], COD, KEY);
     $precio = openssl_decrypt($_POST["precio"], COD, KEY);
     $imagen = openssl_decrypt($_POST["imagen"], COD, KEY);
@@ -77,8 +78,27 @@
 	          	</div>
 	          	<div class="w-100"></div>
           	</div>
-          	<p><a href="cart.php" class="btn btn-black py-3 px-5 mr-2">Añadir al carrito</a>
-          		<a href="cart.php" class="btn btn-primary py-3 px-5">Compra ahora</a></p>
+			<form action="cart.php" method="post">
+				<input type="hidden" name="id" id="id"
+				value="<?php echo openssl_encrypt($id, COD, KEY);?>">
+
+				<input type="hidden" name="nombre" id="nombre"
+				value="<?php echo openssl_encrypt($nombre, COD, KEY);?>">
+
+				<input type="hidden" name="precio" id="precio"
+				value="<?php echo openssl_encrypt($precio, COD, KEY);?>">
+
+				<input type="hidden" name="descripcion" id="descripcion"
+				value="<?php echo openssl_encrypt($descripcion, COD, KEY);?>">
+
+				<input type="hidden" name="imagen" id="imagen"
+				value="<?php echo openssl_encrypt($imagen, COD, KEY);?>">
+
+				<input type="hidden" name="cantidad" id="cantidad"
+				value="<?php echo openssl_encrypt(1, COD, KEY);?>">
+
+				<button name="btnAccion" value="agregar" type="submit" class="btn btn-black py-3 px-5 mr-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+			</form>
     			</div>
     		</div>
 
@@ -90,7 +110,7 @@
             <div class="nav nav-pills d-flex text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a class="nav-link ftco-animate active mr-lg-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Descripción</a>
 
-          
+
 
               <a class="nav-link ftco-animate" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Comentarios</a>
 
@@ -113,7 +133,7 @@
               	</div>
               </div>
 
-              
+
               <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-day-2-tab">
               	<div class="row p-4">
 						   		<div class="col-md-7">

@@ -75,28 +75,8 @@
             }
         break;
 
-        case 'wishlist':
-
-            if (is_string(openssl_decrypt($_POST["nombre"], COD, KEY))) {
-              $nombre = openssl_decrypt($_POST["nombre"], COD, KEY);
-            }
-            if (is_string(openssl_decrypt($_POST["precio"], COD, KEY))) {
-              $precio = openssl_decrypt($_POST["precio"], COD, KEY);
-            }
-            if (is_string(openssl_decrypt($_POST["imagen"], COD, KEY))) {
-              $imagen = openssl_decrypt($_POST["imagen"], COD, KEY);
-            }
-
-            include 'validation.php';
-            $newConn = new dbconn();
-
-            $sql = "INSERT INTO `listadeseos`(`Producto`, `Precio`, `Imagen`) VALUES('" . $nombre . "','" . $precio . "','" . $imagen . "')";
-
-            $newConn->openconn();
-            $newConn->exequery($sql);
-            $newConn->closeconn();
-
-            header('Location: wishlist.php');
+      default:
+        # code...
         break;
     }
   }

@@ -99,7 +99,6 @@
 			              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
 			              <div class="dropdown-menu" aria-labelledby="dropdown04">
 			              	<a class="dropdown-item" href="login.html">Ingresar</a>
-			                <a class="dropdown-item" href="wishlist.php">Lista de Deseos</a>
 			                <a class="dropdown-item" href="cart.php"><span class="icon-shopping_cart"></span>[
 
 				              '; echo (empty($_SESSION['carrito']))?0:count($_SESSION['carrito']);
@@ -299,7 +298,10 @@
   							<div class="pricing">
 	    						<p class="price"><span class="price-sale">$<?php echo number_format($producto['Precio']);?></span></p>
 	    					</div>
-	    					<form id="formProducto" action="product-single.php" method="post">
+	    					<form action="product-single.php" method="post">
+	    						<input type="hidden" name="id" id="id"
+								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
+
 								<input type="hidden" name="nombre" id="nombre"
 								value="<?php echo openssl_encrypt($producto['Nombre'], COD, KEY);?>">
 
@@ -361,8 +363,25 @@
 
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
-								<p></p>
+
 								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+    						</form>
+    						<form action="wishlist.php" method="post">
+	    						<input type="hidden" name="id" id="id"
+								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
+
+								<input type="hidden" name="nombre" id="nombre"
+								value="<?php echo openssl_encrypt($producto['Nombre'], COD, KEY);?>">
+
+								<input type="hidden" name="precio" id="precio"
+								value="<?php echo openssl_encrypt($producto['Precio'], COD, KEY);?>">
+
+								<input type="hidden" name="descripcion" id="descripcion"
+								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
+
+								<input type="hidden" name="imagen" id="imagen"
+								value="<?php echo openssl_encrypt($producto['Imagen'], COD, KEY);?>">
+
 								<button name="btnAccion" value="wishlist" type="submit" class="btn btn-black px-3 py-2"><span>Whislist<i class="ion-ios-add ml-1"></i></span></button>
     						</form>
     					</div>
@@ -416,6 +435,9 @@
 	    						<p class="price"><span class="price-sale">$<?php echo $producto['Precio'];?></span></p>
 	    					</div>
 	    					<form action="product-single.php" method="post">
+	    						<input type="hidden" name="id" id="id"
+								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
+
 								<input type="hidden" name="nombre" id="nombre"
 								value="<?php echo openssl_encrypt($producto['Nombre'], COD, KEY);?>">
 
@@ -427,27 +449,6 @@
 
 								<input type="hidden" name="descripcion" id="descripcion"
 								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
-
-								<input type="hidden" name="tipo" id="tipo"
-								value="<?php echo openssl_encrypt($producto['Tipo'], COD, KEY);?>">
-
-								<input type="hidden" name="TipoMotor" id="TipoMotor"
-								value="<?php echo openssl_encrypt($producto['TipoMotor'], COD, KEY);?>">
-
-								<input type="hidden" name="potencia" id="potencia"
-								value="<?php echo openssl_encrypt($producto['Potencia'], COD, KEY);?>">
-
-								<input type="hidden" name="torque" id="torque"
-								value="<?php echo openssl_encrypt($producto['Torque'], COD, KEY);?>">
-
-								<input type="hidden" name="traccion" id="traccion"
-								value="<?php echo openssl_encrypt($producto['Traccion'], COD, KEY);?>">
-
-								<input type="hidden" name="TipoTransmision" id="TipoTransmision"
-								value="<?php echo openssl_encrypt($producto['TipoTransmision'], COD, KEY);?>">
-
-								<input type="hidden" name="rendimiento" id="rendimiento"
-								value="<?php echo openssl_encrypt($producto['Rendimiento'], COD, KEY);?>">
 
 								<p class="bottom-area d-flex px-3">
 	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span><i class="ion-ios-add ml-1"></i>Detalles</span></button>
@@ -471,8 +472,25 @@
 
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
-								<p></p>
+
 								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+    						</form>
+    						<form action="wishlist.php" method="post">
+	    						<input type="hidden" name="id" id="id"
+								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
+
+								<input type="hidden" name="nombre" id="nombre"
+								value="<?php echo openssl_encrypt($producto['Nombre'], COD, KEY);?>">
+
+								<input type="hidden" name="precio" id="precio"
+								value="<?php echo openssl_encrypt($producto['Precio'], COD, KEY);?>">
+
+								<input type="hidden" name="descripcion" id="descripcion"
+								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
+
+								<input type="hidden" name="imagen" id="imagen"
+								value="<?php echo openssl_encrypt($producto['Imagen'], COD, KEY);?>">
+
 								<button name="btnAccion" value="wishlist" type="submit" class="btn btn-black px-3 py-2"><span>Whislist<i class="ion-ios-add ml-1"></i></span></button>
     						</form>
     					</div>
@@ -526,6 +544,9 @@
 	    						<p class="price"><span class="price-sale">$<?php echo $producto['Precio'];?></span></p>
 	    					</div>
 	    					<form action="product-single.php" method="post">
+	    						<input type="hidden" name="id" id="id"
+								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
+
 								<input type="hidden" name="nombre" id="nombre"
 								value="<?php echo openssl_encrypt($producto['Nombre'], COD, KEY);?>">
 
@@ -537,27 +558,6 @@
 
 								<input type="hidden" name="descripcion" id="descripcion"
 								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
-
-								<input type="hidden" name="tipo" id="tipo"
-								value="<?php echo openssl_encrypt($producto['Tipo'], COD, KEY);?>">
-
-								<input type="hidden" name="TipoMotor" id="TipoMotor"
-								value="<?php echo openssl_encrypt($producto['TipoMotor'], COD, KEY);?>">
-
-								<input type="hidden" name="potencia" id="potencia"
-								value="<?php echo openssl_encrypt($producto['Potencia'], COD, KEY);?>">
-
-								<input type="hidden" name="torque" id="torque"
-								value="<?php echo openssl_encrypt($producto['Torque'], COD, KEY);?>">
-
-								<input type="hidden" name="traccion" id="traccion"
-								value="<?php echo openssl_encrypt($producto['Traccion'], COD, KEY);?>">
-
-								<input type="hidden" name="TipoTransmision" id="TipoTransmision"
-								value="<?php echo openssl_encrypt($producto['TipoTransmision'], COD, KEY);?>">
-
-								<input type="hidden" name="rendimiento" id="rendimiento"
-								value="<?php echo openssl_encrypt($producto['Rendimiento'], COD, KEY);?>">
 
 								<p class="bottom-area d-flex px-3">
 	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span><i class="ion-ios-add ml-1"></i>Detalles</span></button>
@@ -581,10 +581,28 @@
 
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
-								<p></p>
+
 								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+    						</form>
+    						<form action="wishlist.php" method="post">
+	    						<input type="hidden" name="id" id="id"
+								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
+
+								<input type="hidden" name="nombre" id="nombre"
+								value="<?php echo openssl_encrypt($producto['Nombre'], COD, KEY);?>">
+
+								<input type="hidden" name="precio" id="precio"
+								value="<?php echo openssl_encrypt($producto['Precio'], COD, KEY);?>">
+
+								<input type="hidden" name="descripcion" id="descripcion"
+								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
+
+								<input type="hidden" name="imagen" id="imagen"
+								value="<?php echo openssl_encrypt($producto['Imagen'], COD, KEY);?>">
+
 								<button name="btnAccion" value="wishlist" type="submit" class="btn btn-black px-3 py-2"><span>Whislist<i class="ion-ios-add ml-1"></i></span></button>
     						</form>
+
     					</div>
     				</div>
     			</div>
@@ -635,7 +653,10 @@
   							<div class="pricing">
 	    						<p class="price"><span class="price-sale">$<?php echo $producto['Precio'];?></span></p>
 	    					</div>
-	    					<form id="" action="product-single.php" method="post">
+	    					<form action="product-single.php" method="post">
+	    						<input type="hidden" name="id" id="id"
+								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
+
 								<input type="hidden" name="nombre" id="nombre"
 								value="<?php echo openssl_encrypt($producto['Nombre'], COD, KEY);?>">
 
@@ -647,27 +668,6 @@
 
 								<input type="hidden" name="descripcion" id="descripcion"
 								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
-
-								<input type="hidden" name="tipo" id="tipo"
-								value="<?php echo openssl_encrypt($producto['Tipo'], COD, KEY);?>">
-
-								<input type="hidden" name="TipoMotor" id="TipoMotor"
-								value="<?php echo openssl_encrypt($producto['TipoMotor'], COD, KEY);?>">
-
-								<input type="hidden" name="potencia" id="potencia"
-								value="<?php echo openssl_encrypt($producto['Potencia'], COD, KEY);?>">
-
-								<input type="hidden" name="torque" id="torque"
-								value="<?php echo openssl_encrypt($producto['Torque'], COD, KEY);?>">
-
-								<input type="hidden" name="traccion" id="traccion"
-								value="<?php echo openssl_encrypt($producto['Traccion'], COD, KEY);?>">
-
-								<input type="hidden" name="TipoTransmision" id="TipoTransmision"
-								value="<?php echo openssl_encrypt($producto['TipoTransmision'], COD, KEY);?>">
-
-								<input type="hidden" name="rendimiento" id="rendimiento"
-								value="<?php echo openssl_encrypt($producto['Rendimiento'], COD, KEY);?>">
 
 								<p class="bottom-area d-flex px-3">
 	    							<button name="btnAccion" value="agregar" type="submit" class="btn btn-outline-warning"><span><i class="ion-ios-add ml-1"></i>Detalles</span></button>
@@ -691,8 +691,25 @@
 
 								<input type="hidden" name="cantidad" id="cantidad"
 								value="<?php echo openssl_encrypt(1, COD, KEY);?>">
-								<p></p>
+
 								<button name="btnAccion" value="agregar" type="submit" class="btn btn-black px-3 py-2"><span>Carrito<i class="ion-ios-cart ml-1"></i></span></button>
+    						</form>
+    						<form action="wishlist.php" method="post">
+	    						<input type="hidden" name="id" id="id"
+								value="<?php echo openssl_encrypt($producto['ProductoId'], COD, KEY);?>">
+
+								<input type="hidden" name="nombre" id="nombre"
+								value="<?php echo openssl_encrypt($producto['Nombre'], COD, KEY);?>">
+
+								<input type="hidden" name="precio" id="precio"
+								value="<?php echo openssl_encrypt($producto['Precio'], COD, KEY);?>">
+
+								<input type="hidden" name="descripcion" id="descripcion"
+								value="<?php echo openssl_encrypt($producto['Descripcion'], COD, KEY);?>">
+
+								<input type="hidden" name="imagen" id="imagen"
+								value="<?php echo openssl_encrypt($producto['Imagen'], COD, KEY);?>">
+
 								<button name="btnAccion" value="wishlist" type="submit" class="btn btn-black px-3 py-2"><span>Whislist<i class="ion-ios-add ml-1"></i></span></button>
     						</form>
     					</div>
