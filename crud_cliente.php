@@ -22,10 +22,9 @@
 		}
 
 		//obtiene el usuario para el login
-		public function obtenerCliente($nombre, $email, $password){
+		public function obtenerCliente($email, $password){
 			$db=Db::conectar();
-			$select=$db->prepare('SELECT * FROM cliente WHERE nombre=:nombre AND email=:email');
-			$select->bindValue('nombre',$nombre);
+			$select=$db->prepare('SELECT * FROM cliente WHERE email=:email');
 			$select->bindValue('email',$email);
 			$select->execute();
 			$registro=$select->fetch();

@@ -1,0 +1,1301 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 08-12-2019 a las 06:08:03
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `vehicular`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `accesorio`
+--
+
+CREATE TABLE `accesorio` (
+  `ProductoId` varchar(10) NOT NULL,
+  `Nombre` varchar(30) DEFAULT NULL,
+  `Precio` decimal(20,2) DEFAULT NULL,
+  `Descripcion` text,
+  `Imagen` varchar(255) NOT NULL,
+  `MarcaId` int(11) NOT NULL,
+  `CompraId` int(11) NOT NULL,
+  `Existencias` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `accesorio`
+--
+
+INSERT INTO `accesorio` (`ProductoId`, `Nombre`, `Precio`, `Descripcion`, `Imagen`, `MarcaId`, `CompraId`, `Existencias`) VALUES
+('A1', 'FUNDA ASIENTO MOMO', '1300.00', 'MATERIAL DE COMPOSICIÓN: 80% PVC, 20% POLIÉSTER. PESO 2.4 KG. 10 PIEZAS.', 'images/Asiento3.jpg', 31, 3, 8),
+('A10', 'CAJA DE CARGA', '15400.00', 'LUCES TRASERAS PRE CABLEADAS (4 PINES) Y ADAPTADOR DE MATRÍCULA INCLUIDO.\r\nEL SISTEMA DE BLOQUEO CENTRAL PROPORCIONA LA MÁXIMA SEGURIDAD. LA LLAVE SÓLO SE PUEDE QUITAR SI TODOS LOS PUNTOS DE BLOQUEO ESTÁN CERRADOS DE FORMA SEGURA.\r\nSE INSTALA EN LA MAYORÍA DE RECEPTORES DE 2 Y 1 1/4 PULGADAS, NO NECESITA ADAPTADORES NI HERRAMIENTAS ADICIONALES.\r\n', 'images/cajacarga2.jpg', 32, 66, 8),
+('A11', 'BOLSA DE CARGA', '4200.00', 'THULE 869 INTERSTATE BOLSA DE CARGA, 16 CU. CUADRADOS.', 'images/bolsatul2.jpg', 32, 67, 10),
+('A12', 'CORREAS DE AMARRE', '350.00', 'HASTA 1000 KG CON HEBILLA.\r\nMATERIAL: NAILON + HEBILLA DE ALEACIÓN.\r\nUTILIZANDO LA EXCLUSIVA TECNOLOGÍA DE MOLDEADO Y LA MÁS ALTA CALIDAD DE CINCHA GARANTIZA QUE NUESTRAS RESISTENTES CORREAS NEGRAS SE ATAN HACIA ABAJO, MANTIENEN TU EQUIPO EN PERFECTAS CONDICIONES, ASEGURA TU CARGA, NO SE DESHILACHARÁ Y SIN DUDA NO MARCARÁ TU PINTURA.\r\n', 'images/ccarga2.jpg', 32, 68, 25),
+('A13', 'CARGADOR PARA CELULARES', '500.00', 'CARGA RÁPIDA DE 10 W: ADOPTA UNA ALTA EFICIENCIA DE CARGA MEJORADA DE BOBINA NO EMPOTRADO, QI CARGA RÁPIDA INALÁMBRICA PROPORCIONA UNA CARGA MÁS RÁPIDA QUE LA MAYORÍA DE LOS SOPORTES DE CARGADOR DE COCHE INALÁMBRICO EN EL MERCADO.', 'images/cargador2.jpg', 33, 69, 10),
+('A14', 'AROMATIZANTE DE AUTO ', '200.00', 'AMBIENTADOR QUÉ NACE DE UN PERFUME CONCENTRADO Y ÚNICO, DE CALIDAD SUPERIOR, TIENE UN AGRADABLE AROMA Y DURADERO.', 'images/aroma2.jpg', 34, 70, 55),
+('A15', 'FUNDA PALANCA DE CAMBIO A6', '300.00', 'FUNDA PARA PALANCA DE CAMBIOS JETTA BORA GOLF TIGUAN MK6 MK5 A6\r\nCOMPATIBLE SOLO CON EL TIPO DE PALANCA QUE SE MUESTRA\r\n', 'images/funda2.jpg', 33, 71, 20),
+('A16', 'CINTURON SEGURIDAD MUSTANG', '2900.00', 'CINTURÓN SEGURIDAD DERECHO FORD MUSTANG 05-19 ORIGINAL', 'images/cinturon2.jpg', 6, 72, 30),
+('A17', 'ASIENTO DE AUTO PARA BEBES', '6000.00', 'EL ASIENTO DE COCHE CHICCO MY FIT CON ARNÉS DE AIRE/CINTURÓN DE POSICIONAMIENTO ESTÁ DISEÑADO PARA CRECER CON NIÑOS DESDE NIÑOS PEQUEÑOS HASTA NIÑOS GRANDES CON FÁCIL TRANSICIÓN DE ARNÉS DE CINCO PUNTOS AL CINTURÓN DE SEGURIDAD DEL VEHÍCULO. NUEVE POSICIONES DE REPOSACABEZAS ACOMODAN EL CRECIMIENTO A TRAVÉS DE AMBOS MODOS Y TRABAJAN JUNTO CON UNA RECLINACIÓN DE CUATRO POSICIONES PARA APOYAR LA POSTURA ADECUADA.', 'images/asientobb2.jpg', 35, 73, 15),
+('A18', 'VESTIDURAS DE PIEL A LA MEDIDA', '8500.00', 'VESTIDURAS EN PIEL A LA MEDIDA DE CADA COCHE O CAMIONETA, CON ACABADOS Y MATERIALES DE ALTA CALIDAD Y TIPO ORIGINAL.', 'images/fundaas2.jpg', 36, 74, 10),
+('A19', 'PROTECTOR ESTRIBOS DEPORTIVOS', '600.00', 'DECORADOR DE ESTRIBO UNIVERSAL MARCA SPARCO DE 60CMS DE LARGO X 4CMS DE ANCHO, ADAPTABLE A TODA CLASE DE VEHÍCULOS, AUTOADHESIVO DE GRAN CALIDAD; SOLO BASTARÁ LIMPIAR LA SUPERFICIE QUITANDO POLVO, GRASA O CUALQUIER RASTRO DE SUCIEDAD Y RETIRAR EL PROTECTOR ADHESIVO PARA POSTERIORMENTE COLOCAR Y APRETAR CON FUERZA DURANTE UNOS SEGUNDOS', 'images/proteces2.jpg', 37, 75, 15),
+('A2', 'CUBRE VOLANTE', '1200.00', 'CUBIERTA PARA VOLANTE DE PIEL', 'images/fundavol2.jpg', 1, 3, 50),
+('A20', 'ASIENTO BOLSA ORGANIZADOR', '950.00', 'ORGANIZADORES DE AUTOMÓVILES EN EL ASIENTO TRASERO ESTÁN HECHOS DE MATERIAL DE CUERO DE ALTA CALIDAD. PROTEJA LA PARTE TRASERA DE LOS ASIENTOS DE SU VEHÍCULO DE HUELLAS SUCIAS DE ZAPATOS, LÍQUIDOS, ARAÑAZOS.', 'images/organ2.jpg', 37, 76, 30),
+('A21', 'FUNDA PARA CARRO', '1100.00', 'CONTIENE: CUBRE AUTO MOMO 1 CAPA \r\nCARACTERISTICAS DEL PRODUCTO\r\nINFORMACIÓN: CUBRE AUTOS MOMO DE 1 CAPAS.\r\nTAMAÑOS: L, XL Y XXL.\r\nPROTECCIÓN UV, TELA RESPIRABLE\r\nESPACIO CALCULADO PARA LOS ESPEJOS RETROVISORES Y MATERIAL TRANSPARENTE PARA VER LA PATENTE DEL VEHÍCULO.\r\n\r\n', 'images/fundaco2.jpg', 31, 84, 20),
+('A22', 'RACK PARA BICICLETA', '11500.00', 'LA INSTALACIÓN DEL SISTEMA AUTO ATTACH SIN HERRAMIENTAS FACILITA LA INSTALACIÓN Y LA EXTRACCIÓN DEL SOPORTE. LA PALANCA DEL INTERRUPTOR DEL ENGANCHE SE INCLINA FÁCILMENTE HACIA ARRIBA CUANDO NO ESTÁ EN USO O HACIA ABAJO PARA ACCEDER POR LA PARTE TRASERA DEL VEHÍCULO. EL BRAZO DE TRINQUETE SIN MARCO ASEGURA LAS BICICLETAS RÁPIDAMENTE SIN CONTACTO CON EL MARCO. \"RUEDAS Y LLANTAS DE HASTA 5\" SIN ADAPTADORES QUE LO HACEN IDEAL PARA CUADROS DE CARBONO, BICICLETAS DE MONTAÑA, DE BAJADA O PESADAS', 'images/tulebic2.jpg', 32, 85, 20),
+('A23', 'ESTEREO BLUETOOTH', '800.00', 'AMPLIA COMPATIBILIDAD: EL TRANSMISOR DE COCHE DE TOHAYIE FUNCIONA CON DISPOSITIVOS HABILITADOS PARA BLUETOOTH, COMO IPHONE, IPAD, IPOD, TABLETA, TELÉFONOS INTELIGENTES O REPRODUCTORES DE MP3 Y MP4 A TRAVÉS DE UN CONECTOR DE AUDIO DE 3,5 MM.', 'images/bluet2.jpg', 38, 86, 20),
+('A24', 'EXTINTOR DE EMERGENCIA', '750.00', 'EXTINTOR DE EMERGENCIA PARA AUTOMOVILES MARCA MIKEL´S', 'images/extintor2.jpg', 12, 87, 40),
+('A25', 'VOLANTE ', '3000.00', 'VOLANTE DEPORTIVO MARCA MOMO', 'images/volant2.jpg', 31, 88, 6),
+('A26', 'REMOLQUE TIPO TRAILER', '5900.00', 'SON FABRICADOS SEGÚN LAS ESPECIFICACIONES DE PESO DEL FABRICANTE DEL VEHÍCULO Y EL AÑO DEL MODELO PARA ASEGURAR UN AJUSTE PERFECTO Y UN RENDIMIENTO DE REMOLQUE SUPERIOR. CON UNA CONSTRUCCIÓN SÓLIDA TOTALMENTE SOLDADA PARA MÁXIMA FUERZA Y SEGURIDAD, CADA ENGANCHE CUMPLE Y SUPERA LOS ESTÁNDARES DE LA INDUSTRIA.', 'images/trailer.jpg', 32, 174, 15),
+('A27', 'REMOLQUE TRAILER POWER', '8700.00', 'SON FABRICADOS SEGÚN LAS ESPECIFICACIONES DE PESO DEL FABRICANTE DEL VEHÍCULO Y EL AÑO DEL MODELO PARA ASEGURAR UN AJUSTE PERFECTO Y UN RENDIMIENTO DE REMOLQUE SUPERIOR. CON UNA CONSTRUCCIÓN SÓLIDA TOTALMENTE SOLDADA PARA MÁXIMA FUERZA Y SEGURIDAD, CADA ENGANCHE CUMPLE Y SUPERA LOS ESTÁNDARES DE LA INDUSTRIA.', 'images/remolquepo.jpg', 32, 175, 8),
+('A28', 'BOLA DE ENGANCHE REMOLQUE', '450.00', 'BOLA DE ENGANCHE CROMADA INTERLOCK PARA 3,500 LB DE PESO\r\n\r\n', 'images/reese-towpower-hitch-balls-7068820-64_1000.jpg', 32, 176, 20),
+('A29', 'BOLA ENGANCHE DE REMOLQUE PRO', '1200.00', 'BOLA DE ENGANCHE PARA 12 000 LB DE PESO\r\n\r\n', 'images/reese-towpower-hitch-assembly-kits-21542rak-64_1000.jpg', 32, 177, 20),
+('A3', 'PARASOL', '500.00', 'PARASOL PARA VEHÍCULOS MARCA BMW', 'images/parasolbmw2.jpg', 3, 3, 0),
+('A30', 'EXTENSION CAJA DE ENGANCHE', '4500.00', 'ESTÁ DISEÑADA PARA EXTENDER LA DISTANCIA ENTRE EL VEHÍCULO DE REMOLQUE Y EL REMOLQUE. ESTÁ CLASIFICADO PARA CARGAR UN MÁXIMO DE 400 LB DE CARGA VERTICAL Y UNA CAPACIDAD DE PESO BRUTO DE REMOLQUE DE 4000 LB. CUANDO SE USA CON ENGANCHE DE DISTRIBUCIÓN DE PESO, ESTÁ CLASIFICADA PARA CARGAR UN MÁXIMO DE 600 LB DE CARGA VERTICAL, Y UNA CAPACIDAD DE PESO BRUTO DEL REMOLQUE DE 6500 LB. AJUSTA EN UNA ABERTURA DE ENGANCHE CUADRADA DE 2 X 2 PULG.', 'images/71TGQ0vQQrL._SY355_.jpg', 32, 178, 15),
+('A31', 'SISTEMA DISTRIBUIDOR DE PESO', '12800.00', 'DISTRIBUCIÓN DE PESO CON BARRA REDONDA, PESO BRUTO DEL REMOLQUE DE 10 000 LB, CARGA VERTICAL MÁXIMA DE 1000 LB\r\n\r\n', 'images/71fmmLbPKcL._SX466_.jpg', 32, 179, 8),
+('A32', 'CARGADOR DE BATERIA ', '2800.00', 'NOCO 1000 AMP 12 VOLT BATTERY CHARGER (JUMP STARTER)\r\n\r\n', 'images/91JeLn8iRZL._SL1500_.jpg', 53, 180, 20),
+('A33', 'SLIME INFLADOR PRO POWER', '2400.00', 'CUANDO NECESITE GRAN POTENCIA, CONFÍE EN EL INFLADOR DE NEUMÁTICOS 2X. DOS CILINDROS PRODUCEN EL MÁXIMO PODER PARA UN INFLADO RÁPIDO. INCLUYE UNA MANGUERA DE AIRE ENROLLADA, INDICADOR DE CARÁTULA EN LÍNEA Y ESTUCHE DE ALMACENAMIENTO RÍGIDO. SE CONECTA DIRECTAMENTE A LA BATERÍA.', 'images/compresor-inflador-slime-super-duty-valija-metal-camion-sti-D_NQ_NP_758488-MLA31021367788_062019-F.jpg', 54, 181, 8),
+('A34', 'BOMBA DE PIE', '200.00', 'AUTOTEC BOMBA DE AIRE DE PIE.\r\n\r\n', 'images/bombapie.jpg', 55, 182, 25),
+('A35', 'RODILLO PARA PARCHES NEUMATICO', '80.00', 'RODILLO EL CUAL SIRVE PARA COLOCAR PARCHES EN LOS NEUMATICOS', 'images/rodillo-para-colocar-parches-1-1_2-plg-x-1_4-plg-8.jpg', 55, 183, 50),
+('A36', 'SELLADOR DE NEUMATICOS', '250.00', 'NUNCA SE PREOCUPE MÁS POR UNA LLANTA PONCHADA QUE LO VAYA A DEJAR DETENIDO A UN LADO DE LA CARRETERA. CON EL SELLADOR DE SLIME PARA NEUMÁTICOS REPARA AL INSTANTE UNA PONCHADURA DE 1/4 \" (6 MM) DE DIÁMETRO CON NUESTRA TECNOLOGÍA FIBRO SEAL Y SIN DAÑAR EL SENSOR DEL NEUMÁTICO TPMS (SISTEMA DE MONITORIZACIÓN DE LA PRESIÓN DE LOS NEUMÁTICOS). ESTE SELLADOR DEBE SER USADO CON UNA CORRIENTE DE AIRE PARA REPARAR LAS PONCHADURAS DE LOS AUTOS, CAMIONETAS, CAMIONES, MOTOCICLETAS Y VEHÍCULOS EN TODO TERRENO.', 'images/1MRE3_AS01.jpg', 54, 184, 50),
+('A37', 'SELLADOR DE NEUMATICOS GALON', '800.00', 'NUNCA SE PREOCUPE MÁS POR UNA LLANTA PONCHADA QUE LO VAYA A DEJAR DETENIDO A UN LADO DE LA CARRETERA. CON EL SELLADOR DE SLIME PARA NEUMÁTICOS REPARA AL INSTANTE UNA PONCHADURA DE 1/4 \" (6 MM) DE DIÁMETRO CON NUESTRA TECNOLOGÍA FIBRO SEAL Y SIN DAÑAR EL SENSOR DEL NEUMÁTICO TPMS (SISTEMA DE MONITORIZACIÓN DE LA PRESIÓN DE LOS NEUMÁTICOS). ESTE SELLADOR DEBE SER USADO CON UNA CORRIENTE DE AIRE PARA REPARAR LAS PONCHADURAS DE LOS AUTOS, CAMIONETAS, CAMIONES, MOTOCICLETAS Y VEHÍCULOS EN TODO TERRENO.', 'images/sellador.jpg', 54, 185, 15),
+('A38', 'INFLALLANTAS', '120.00', 'EPARA E INFLA LLANTAS AL INSTANTE. FÁCIL DE USAR. EVITAR EL USO DE GATO Y HERRAMIENTAS. INFLA Y VULCANIZA LLANTAS PONCHADAS. NO AFECTA EL BALANCEO DE LA LLANTA.', 'images/inflallantas.jpg', 39, 186, 15),
+('A39', 'INFLALLANTAS', '180.00', 'DURANTE 40 AÑOS EN ESTADOS UNIDOS Y CASI 20 AÑOS EN MÉXICO, AUTOZONE HA MANTENIDO SU COMPROMISO DE BRINDAR LOS MEJORES PRODUCTOS, PRECIOS Y SERVICIO AL CLIENTE EN LA INDUSTRIA AUTOMOTRIZ DE REFACCIONES Y ACCESORIOS. NUESTRO ALTO GRADO DE ENFOQUE EN EL SERVICIO AL CLIENTE Y EL COMPROMISO CON NUESTRA PROMESA Y VALORES SON LO QUE NOS DISTINGUE.', 'images/inflallantasautozon.jpg', 56, 187, 20),
+('A4', 'CAMARA', '3000.00', 'CAMARA FRONTAL DE GRABACION', 'images/camara2.jpg', 22, 7, 0),
+('A40', 'TAPONES PARA VALVULAS', '90.00', 'AUTO TECH TAPONES PARA VÁLVULAS NEGROS, 4 PIEZAS\r\n\r\n', 'images/61ggsJDz2iL._SX425_.jpg', 57, 188, 35),
+('A41', 'TAPAS PARA VALVULAS', '60.00', 'AUTO TECH TAPONES PARA VÁLVULAS ROJOS, 4 PIEZAS\r\n\r\n', 'images/valvulas.jpg', 57, 189, 40),
+('A42', 'TAPONES PARA VALVULAS', '90.00', 'AUTO TECH TAPONES PARA VÁLVULAS VERDES, 4 PIEZAS\r\n\r\n', 'images/valvulasver.jpg', 57, 190, 25),
+('A43', 'CINTA AISLANTE', '40.00', 'RUST-OLEUM CINTA AISLANTE ADHESIVA DE PLÁSTICO NEGRO\r\n\r\n', 'images/cintaaislante.jpg', 58, 191, 30),
+('A44', 'CINTA AISLANTE AZUL', '140.00', 'RUST-OLEUM CINTA AISLANTE ADHESIVA DE PLÁSTICO AZUL\r\n', 'images/cinta-adhesiva-para-pintores-azul-34-55mts-7918-3m-D_NQ_NP_822404-MLM31224473460_062019-F.jpg', 58, 192, 30),
+('A45', 'CINTA AISLANTE', '25.00', 'CINTA AISLANTE DE PELÍCULA DE VINILO, AUTO-EXTINGUIBLE, MUY FLEXIBLE, DE SUAVE DESEMBOBINADO Y DE GRAN ELASTICIDAD. ESTA CINTA ES MUY UTILIZADA COMO AISLANTE ELÉCTRICO EN ELECTRODOMÉSTICOS, PARA AISLAR CONEXIONES ELÉCTRICAS SIMPLES, MUY ÚTIL TAMBIÉN PARA SELLAR FUGAS DE AGUA EN MANGUERAS, PROTEGER TEMPORALMENTE SUPERFICIES CONTRA RALLADURAS Y OTRAS APLICACIONES EN EL HOGAR.', 'images/320_19x19_large.jpg', 59, 193, 15),
+('A46', 'CINTA DOBLE CARA', '100.00', 'CINTA DOBLE CAPA DE ALTO DESEMPEÑO CON ADHESIVO DE GRAN AFINIDAD A SUPERFICIES AUTOMOTRICES PINTADAS. PARA USO AUTOMOTRIZ EN APLICACIONES TALES COMO PEGADO Y SELLADO DE MOLDURAS, EMBLEMAS, FALDONES, POLVERAS, FASCIAS Y PARA EL ARMADO DE VEHÍCULOS EN GENERAL. UTILIZADA COMO MATERIAL DE UNIÓN ENTRE SUPERFICIES METÁLICAS, PLÁSTICOS Y VIDRIOS.', 'images/ProductRepositoryFile.jpg', 59, 194, 35),
+('A47', 'CINTA REFLECTANTE', '90.00', 'LA TIRA DE BARRERA ES DE UN MATERIAL REFLECTANTE ROJO Y BLANCO. APLIQUE DONDE QUIERA, EN VEHÍCULOS, BUZONES Y MÁS.', 'images/cinta-reflectante-bicolor-roja-blanca-certificada-D_NQ_NP_488911-MLC20658583932_042016-F.jpg', 60, 195, 25),
+('A48', 'CINTA PLASTICA AUTOADHESIVA', '120.00', 'RUST-OLEUM CINTA PLÁSTICA AUTOADHESIVA\r\n\r\n', 'images/cinta-autoadhesiva-de-pvc-para-pisos-demarcacion-azul-D_NQ_NP_783499-MLA32226011421_092019-F.jpg', 58, 196, 35),
+('A49', 'CINTA PARA DUCTO', '170.00', 'RUST-OLEUM CINTA PARA DUCTO DE 48 MM X 50 M\r\n\r\n', 'images/cinta.jpg', 58, 197, 25),
+('A5', 'DADOS DE FELPA', '200.00', 'DADOS DE PELUCHE PARA COLGAR EN EL RETROVISOR', 'images/dados2.jpg', 22, 9, 0),
+('A50', 'CUÑA PARA NEUMATICOS', '190.00', 'DISEÑADO A LA FORMA DEL NEUMÁTICO, LA CUÑA PARA NEUMÁTICOS SE AJUSTA DE FORMA ENVOLVENTE PARA IMPEDIR QUE LOS NEUMÁTICOS RUEDEN. TIENEN UNA ESTRUCTURA REFORZADA PARA UNA MAYOR ESTABILIDAD.', 'images/22XW84_AS01.jpg', 32, 198, 15),
+('A6', 'CABLE INTERFACE ANDROID', '250.00', 'CABLE CONEXION ANDROID', 'images/cable2.jpg', 22, 10, 0),
+('A7', 'ALFOMBRILLA AUDI A3', '2300.00', 'HECHA DE CUERO DE ALTA CALIDAD, IMPERMEABLE Y ANTIDESLIZANTE, SIN SUSTANCIAS QUÍMICAS DAÑINAS NI OLOR, RESPETUOSO CON EL MEDIO AMBIENTE Y DURADERO.', 'images/alfom2.jpg', 4, 63, 0),
+('A8', 'FUNDA DE ASIENTO TRASERO', '500.00', 'AJUSTE DE HEBILLA ANTIDESLIZANTE PARA QUE NO SE MUEVA Y PERMANEZCA SIEMPRE EN EL ASIENTO DEL COCHE.', 'images/fundamomo2.jpg', 31, 7, 0),
+('A9', 'CUBIERTA DE ASIENTO PARA PERRO', '600.00', 'CUBIERTA ASIENTO PARA PERROS PROTEGE SU ASIENTO TRASERO SIN PATAS FANGOSAS, SIN PELOS DE PERRO,SIN OLORES DE MASCOTAS, TAMBIÉN PROTEJE LA SEGURIDAD DE LOS ANIMALES DOMÉSTICOS.USTED PUEDE DISFRUTAR DE VIAJAR CON SUS MASCOTAS.', 'images/fundaperro2.jpg', 31, 65, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `bitacoracliente`
+--
+
+CREATE TABLE `bitacoracliente` (
+  `BitacoraClienteId` int(11) NOT NULL,
+  `Nombre` varchar(20) NOT NULL,
+  `Domicilio` varchar(40) NOT NULL,
+  `Telefono` int(20) NOT NULL,
+  `FechaContacto` date DEFAULT NULL,
+  `Producto` varchar(200) NOT NULL,
+  `HoraIngreso` time NOT NULL,
+  `HoraSalida` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrito`
+--
+
+CREATE TABLE `carrito` (
+  `CarritoId` int(11) NOT NULL,
+  `ClienteId` int(11) DEFAULT NULL,
+  `ProductoId` varchar(10) DEFAULT NULL,
+  `Producto` varchar(45) DEFAULT NULL,
+  `Precio` decimal(10,0) DEFAULT NULL,
+  `Cantidad` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cliente`
+--
+
+CREATE TABLE `cliente` (
+  `ClienteId` int(11) NOT NULL,
+  `Nombre` varchar(20) DEFAULT NULL,
+  `Apellidos` varchar(30) DEFAULT NULL,
+  `Telefono` bigint(20) DEFAULT NULL,
+  `Domicilio` varchar(40) DEFAULT NULL,
+  `Email` varchar(45) DEFAULT NULL,
+  `Password` varchar(65) DEFAULT NULL,
+  `BitacoraClienteId` int(11) DEFAULT NULL,
+  `EmpleadoId` int(11) DEFAULT NULL,
+  `ListaDeseosId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`ClienteId`, `Nombre`, `Apellidos`, `Telefono`, `Domicilio`, `Email`, `Password`, `BitacoraClienteId`, `EmpleadoId`, `ListaDeseosId`) VALUES
+(7, 'Paco', 'Padilla', 127, 'kjbi', 'elp@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(8, 'Andres', 'Gutierrez', 4498576482, 'San Marcos', 'andgut23@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(9, 'Maria', 'Juancha', 9258623495, 'Jesus Maria', 'Juancha498@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(10, 'Teresa', 'Robles', 4596327596, 'Su casa', 'Teresaroles98@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(11, 'Christina', 'Ramirez', 2536215896, 'Lopez Mateos', 'ChrisRam98@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(12, 'Juan', 'Perez', 3218965746, 'Colinas del rio', 'JuanPerez67@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(13, 'Humberto', 'Calvillo', 8526934596, 'Calvillo', 'Humbillo@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(14, 'Ricardo', 'Velez Aguayo', 4490983475, 'Tangamandapio', 'Papichulo@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(15, 'Luis Fernando', 'Salas', 4499046955, 'In hearth', 'chipo_one@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(16, 'Alicia', 'Caudillo Rosales', 4490934432, 'Eucalipto', 'Alici345@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(17, 'Paco', 'Reynoso Femat', 4490091234, 'Jacaranda', 'Elpaco_rico@hotmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(18, 'Antonio', 'Visencio', 4499095678, 'Norias', 'Tonitochiquito@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(19, 'Maheli', 'Martinez', 4498761265, 'Casuarina', 'Mamacita@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(20, 'Juan', 'Camello', 4562348759, 'Narcizo', 'PablitoCalvito@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(21, 'Carlos', 'Quezada', 3346789876, 'Polo Sur', 'chiquitobb@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(22, 'Mayra', 'Rodriguez', 4497865345, 'Ejercito Nacional', 'Bebesita@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(23, 'Pepe', 'Juerez', 5543456543, 'Eucalipto', 'chino_padre@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(24, 'Vianney', 'Cazares', 4492223451, 'Palomino', 'Vianney005@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(25, 'Rodrigo', 'Mustafa', 4496752130, 'Mahatmaghandi', 'Mustafaclanqgmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(26, 'Tony', 'Montana', 4496669898, 'Emiliano Zapata', 'Gangster@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL, NULL),
+(27, 'Ramiro', 'Padilla', 987654123, 'el aguacate ', 'elRamiro@gmail.com', '$2y$10$xe37q.kNuPdUn7/IwoFvr.RHonseaaxb0JfTLl4OT4azn6HsURmXa', NULL, NULL, NULL),
+(30, 'Ivan', 'Saucedo', 4499021278, 'Alamo', 'Ivancito@gmail.com', '$2y$10$GPmn0nQWP0iu3.ymkocdS.S9DGhs35cLo.JiCVlfSVdFg9eRHGGfi', NULL, NULL, NULL),
+(31, 'Patricio', 'Pascual', 4498761285, 'Palma ', 'Elpato@gmail.com', '$2y$10$22EM1D6csocO6JNoHokoxeyUW8tPLldPLwsfeAvFEbAd1eoOEv9Zu', NULL, NULL, NULL),
+(32, 'Luis', 'Reynoso', 4531238790, 'Rio Papaloapan', 'PresiRey@gmail.com', '$2y$10$oQfUf9WQO7VsYAEqPKrJ2eqm/LWCEEsJ3tKd2LBGYrmszmjDiBwwy', NULL, NULL, NULL),
+(33, 'Ana Gabriela', 'Guevara', 6531234567, 'Gamez orozco', 'RataInmunda@gmail.com', '$2y$10$06Klx7zrG9Sxk7vfjKnajOHdU2aAl3.rY2C6VJeak2vGttUnrfd0O', NULL, NULL, NULL),
+(34, 'Karla', 'Padilla', 4490981234, 'Jacaranda', 'KarlotaPapu@hotmail.com', '$2y$10$t4AaSCMq1QT7cr4053WKZe0YOCU7pc0xsEniel2b6ut.luH2RBS4a', NULL, NULL, NULL),
+(35, 'Carolina', 'Salamanca', 4490891489, 'Roble', 'SlaMancarolina@gmail.com', '$2y$10$E0F9Ru./XIHhicFReOGzM.N1S6oTgC3tBJIX/RtKf8GmdaZ1vqF1K', NULL, NULL, NULL),
+(36, 'Lubel', 'Uriarte', 2349874561, 'Pino', 'ElUri@gmail.com', '$2y$10$IUtZdUX33dN1v6xh5lB9IOlhrTVkhTehhsnlt4qs8B3RZV2ujiwDu', NULL, NULL, NULL),
+(37, 'Jose', 'Mercado', 8761239422, 'Alvaro Obregon', 'Merca_bezon@gmail.com', '$2y$10$Wuayp0vp6scgb1p.ecy9peAOXqiRLuT42/2VV7tLevkwTV5WwVTc.', NULL, NULL, NULL),
+(38, 'Omar', 'Moreno', 4496661234, 'Roble', 'NegroYaTuSabe@gmail.com', '$2y$10$88sKZSMwU.y.6M1U.ivOmeH.uULp1R0ed5uA7GybgLKxPwBOrOu5i', NULL, NULL, NULL),
+(39, 'Valentin', 'Valente', 4499990912, 'Naranjo', 'ElgalloPrecioso@gmail.com', '$2y$10$AGhuWMMya.09iWkLbVG1ieKSb6nhCC1FPNJX29VdEaGeNPSfTxba2', NULL, NULL, NULL),
+(40, 'Hazael', 'Vazquez', 4491276036, 'Rubiates', 'Hazaciti@gmail.com', '$2y$10$dV5rFryBW5XNcpaXA7mVy.2iSgZUc25Ehq5byREa/EY19BPZSiJ7K', NULL, NULL, NULL),
+(41, 'Ofelia', 'Diaz', 4482226544, 'Eucalipto', 'OferecutaDiFresa@gmail.con', '$2y$10$VNWsasl5BFfH7riy5TJExupIliMPj.QghYWJxb4gWIP2ccduKNK/q', NULL, NULL, NULL),
+(42, 'Caro', 'Valadez', 4496719902, 'Sacramento', 'Chiquitamama@gmail.com', '$2y$10$4THynt7fhh85bjzr6NG3rODpEEPipucx8LELq0Dz9M880CN6H9LFu', NULL, NULL, NULL),
+(43, 'Francis', 'Rodriguez ', 4471230799, 'Sauce', 'Francini@gmail.com', '$2y$10$GSPJcIbARhUtsQHbmZC3YeZVheJVs7WpgPfKUDnlwnFF9xyEkyI5m', NULL, NULL, NULL),
+(44, 'Carlod', 'Santana', 4492225688, 'Sauce', 'QuieresACarlos@gmail.com', '$2y$10$XxY9VDkQz58pZlk1Leyrt.D5rVWzDmPaAZ430Mq1qzZsbxkXsQuWO', NULL, NULL, NULL),
+(45, 'Ruben Omar', 'Romano', 9982234, 'Soconads', 'Monarcas@gmail.com', '$2y$10$bJfkRwZ3Hy1JNaF3lOqOX.d2OHe4V4.MT7P5tnRLXGMtiGz420dX2', NULL, NULL, NULL),
+(46, 'Miguel', 'Herrera', 9999999, 'Ameria', 'Piojo@gmail.com', '$2y$10$K1vEvtjR/KlDkQKggJD13.D/pFp6X4r2I8K9YkXLrck/9TpkG1TQ.', NULL, NULL, NULL),
+(47, 'Kevin', 'Tapia ', 6598215666, 'Riblesillo', 'Taponpon@gmail.com', '$2y$10$neLd2sA8at3YKoJX6Bnkz.uvlqwDcYJh95V7MxHy7h9kbgAqFyhEi', NULL, NULL, NULL),
+(48, 'Mario', 'Moreno Vargas', 4498781277, 'Pino', 'Vargas_007@gmail.com', '$2y$10$tHty0GdoZXOMxhesOycQDu4AYrgZ0ndRq7/86CQqXdrzh6I5n.W82', NULL, NULL, NULL),
+(49, 'Osvaldo', 'Sanchez', 4490871133, 'San clemente', 'ChivasLove@gmail.com', '$2y$10$X3HRnKhq18WeAox5.Q6RZOokYb.soRQTxnKrxJvjWo3bczPE7C/gG', NULL, NULL, NULL),
+(50, 'Cesar', 'Campos', 4499021266, 'Picaso', 'Porteroporte@gnail.com', '$2y$10$Kg8nomyi96UJk892KMXHtute.nHQcd08vJQwVNJZTYtZkVvoVq62G', NULL, NULL, NULL),
+(51, 'David', 'Camacho', 553249812, 'Tepito', 'ChilangoPower@hotmail.com', '$2y$10$ABTgMc67ogods0F.PZhcd.nm0ynyRgLAgTl.9dUJtwM2jnBz.T4/2', NULL, NULL, NULL),
+(52, 'Britany', 'Abigail', 651239867, 'Ãlvaro obregon', 'Labritanny@hotmail.com', '$2y$10$0htUkIN1pKotEFgmXC.HdemIP1AAQ17InWNmRFr4BmL3ngGKdntKq', NULL, NULL, NULL),
+(53, 'Emmanuel', 'Cantara', 4498761268, 'RÃ­o lerma', 'Cantante@gmail.com', '$2y$10$4KXLfqAhIZwvsF6dXq2Wc.x9srA7DWRFtCOK79h1fGmwGIuuY4L9K', NULL, NULL, NULL),
+(54, 'Ian', 'Soriano', 4490811192, 'Tepito', 'Elsorianojaja@gmail.com', '$2y$10$QuzdiYUhbZbsfc3k.S9YUeS0svKBmdtnI5LgsKgiLOzV/oK2ZJqzm', NULL, NULL, NULL),
+(55, 'Sara', 'Rodriguez', 9887255, 'Roble', 'Sarititita@gamil.com', '$2y$10$yN0hv0./jnUFRg.0dkOQF.BJf3DNMvWUt095nP74R/j.KiLUjku7u', NULL, NULL, NULL),
+(56, 'Sofia', 'Sanchez', 4498113644, 'Zaragoza ', 'Sifisofi@gmail.com', '$2y$10$kqorR7AxFQm4LhvyiqHI6O5a3gX9um29flrbzaOo8bx7/TGhAIG36', NULL, NULL, NULL),
+(57, 'Edmundo', 'Robles', 4499942356, 'Soconads', 'Ediedi@gmail.com', '$2y$10$dQkz15ig.qUz1mMoWFp0T.D2J6tXhwPaxiNp54w2Ui/ZBFlAUxC0K', NULL, NULL, NULL),
+(58, 'Ramon', 'Ramirez', 4491225567, 'Zaragoza ', 'Ramonsito@gmail.com', '$2y$10$rIrWCri/gLrBV/LNtyutRuEQFbR3XeuUg0sNIeCaOneYkTFl.qssG', NULL, NULL, NULL),
+(59, 'Hector', 'Gonzalez', 3216548987, 'El oro #44', 'elHetor@gmail.com', '$2y$10$LWemCBNUY9xtDQgST6hieOy/bxDKYpR3ief6PlUY2LVbaPpF0UaD.', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compra`
+--
+
+CREATE TABLE `compra` (
+  `CompraId` int(11) NOT NULL,
+  `Fecha` date DEFAULT NULL,
+  `Cantidad` tinyint(100) DEFAULT NULL,
+  `ProveedorId` int(11) NOT NULL,
+  `ProductoId` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `compra`
+--
+
+INSERT INTO `compra` (`CompraId`, `Fecha`, `Cantidad`, `ProveedorId`, `ProductoId`) VALUES
+(1, '2019-10-18', 5, 1, 'R1'),
+(2, '2019-10-18', 4, 1, 'R2'),
+(3, '2019-10-18', 3, 1, 'V1'),
+(4, '2019-10-01', 1, 1, 'A4'),
+(5, '2019-08-24', 1, 5, 'A5'),
+(6, '2019-10-10', 6, 4, 'R3'),
+(7, '2019-09-20', 10, 3, 'A4'),
+(8, '2019-09-25', 10, 5, 'R4'),
+(9, '2019-09-27', 8, 3, 'A5'),
+(10, '2019-10-04', 15, 3, 'A6'),
+(11, '2019-09-17', 5, 7, 'P3'),
+(12, '2019-08-24', 5, 9, 'P4'),
+(13, '2019-10-22', 5, 8, 'P5'),
+(14, '2019-09-16', 6, 2, 'R5'),
+(15, '2019-10-02', 2, 8, 'V2'),
+(16, '2019-09-19', 12, 12, 'V3'),
+(17, '2019-08-24', 1, 6, 'V4'),
+(18, '2019-05-20', 12, 13, 'R6'),
+(19, '2019-07-12', 4, 2, 'V6'),
+(20, '2019-03-22', 2, 16, 'V7'),
+(21, '2019-05-24', 4, 10, 'V8'),
+(22, '2019-04-25', 4, 11, 'V9'),
+(23, '2019-07-26', 2, 8, 'V10'),
+(24, '2019-04-30', 4, 17, 'V11'),
+(25, '2019-03-28', 3, 18, 'V12'),
+(26, '2019-08-22', 6, 19, 'V13'),
+(27, '2019-07-20', 6, 20, 'V14'),
+(28, '2019-07-18', 3, 6, 'V15'),
+(29, '2019-09-27', 2, 2, 'V16'),
+(30, '2019-09-20', 1, 8, 'V17'),
+(31, '2019-07-31', 2, 8, 'V18'),
+(32, '2019-08-23', 2, 8, 'V19'),
+(33, '2019-11-02', 2, 8, 'V20'),
+(34, '2019-07-18', 5, 7, 'P6'),
+(35, '2019-07-17', 8, 2, 'P7'),
+(36, '2019-06-19', 5, 8, 'P8'),
+(37, '2019-06-27', 2, 16, 'P9'),
+(38, '2019-06-11', 2, 12, 'P10'),
+(39, '2019-07-19', 8, 7, 'P11'),
+(40, '2019-09-19', 2, 7, 'P12'),
+(41, '2019-06-21', 2, 7, 'P13'),
+(42, '2019-08-02', 4, 8, 'P14'),
+(43, '2019-07-02', 3, 2, 'P15'),
+(44, '2019-06-28', 2, 15, 'P16'),
+(45, '2019-03-23', 2, 16, 'P17'),
+(46, '2019-05-18', 2, 15, 'P18'),
+(47, '2019-09-07', 3, 18, 'P19'),
+(48, '2019-09-02', 6, 15, 'P20'),
+(49, '2019-06-14', 12, 4, 'R7'),
+(50, '2019-10-03', 4, 16, 'R8'),
+(51, '2019-09-05', 4, 7, 'R9'),
+(52, '2019-11-04', 6, 2, 'R10'),
+(53, '2019-07-06', 6, 8, 'R11'),
+(54, '2019-08-02', 4, 8, 'R12'),
+(55, '2019-09-13', 8, 13, 'R13'),
+(56, '2019-09-06', 2, 7, 'R14'),
+(57, '2019-05-23', 4, 8, 'R15'),
+(58, '2019-08-17', 4, 2, 'R16'),
+(59, '2019-09-06', 2, 7, 'R17'),
+(60, '2019-10-03', 4, 2, 'R18'),
+(61, '2019-05-09', 4, 11, 'R19'),
+(62, '2019-04-18', 4, 13, 'R20'),
+(63, '2019-08-23', 4, 8, 'A7'),
+(64, '2019-09-12', 5, 14, 'A8'),
+(65, '2019-06-13', 5, 14, 'A9'),
+(66, '2019-08-07', 3, 21, 'A10'),
+(67, '2019-11-01', 2, 21, 'A11'),
+(68, '2019-04-19', 10, 21, 'A12'),
+(69, '2019-06-06', 5, 14, 'A13'),
+(70, '2019-09-07', 10, 14, 'A14'),
+(71, '2019-04-12', 8, 14, 'A15'),
+(72, '2019-11-01', 4, 12, 'A16'),
+(73, '2019-08-08', 4, 14, 'A17'),
+(74, '2019-08-09', 3, 14, 'A18'),
+(75, '2019-08-13', 10, 14, 'A19'),
+(76, '2019-08-03', 6, 14, 'A20'),
+(77, '2019-07-25', 2, 2, 'V21'),
+(78, '2019-04-18', 2, 2, 'V22'),
+(79, '2019-11-15', 1, 2, 'V23'),
+(80, '2019-11-02', 2, 2, 'V24'),
+(81, '2019-10-12', 2, 2, 'V25'),
+(82, '2019-08-23', 2, 2, 'V26'),
+(83, '2019-09-20', 2, 2, 'V27'),
+(84, '2019-08-16', 5, 22, 'A21'),
+(85, '2019-10-03', 2, 21, 'A22'),
+(86, '2019-09-13', 8, 23, 'A23'),
+(87, '2019-06-13', 20, 24, 'A24'),
+(88, '2019-09-12', 4, 22, 'A25'),
+(89, '2019-08-16', 8, 19, 'R21'),
+(90, '2019-09-27', 6, 25, 'R22'),
+(91, '2019-08-22', 8, 26, 'R23'),
+(92, '2019-10-19', 10, 27, 'R24'),
+(93, '2019-08-23', 10, 27, 'R25'),
+(94, '2019-10-11', 4, 27, 'R26'),
+(95, '2019-09-13', 4, 27, 'R27'),
+(96, '2019-10-25', 16, 28, 'R28'),
+(97, '2019-11-07', 4, 28, 'R29'),
+(98, '2019-08-17', 8, 28, 'R30'),
+(99, '2019-09-13', 6, 28, 'R31'),
+(100, '2019-10-12', 6, 11, 'R32'),
+(101, '2019-10-11', 6, 29, 'R33'),
+(102, '2019-09-13', 6, 29, 'R34'),
+(103, '2019-11-02', 6, 29, 'R35'),
+(104, '2019-10-11', 6, 30, 'R36'),
+(105, '2019-11-04', 4, 30, 'R37'),
+(106, '2019-09-13', 4, 30, 'R38'),
+(107, '2019-08-15', 10, 31, 'R39'),
+(108, '2019-09-14', 8, 31, 'R40'),
+(109, '2019-11-05', 10, 31, 'R41'),
+(110, '2019-09-20', 8, 31, 'R42'),
+(111, '2019-11-05', 8, 31, 'R43'),
+(112, '2019-11-02', 8, 31, 'R44'),
+(113, '2019-09-14', 6, 31, 'R45'),
+(114, '2019-09-21', 6, 31, 'R46'),
+(115, '2019-10-05', 4, 31, 'R47'),
+(116, '2019-11-13', 6, 31, 'R48'),
+(117, '2019-08-10', 8, 31, 'R49'),
+(118, '2019-11-13', 8, 31, 'R50'),
+(119, '2019-11-09', 20, 32, 'R15'),
+(120, '2019-09-21', 15, 32, 'R16'),
+(121, '2019-10-04', 5, 25, 'P21'),
+(122, '2019-11-07', 10, 25, 'P22'),
+(123, '2019-11-02', 5, 25, 'P23'),
+(124, '2019-10-12', 8, 25, 'P24'),
+(125, '2019-08-23', 5, 25, 'P25'),
+(126, '2019-10-21', 5, 25, 'P26'),
+(127, '2019-11-01', 5, 12, 'P27'),
+(128, '2019-11-05', 5, 12, 'P28'),
+(129, '2019-09-07', 2, 12, 'P29'),
+(130, '2019-07-13', 5, 12, 'P30'),
+(131, '2019-09-06', 5, 12, 'P31'),
+(132, '2019-10-01', 5, 12, 'P32'),
+(133, '2019-08-09', 5, 8, 'P33'),
+(134, '2019-09-07', 3, 33, 'P34'),
+(135, '2019-11-13', 5, 33, 'P35'),
+(136, '2019-07-13', 3, 33, 'P36'),
+(137, '2019-11-16', 5, 33, 'P37'),
+(138, '2019-09-13', 8, 33, 'P38'),
+(139, '2019-06-14', 8, 33, 'P39'),
+(140, '2019-09-20', 4, 33, 'P40'),
+(141, '2019-09-06', 5, 34, 'P41'),
+(142, '2019-11-21', 5, 34, 'P42'),
+(143, '2019-07-19', 3, 34, 'P43'),
+(144, '2019-08-17', 4, 34, 'P44'),
+(145, '2019-11-03', 5, 34, 'P45'),
+(146, '2019-11-03', 5, 34, 'P46'),
+(147, '2019-09-14', 2, 34, 'P47'),
+(148, '2019-09-12', 2, 35, 'P48'),
+(149, '2019-09-13', 5, 35, 'P49'),
+(150, '2019-09-20', 7, 35, 'P50'),
+(151, '2019-09-19', 3, 12, 'V28'),
+(152, '2019-11-08', 2, 12, 'V29'),
+(153, '2019-10-18', 4, 12, 'V30'),
+(154, '2019-08-15', 5, 19, 'V31'),
+(155, '2019-08-16', 2, 19, 'V32'),
+(156, '2019-09-05', 3, 19, 'V33'),
+(157, '2019-09-20', 1, 36, 'V34'),
+(158, '2019-09-20', 2, 36, 'V35'),
+(159, '2019-07-12', 4, 26, 'V36'),
+(160, '2019-11-08', 3, 26, 'V37'),
+(161, '2019-11-05', 1, 35, 'V38'),
+(162, '2019-09-13', 2, 37, 'V39'),
+(163, '2019-08-15', 1, 35, 'V40'),
+(164, '2019-09-20', 4, 33, 'V41'),
+(165, '2019-10-04', 4, 12, 'V42'),
+(166, '2019-10-12', 1, 39, 'V43'),
+(167, '2019-10-11', 2, 40, 'V44'),
+(168, '2019-08-10', 1, 35, 'V45'),
+(169, '2019-08-16', 2, 41, 'V46'),
+(170, '2019-11-02', 2, 41, 'V47'),
+(171, '2019-09-20', 1, 41, 'V48'),
+(172, '2019-09-13', 2, 42, 'V49'),
+(173, '2019-09-13', 3, 37, 'V50'),
+(174, '2019-10-18', 15, 21, 'A26'),
+(175, '2019-10-04', 8, 21, 'A27'),
+(176, '2019-09-14', 20, 21, 'A28'),
+(177, '2019-10-12', 20, 14, 'A29'),
+(178, '2019-09-12', 15, 14, 'A30'),
+(179, '2019-09-13', 8, 14, 'A31'),
+(180, '2019-07-12', 20, 43, 'A32'),
+(181, '2019-10-12', 8, 44, 'A33'),
+(182, '2019-08-09', 25, 45, 'A34'),
+(183, '2019-09-12', 50, 45, 'A35'),
+(184, '2019-08-29', 50, 44, 'A36'),
+(185, '2019-08-07', 15, 44, 'A37'),
+(186, '2019-08-16', 15, 24, 'A38'),
+(187, '2019-09-20', 20, 46, 'A39'),
+(188, '2019-09-20', 35, 47, 'A40'),
+(189, '2019-06-27', 40, 47, 'A41'),
+(190, '2019-08-22', 25, 47, 'A42'),
+(191, '2019-05-20', 30, 48, 'A43'),
+(192, '2019-08-29', 30, 48, 'A44'),
+(193, '2019-08-13', 15, 49, 'A45'),
+(194, '2019-03-16', 35, 49, 'A46'),
+(195, '2019-09-03', 25, 50, 'A47'),
+(196, '2019-08-02', 35, 48, 'A48'),
+(197, '2019-08-14', 25, 48, 'A49'),
+(198, '2019-06-19', 15, 14, 'A50');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empleado`
+--
+
+CREATE TABLE `empleado` (
+  `EmpleadoId` int(11) NOT NULL,
+  `Nombre` varchar(20) DEFAULT NULL,
+  `Apellidos` varchar(30) DEFAULT NULL,
+  `Telefono` bigint(20) DEFAULT NULL,
+  `Email` varchar(45) NOT NULL,
+  `Password` varchar(65) DEFAULT NULL,
+  `Salario` decimal(10,0) DEFAULT NULL,
+  `RFC` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `empleado`
+--
+
+INSERT INTO `empleado` (`EmpleadoId`, `Nombre`, `Apellidos`, `Telefono`, `Email`, `Password`, `Salario`, `RFC`) VALUES
+(1, 'Paco', 'Padilla', 127, 'elPaco@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(2, 'Maria', 'Gomez', 4496328657, 'mariagomtr@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(3, 'Carlos', 'Estrada', 8514578562, 'carlest34@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(4, 'Lucia', 'Morales', 4125368576, 'lumora78@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(5, 'Ximena', 'Sanchez', 2156489526, 'Ximechez@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(6, 'Luis', 'Ruiz ', 4499086574, 'Wuichorapidito@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(7, 'Alicia', 'Sareth', 5532647890, 'Lareyna@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(8, 'Pepe', 'De la cruz', 4490021314, 'Pepitodeloschistes@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(9, 'Uriel', 'Aguayo Velez', 4492223478, 'Pitufomalvado@hotmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(10, 'Gerardo', 'Villalpando', 4496439199, 'Geraspapitoqhotmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(11, 'Eugenio', 'Derbez', 5547890234, 'Derbezencuando@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(12, 'Tom', 'Brady', 5569898234, 'Brady_Pats@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(13, 'Antonio', 'Brorwn', 4498907612, 'Brown_Drog@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(14, 'Lily', 'Brillanti', 4491234567, 'LlilitaBB@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(15, 'Tania', 'Mejia', 4490238795, 'Taniecita@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(16, 'Felipe', 'Esparza', 4490918794, 'CampamochaEsparza@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(17, 'Fercho', 'Salas Ruiz', 5670923657, 'Fercholindo@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(18, 'Joan', 'Solorzano', 4495671243, 'Cachito_ricolino@hotmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(19, 'Gretel', 'Salas', 3412879048, 'Tetel_Aby@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(20, 'Jazmin Del Rocio', 'Esparza', 4499098798, 'Pitufina_lafina@gmail.com', '$2y$10$7SS6hSPNfSBP9ai/x.Eh2u1xy4LbBB0tCV55ehTlEiEGDX6XZ5SQW', NULL, NULL),
+(21, 'Hector', 'Gonzalez', 987654123, 'elHetor@gmail.com', '$2y$10$CJ9UjTIZdtxOlTtGNtTEluXHy3J8pF8iVepn/Kw3wRUtG5FQMufNW', NULL, NULL),
+(22, 'Ana', 'Rosales', 987654123, 'soyAna@gmail.com', '$2y$10$qP0HPjLKJT2Hz9B2d6xY.OdTCVGpdbDlcdRVu9VxLWDb1tIEd7oti', NULL, NULL),
+(23, 'Juan', 'Lopez Lopez', 4490981112, 'PapitoPapu@gmail.com', '$2y$10$TFMgzY.9VGlVGk3EawMOZu8aqFeWG0NmBetylbcL5rhoQKv0v/Gf6', NULL, NULL),
+(24, 'Rosendo', 'Ramiro', 4496661298, 'ElProfe@gmail.com', '$2y$10$fHTcGeRurZB.3S6o59IVQeYzFlm3IdA2FfDcpATgq6EEZ7Q6YMqwS', NULL, NULL),
+(25, 'Chipo', 'One', 4499046952, 'ChipoALV@gmail.com', '$2y$10$O3isCDrw7gZjsClnXOPqYOzgcomSsVA9BGNSbOG6N2f.0mq7BpDma', NULL, NULL),
+(26, 'Leonel', 'Messi', 2341234567, 'CrackSiempre@gmail.com', '$2y$10$6fWM8WQnxuh2VxDAdax.VO/DkI50vzcf34gaPSbICUqkAXDXAqWtW', NULL, NULL),
+(27, 'Ricardo', 'Ricarte', 9335699, 'ElRiqui@gmail.com', '$2y$10$IDgaCiW9vkrAHTAv52g9bukytRJO4C9x8fZuB./G6pPFi.RR4FLaG', NULL, NULL),
+(28, 'Roberto ', 'Saucedo', 4498761139, 'Robertotototo@gmail.com', '$2y$10$ULbtrM1uXLQPw2vCSglUPekaT1x0SbaBiynaKkYG5iydEjII1knh6', NULL, NULL),
+(29, 'Sarita', 'Aguilar', 4457891236, 'lasaraloca@gmail.com', '$2y$10$bryvA6yg/6Fh/l0EccTIUucbguwSEjpazj0YF2mhk4FWmMFYhdOmS', NULL, NULL),
+(30, 'Pablo', 'Lopez ', 4598871592, 'pablipabli@gmail.com', '$2y$10$U/7x8PuuW5sPSd/LwB10Oe8Fsa5Tx59kZcwWMB3uYyhk8GQB4mnve', NULL, NULL),
+(31, 'Ivan', 'Castro', 4498875463, 'elpapivan@gmail.com', '$2y$10$Q32aQxn8B0QjyRPy9O4ey.XEkesEGVhQc1HedII8wukapk7ykvVG6', NULL, NULL),
+(32, 'Joel', 'Pacheco', 4492224599, 'asisoy@hotmail.com', '$2y$10$jzRguSQ5/INvXvDu5hSRIeQXghKzE4t8bgTQ7gu/NVCdrA4/roTJW', NULL, NULL),
+(33, 'Patricio', 'Roman', 4499901277, 'romanciti@gmail.com', '$2y$10$akzbXUu2xNg7ZdFNuP2qxO9jEcSUJkXIbZZzFagAqho/RAbe5FtmG', NULL, NULL),
+(34, 'Poncho', 'Recio', 4496661122, 'ElPatrooon@gmail.com', '$2y$10$dyF.Amqx12omUWrzcsJD3uxkVDi3mQVdPWHGIypA61.bi9B9VO0DS', NULL, NULL),
+(35, 'Omar', 'Vengas Estrada ', 4498825611, 'Elvenegas@hotmail.com', '$2y$10$fancf8axOSgndggIzWXv8O5B2moWXlMmFyxrz0x59fIrUT9ea1eJm', NULL, NULL),
+(36, 'Jose Luis ', 'Flores', 6531268977, 'Elflorero@gmail.com', '$2y$10$ge7ybsolg3rzHnpRpiGkNesuU3xlOkLSiw4nwD0EjMHpou/m0UaAG', NULL, NULL),
+(37, 'Leticia', 'Bonilla', 4490081267, 'BonitaNoSoy@gmail.com', '$2y$10$ZNJ2K4o.TQtllD327mSE9OmGBXdZKTYZMtFprim7QVAevAbpT94Ri', NULL, NULL),
+(38, 'Dallan', 'Gonzalez', 4498989808, 'AmoAChipo@gmail.com', '$2y$10$TdjqRunctpsyUb24l5qsF.R2a4yklJp58W4d5W9Iw1xUwLKrHdZUu', NULL, NULL),
+(39, 'Valeria', 'Acevedo', 4490125645, 'ValeVale.012@gmail.com', '$2y$10$l41wdcz1D2.O2LI6cBzdEOApFM1ruzCQq1Pl7qgfzUDv8su96lUem', NULL, NULL),
+(40, 'Griselda', 'Blanco', 4491015573, 'LaGrisgris@gmail.com', '$2y$10$7nChFXemXkc70M/Tvwk.wuCh58YOdOEtAHAtU2IDbkCOQPt1nFQiO', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `listadeseos`
+--
+
+CREATE TABLE `listadeseos` (
+  `ListaDeseosId` int(11) NOT NULL,
+  `Nombre` varchar(30) DEFAULT NULL,
+  `Precio` double DEFAULT NULL,
+  `Descripcion` text NOT NULL,
+  `Imagen` varchar(255) NOT NULL,
+  `ClienteId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `marca`
+--
+
+CREATE TABLE `marca` (
+  `MarcaId` int(11) NOT NULL,
+  `NombreMarca` varchar(25) DEFAULT NULL,
+  `Pais` varchar(15) DEFAULT NULL,
+  `Informacion` varchar(800) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`MarcaId`, `NombreMarca`, `Pais`, `Informacion`) VALUES
+(1, 'FERRARI', 'ITALIA', 'ES UNA COMPAÑÍA DE AUTOMÓVILES DEPORTIVOS CON SEDE EN MARANELLO (ITALIA). FUE FUNDADA EN 1929 POR EL PILOTO DE AUTOS DE COMPETICIÓN, ENZO FERRARI, CON EL NOMBRE DE SCUDERIA FERRARI, CONSTRUYENDO AUTOMÓVILES DE COMPETICIÓN Y, MÁS TARDE, EN 1947, FABRICANDO AUTOS DEPORTIVOS.'),
+(2, 'ASTON MARTIN', 'REINO UNIDO', 'ASTON MARTIN FUE FUNDADA CON EL NOMBRE DE BAMFORD & MARTIN LTD EN 1913 POR ROBERT BAMFORD Y EL PILOTO LIONEL MARTIN, VENCEDOR EN 1913 DE LA FAMOSA CARRERA DE MONTAÑA ASTON-CLINTON. EN 1914 PASÓ A DENOMINARSE ASTON MARTIN. DURANTE CASI TODA SU HISTORIA, ASTON MARTIN HA FABRICADO AUTOMÓVILES DE MANERA ARTESANAL Y EN PEQUEÑAS SERIES; ENTRE 1957 Y 2000 LA PRODUCCIÓN TOTAL DE LA MARCA NO LLEGÓ A DOCE MIL UNIDADES.'),
+(3, 'BMW', 'ALEMANIA', 'BMW ES UN FABRICANTE DE COCHES Y MOTOS PREMIUM DE ORIGEN Y CAPITAL ALEMÁN. SUS SIGLAS SIGNIFICAN \"BAYERISCHE MOTOREN WERKE\" (FÁBRICA BÁVARA DE MOTORES) Y SU SEDE SE ENCUENTRA EN LA CIUDAD ALEMANA DE MÚNICH. AUNQUE EN UN PRINCIPIO BMW COMENZÓ CONSTRUYENDO MOTORES DE AVIÓN Y MÁS TARDE MOTOCICLETAS, EN LA ACTUALIDAD ES MÁS CONOCIDA POR SU GAMA DE AUTOMÓVILES, UN MERCADO EN EL QUE ES CONSIDERADA COMO UNA DE LAS MARCAS CLÁSICAS DE PRESTIGIO (PREMIUM) ALEMANAS, JUNTO CON AUDI Y MERCEDES.'),
+(4, 'AUDI', 'ALEMANIA', '1899: AUGUST HORCH ESCRIBIÓ EL PRIMER CAPÍTULO DE LA HISTORIA DE AUDI CUANDO FUNDÓ LA COMPAÑÍA DE VEHÍCULOS DE MOTOR CONOCIDA COMO HORCH & CIE. MOTORWAGENWERKE. DIEZ AÑOS DESPUÉS, FUNDÓ EN ZWICKAU SU SEGUNDA COMPAÑÍA DEDICADA A LA FABRICACIÓN DE COCHES: AUDI AUTOMOBILWERKE.'),
+(5, 'FIAT', 'ITALIA', 'NUESTRA HISTORIA COMIENZA UN PRIMERO DE JULIO DE 1899 A MANOS DE NUESTROS FUNDADORES GIOVANNI AGNELLI Y EMANUELE CACHERANO DI BRICHERASIO, EL 11 DE JULIO DE 1899, SE CREA EN TURÍN LA ESCRITURA DE CONSTITUCIÓN DE LA SOCIETÀ ANONIMA FABBRICA ITALIANA AUTOMOBILI DI TORINO. CRUZAMOS EL ATLÁNTICO Y COMENZAMOS A PRODUCIR VEHÍCULOS EN ESTADOS UNIDOS CON LA CREACIÓN DE LA FIAT AUTOMOBILE CO.'),
+(6, 'FORD', 'ESTADOS UNIDOS', 'HENRY FORD DISEÑO SU PRIMERA CADENA DE MONTAJE MÓVIL EN 1913, REVOLUCIONANDO EL PROCESO DE MANUFACTURA EN SU FORD MODELO T.\r\nESTA CADENA DE MONTAJE, EN UN PRIMER MOMENTO INSTALADA EN LA FÁBRICA FORD DE HIGHLAND PARK, MICHIGAN, FUE EL ESPEJO DE LOS PROCESOS DE PRODUCCIÓN EN MASA EN EL RESTO DEL MUNDO.\r\nEL ÓVALO DE FORD ES UNO DE LOS SÍMBOLOS CON MAYOR RECONOCIMIENTO DENTRO DEL MUNDO CORPORATIVO, ESTANDO EN ACTIVO MÁS DE 50 AÑOS.\r\n'),
+(7, 'SEAT', 'ESPAÑA', 'COMENZÓ CON SU ACTIVIDAD INDUSTRIAL EN LA PLANTA DE LA ZONA FRANCA DE BARCELONA. LA PRODUCCIÓN COMIENZA EN MAYO DE 1953 CON EL SEAT 1400, DERIVADO DIRECTO DEL FIAT 1400 DE 1950. EL POPULAR SEAT 600 NO LLEGÓ HASTA JUNIO DE 1957 CON UN PRECIO DE 65 000 PESETAS, QUE BAJARÍA EN AÑOS POSTERIORES.'),
+(8, 'HONDA', 'JAPON', 'FUE FUNDADA EN 1949 EN HAMAMATSU (JAPÓN) POR EL INGENIERO SŌICHIRŌ HONDA CON EL NOMBRE DE HONDA TECHNICAL RESEARCH INSTITUTE (INSTITUTO HONDA DE INVESTIGACIONES TÉCNICAS). LA EMPRESA ARRANCÓ CUANDO SŌICHIRŌ HONDA CONSIGUIÓ IMPULSAR UNA BICICLETA CON UN PEQUEÑO MOTOR AUXILIAR.'),
+(9, 'JAGUAR', 'REINO UNIDO', 'JAGUAR CARS ES UNA RECONOCIDA MARCA INGLESA DE AUTOMÓVILES DE LUJO, QUE PERTENECE AL GRUPO JAGUAR LAND ROVER. LA FIRMA FUE CREADA EN 1922 BAJO EL NOMBRE DE SWALLOW SIDECAR COMPANY POR WILLIAM LYONS, SIENDO RENOMBRADA COMO JAGUAR CARS TRAS LA SEGUNDA GUERRA MUNDIAL.'),
+(10, 'KIA', 'COREA DEL SUR', 'EN EL AÑO 1944 CUANDO SE FUNDA LA CORPORACIÓN KYONGSEONG PRECISION. DESDE SUS MODESTOS COMIENZOS COMO FABRICANTE DE BICICLETAS EN LAS AFUERAS DE SEÚL (COREA DEL SUR), KIA SE CONVERTIRÁ EN UN IMPORTANTE MOTOR DE LA INDUSTRIA AUTOMOVILÍSTICA COREANA CON EL PASO DE LOS AÑOS. NO EN VANO, SERÁ LA PRIMERA COMPAÑÍA QUE FABRICA UN COCHE EN ESTE PAÍS Y LA PRIMERA QUE TAMBIÉN LO EXPORTA.'),
+(11, 'LAMBORGHINI', 'ITALIA', 'DESDE EL PRIMER MOMENTO EN QUE FERRUCIO LAMBORGHINI (1916-1993) CONOCIDO CONSTRUCTOR DE TRACTORES, DECIDIÓ CREAR UNA FACTORÍA DE SÚPER DEPORTIVOS, SU MAYOR AMBICIÓN ERA DESBANCAR A FERRARI DE ESE TRONO INCONQUISTABLE.'),
+(12, 'LAND ROVER', 'INGLATERRA', 'LAND ROVER ES UN NOMBRE QUE SE ASOCIA UNIVERSALMENTE CON EL VEHÍCULO DE TRACCIÓN A LAS CUATRO RUEDAS POR EXCELENCIA. AUNQUE LAND ROVER MEJORA Y DESARROLLA CONSTANTEMENTE SUS PRODUCTOS, LA HISTORIA QUE HAY DETRÁS DE ESTOS EXCLUSIVOS TODOTERRENOS PONE DE MANIFIESTO UNA VISIÓN CONSTANTE: UNA COMBINACIÓN DE VALORES ESTABLES Y UN DISEÑO CREADO PARA UN FIN CONCRETO.\r\n\r\nEL PRIMER LAND ROVER SURGIÓ EN LA POSGUERRA BRITÁNICA, EN 1948, DURANTE UN PERIODO DE ESCASEZ DE ACERO: UN VEHÍCULO ENFOCADO AL TRABAJO, BRILLANTEMENTE SENCILLO E INGENIOSO Y FABRICADO EN ALUMINIO.\r\n'),
+(13, 'LEXUS', 'JAPON', 'EN 1983, EL PRESIDENTE DE TOYOTA, EIJI TOYODA, ACUERDA EN UNA REUNIÓN SECRETA JUNTO A UN GRUPO DE DIRECTIVOS DE LA COMPAÑÍA LANZAR UNA MARCA CAPAZ DE DESAFIAR A LAS MEJORES DEL MUNDO, ESPECIALMENTE EN EL MERCADO NORTEAMERICANO. PREVIAMENTE, EN EL AÑO 1986, SE DECIDE QUE LA MARCA SE DENOMINE \"LEXUS\" POR LA ALUSIÓN DE ESTA PALABRA AL LUJO, LA TECNOLOGÍA Y LA DISTINCIÓN.'),
+(14, 'MAZDA', 'JAPON', 'EL NOMBRE MAZDA PROVIENE DE AHURA MAZDA, EL DIOS SUPERIOR DEL ZOROASTRISMO PERSA. ERA EL DIOS DE LA RAZÓN, CONCEDÍA LA SABIDURÍA Y UNÍA AL HOMBRE CON LA NATURALEZA Y OTRAS DIVINIDADES. MAZDA TAMBIÉN RECUERDA EL APELLIDO DEL FUNDADOR DE LA COMPAÑÍA, JUJIRO MATSUDA, QUIEN FUNDÓ MAZDA EN 1920 CON EL NOMBRE DE TOYO CORK KOGYO CO. LTD. EN 2016 LA COMPAÑÍA CELEBRÓ SU 85 ANIVERSARIO COMO FABRICANTE DE AUTOMÓVILES.'),
+(15, 'MERCEDES-BENZ', 'ALEMANIA', 'EL NOMBRE DE MERCEDES-BENZ ES UNA LEYENDA EN EL ÁMBITO AUTOMOTRIZ Y ES CONOCIDO COMO EL FABRICANTE MÁS ANTIGUO DEL MUNDO, NACIDO EN LA CIUDAD DE STUTTGART, AL OESTE DE ALEMANIA, DE LA MANO DE PERSONAS QUE COMENZARON A CONSTRUIR LA HISTORIA DE UNA INDUSTRIA.'),
+(16, 'MINI', 'INGLATERRA', 'JOHN COOPER AMIGO DEL CREADOR DEL CLASSIC (ISSIGONIS) QUIEN FUERA CONSTRUCTOR DE LA FORMULA UNO, HIZO DEL MINI UN VEHÍCULO DE ALTAS PRESTACIONES ASÍ QUE AUMENTÓ DE 848 CC HASTA LOS 997 CC EN 1961, VEHÍCULO QUE GANARA EL RALLY DE MONTECARLO EN LOS AÑOS 1964, 1965 Y 1967.'),
+(17, 'MITSUBISHI', 'JAPON', 'LA HISTORIA DE MITSUBISHI ELECTRIC ES LA HISTORIA DEL DESARROLLO DEL JAPÓN MODERNO. LA EMPRESA SE FUNDÓ EN 1921, CUANDO MITSUBISHI SHIPBUILDING CO. CREÓ UNA FILIAL EN KOBE, JAPÓN, QUE FABRICABA MOTORES ELÉCTRICOS PARA BUQUES OCEÁNICOS, Y LA CONVIRTIÓ EN UNA NUEVA EMPRESA LLAMADA MITSUBISHI ELECTRIC CORPORATION.'),
+(18, 'RIVIAN', 'ESTADOS UNIDOS', 'SE FUNDÓ EN 2009 COMO UNA EMPRESA DE AUTOMOCIÓN PARA DESARROLLAR PRODUCTOS Y SERVICIOS DE MOVILIDAD SOSTENIBLE. FUE FUNDADA COMO MAINSTREAM MOTORS PERO CAMBIÓ SU NOMBRE A AVERA AUTOMOTIVE PARA MÁS TARDE PASAR A LLAMARSE RIVIAN EN 2011. SU FUNDADOR Y CEO ES ROBERT \"RJ\" SCARINGE, UN GRADUADO DEL MASSACHUSETTS INSTITUTE OF TECHNOLOGY\'S |SLOAN AUTOMOTIVE LABORATORY.'),
+(19, 'ROLLS-ROYCE', 'REINO UNIDO', 'ROLLS-ROYCE LIMITED NACIÓ EN MAYO DE 1904 CUANDO HENRY ROYCE  Y CHARLES ROLLS SE CONOCEN. HENRY ROYCE HABÍA FUNDADO UNA FÁBRICA DE EQUIPOS ELÉCTRICOS Y MECÁNICOS Y EN 1904 PRESENTÓ SU PRIMER AUTOMÓVIL. POR SU PARTE, CHARLES ROLLS UN ARISTÓCRATA APASIONADO DEL MOTOR, ERA PROPIETARIO DE UN CONCESIONARIO DEDICADO A LA IMPORTACIÓN DE COCHES DE LUJO FRANCESES, PERO SU IDEA ERA LA DE CREAR UN COCHE BRITÁNICO QUE DESBANCASE A LOS DEMÁS.'),
+(20, 'SUBARU', 'JAPON', 'SUBARU MOTOR COMPANY ES UN FABRICANTE DE AUTOMÓVILES JAPONÉS, Y ES SUBSIDIARIA DE LA COMPAÑÍA FUJI HEAVY INDUSTRIES (FHI). GENERAL MOTORS FUE ACCIONISTA MINORITARIO CON UN 20% DE ESTA EMPRESA ENTRE 1999 Y 2005, CUANDO VENDIERON EL 8.7% DE SUS ACCIONES A TOYOTA, Y EL RESTO LO DEJARON AL MERCADO ABIERTO.'),
+(21, 'TESLA', 'ESTADOS UNIDOS', 'TESLA FUE FUNDADA EN 2003 POR UN GRUPO DE INGENIEROS QUE QUERÍAN DEMOSTRAR QUE ES POSIBLE CONDUCIR CON ENERGÍA ELÉCTRICA SIN NECESIDAD DE HACER CONCESIONES Y QUE LOS VEHÍCULOS ELÉCTRICOS PUEDEN SER MEJORES, MÁS RÁPIDOS Y MÁS DIVERTIDOS DE MANEJAR QUE LOS AUTOS A GASOLINA. HOY EN DÍA, TESLA NO SOLO CONSTRUYE VEHÍCULOS TOTALMENTE ELÉCTRICOS, SINO QUE TAMBIÉN FABRICA PRODUCTOS DE ALMACENAMIENTO Y GENERACIÓN DE ENERGÍA LIMPIA QUE PUEDEN AMPLIARSE DE MANERA ILIMITADA. TESLA CREE QUE EL MUNDO ESTARÁ MEJOR ENTRE MÁS PRONTO DEJEMOS DE DEPENDER DE LOS COMBUSTIBLES FÓSILES Y AVANCEMOS HACIA UN FUTURO CON CERO EMISIONES.'),
+(22, 'PIONEER', 'JAPON', 'PIONEER CORPORATION ES UNA EMPRESA JAPONESA DE TECNOLOGÍA QUE SE FUNDÓ EN ENERO DE 1938 COMO FUKUIN SHOKAI DENKI SEISAKUSHO, CAMBIANDO SU NOMBRE EN MAYO DE 1947. EN MARZO DE 2014 TENÍA 22.193 EMPLEADOS A NIVEL MUNDIAL.'),
+(23, 'KENWOOD', 'JAPON', 'KENWOOD CORPORATION ES UN FABRICANTE JAPONÉS DE EQUIPOS PARA RADIOAFICIONADOS, ASÍ COMO HI-FI Y EQUIPOS DE AUDIO PORTÁTIL.\r\nLA COMPAÑÍA COMENZÓ EN 1946 CON EL NOMBRE DE “KASUGA RADIO CO. LTD”. EN KOMAGANE CIUDAD, PREFECTURA DE NAGANO, JAPÓN. EN 1960 LA EMPRESA PASÓ A LLAMARSE “TRÍO CORPORATION”.EN 1963 VIO LA FUNDACIÓN DE LA PRIMERA OFICINA INTERNACIONAL DE TRÍO, EN LOS ÁNGELES, CALIFORNIA, EE.UU.'),
+(24, 'YOKOHAMA', 'JAPON', 'ES UNA MARCA DE NEUMÁTICOS CON SEDE EN TOKIO, JAPÓN. LA COMPAÑÍA FUE FUNDADA EN 1917 EN UNA UNIÓN ENTRE YOKOHAMA CABLE MANUFACTURING Y B.F. GOODRICH. EN 1969 LA COMPAÑÍA SE EXPANDIÓ A LOS ESTADOS UNIDOS COMO YOKOHAMA TIRE CORPORATION. EN 2009 SE ESTABLECE LA SUBSIDIARIA DE YOKOHAMA EN ESPAÑA Y PORTUGAL COMO YOKOHAMA IBERIA.'),
+(25, 'MICHELIN', 'FRANCIA', 'ES UN EMPRESA QUE SE ESPECIALIZA EN LA FABRICACIÓN DE NEUMÁTICOS FUNDADA POR LOS HERMANOS ÉDOUARD MICHELIN Y ANDRÉ MICHELIN EL 28 DE MAYO DE 1889 DESARROLLADO PARA NEUMÁTICOS DE BICICLETA. SU SEDE CENTRAL SE UBICA EN LA CIUDAD DE CLERMONT-FERRAND, CAPITAL DEL DEPARTAMENTO PUY-DE-DÔME, EN EL CENTRO GEOGRÁFICO DE FRANCIA. JUNTO CON BRIDGESTONE ES EL MAYOR FABRICANTE DE NEUMÁTICOS EN EL MUNDO.\r\nLA EMPRESA FRANCESA TIENE PARTICIPACIÓN EN DIVERSAS CATEGORÍAS DE AUTOMOVILISMO, PRINCIPALMENTE EN EL CAMPEONATO DEL MUNDO DE MOTOCICLISMO Y EL CAMPEONATO MUNDIAL DE RALLY.\r\n\r\n'),
+(26, 'GOOD YEAR', 'ESTADOS UNIDOS', 'NUESTROS INGENIEROS Y CIENTÍFICOS SIGUEN A LA CABEZA DE LA INNOVACIÓN AL LIDERAR NO SOLO LA INVESTIGACIÓN EN CAUCHO Y POLÍMEROS, SINO TAMBIÉN EN CAMPOS TAN DIVERSOS COMO LA COMPUTACIÓN, LA FÍSICA Y LAS MATEMÁTICAS.\r\nSIN EMBARGO, EN GOODYEAR SOMOS MUCHO MÁS QUE UN FABRICANTE DE NEUMÁTICOS. NUESTRA INVENTIVA Y NUESTROS AVANCES TAMBIÉN LLEGAN A SECTORES COMO LOS ADHESIVOS, LOS ENVASADOS ALIMENTARIOS O LOS CORAZONES ARTIFICIALES.\r\n\r\n'),
+(27, 'VOLKSWAGEN', 'ALEMANIA', 'LA FÁBRICA DE AUTOMÓVILES VOLKSWAGEN ESTÁ VINCULADA EN SU ORIGEN CON EL DISEÑADOR FERDINAND PORSCHE, QUIEN EN 1930 FUNDÓ EN STUTTGART UN NEGOCIO CON EL OBJETO DE FABRICAR UN COCHE PEQUEÑO Y BARATO PARA ALEMANIA. LA GUERRA PARÓ LA PRODUCCIÓN DE AUTOMÓVILES SEDÁN, QUE SERÍA RETOMADA POR LOS BRITÁNICOS AHÍ MISMO, EN WOLFSBURG. EN SEPTIEMBRE DE 1948, LA VOLKSWAGENWERK GMBH PASÓ DE NUEVO A MANOS DE ALEMANIA, BAJO LA DIRECCIÓN DE HEINRICH NORDHOFF, QUIEN DURANTE 20 AÑOS HABRÍA DE DIRIGIR LA EMPRESA CON UN OBJETIVO CLARO: \"FABRICAR UN SOLO MODELO DE AUTOMÓVIL, HACER LOS MENOS CAMBIOS POSIBLES EN SU DISEÑO (SOLO PARA MEJORAR LA CALIDAD) PARA NO PERDER SU ESPÍRITU\" '),
+(28, 'MICHELIN', 'FRANCIA', 'EMPRESA QUE SE ESPECIALIZA EN LA FABRICACIÓN DE NEUMÁTICOS FUNDADA POR LOS HERMANOS ÉDOUARD MICHELIN Y ANDRÉ MICHELIN EL 28 DE MAYO DE 1889 DESARROLLADO PARA NEUMÁTICOS DE BICICLETA. SU SEDE CENTRAL SE UBICA EN LA CIUDAD DE CLERMONT-FERRAND, CAPITAL DEL DEPARTAMENTO PUY-DE-DÔME, EN EL CENTRO GEOGRÁFICO DE FRANCIA. JUNTO CON BRIDGESTONE ES EL MAYOR FABRICANTE DE NEUMÁTICOS EN EL MUNDO.'),
+(29, 'CHEVROLET', 'ESTADOS UNIDOS', 'CHEVROLET, ES UNA MARCA PERTENECIENTE AL GIGANTE GENERAL MOTORS. JUNTO A BUICK, CADILLAC, DAEWOO, GMC, HOLDEN Y OPEL/VAUXHALL FORMAN UNO DE LOS MAYORES EMPORIOS DE LA INDUSTRIA DEL AUTOMÓVIL, AUNQUE ESTOS ÚLTIMOS AÑOS HAN PASADO POR SERIAS DIFICULTADES ECONÓMICAS. DE TODAS ELLAS, CHEVROLET ES UNA DE LAS MARCAS CON MÁS SOLERA Y TRADICIÓN. CASI UN SIGLO LLEVA DEDICADA A LA FABRICACIÓN DE AUTOMÓVILES.'),
+(30, 'LUXOTIK', 'ESTADOS UNIDOS', 'TENEMOS GRAN EXPERIENCIA EN EL MERCADO Y NOS HEMOS CARACTERIZADO POR CONTAR CON ESPECIALISTAS DE AMPLIA EXPERIENCIA EN TODO LO REFERENTE A RINES LO QUE NOS HA PERMITIDO LLEGAR A TODO EL MUNDO EL CUAL NOS HA CARACTERIZADO NUESTRO SERVICIO SEGURO Y CONFIABLE.\r\nNOS ENORGULLECEMOS POR HABER DESARROLLADO UNA SÓLIDA RED DE DISTRIBUCIÓN A TRAVÉS DE GRANDES NEGOCIACIONES.\r\nNUESTROS CLIENTES, PROVEEDORES Y RELACIONADOS NOS RECONOCEN COMO PROVEEDORES CONFIABLES DE ELEVADA ÉTICA COMERCIA\r\n'),
+(31, 'MOMO', 'ITALIA', 'EN SUS COMIENZOS, LA PRODUCCIÓN DE MOMO ESTUVO LIMITADA AL MUNDO DE LAS CARRERAS, PERO EN LOS AÑOS 70, LA COMPAÑÍA EMPEZÓ A EXPANDIR SUS HORIZONTES CREANDO NUEVAS LÍNEAS DE PRODUCTOS. MOMO INICIÓ LA PRODUCCIÓN DE RUEDAS DE ALEACIÓN LIGERA Y VOLANTES PARA VEHÍCULOS DE PASAJEROS, TANTO PARA EL MERCADO DE POSVENTA COMO PARA LOS FABRICANTES DE EQUIPOS ORIGINALES, EMPEZANDO CON FERRARI.'),
+(32, 'THULE', 'SUECIA', 'THULE SE FUNDÓ EN SUECIA EN 1942. DESDE ENTONCES, NUESTRO NEGOCIO HA SIDO ACERCARTE AL MUNDO Y A TU PASIÓN POR LA VIDA. SOMOS UN GRUPO INTERNACIONAL DE PERSONAS UNIDAS POR NUESTRA PASIÓN POR AYUDAR A LAS FAMILIAS ACTIVAS Y A LOS ENTUSIASTAS DEL AIRE LIBRE.'),
+(33, 'JWANG', 'CHINA', ''),
+(34, 'TASSOTTI', 'ITALIA', '\r\n\r\n'),
+(35, 'CHICCO', 'ESPAÑA', 'EL MUNDO INFANTIL ES EL CORAZÓN DE LA EMPRESA, CUYO ORIGEN SE REMOTA A 1958, CUANDO PIETRO CATELLI FUNDÓ CHICCO(MARCA INSPIRADA EN EL DIMINUTIVO DE ENRICO, SU HIJO). ESPAÑA, DONDE ATERRIZA EN 1967, ES EL PRIMER MERCADO INTERNACIONAL DE UNA COMPAÑÍA FAMILIAR QUE, EN EL ÚLTIMO EJERCICIO, FACTURÓ 1.400 MILLONES DE EUROS. TODAVÍA HOY, EL MERCADO ESPAÑOL ES EL SEGUNDO MÁS IMPORTANTE, POR DETRÁS DE ITALIA, Y APORTA EL 10% DE LAS VENTAS TOTALES DEL GRUPO.'),
+(36, 'INTERNATIONAL TRADINGRUSH', 'MEXICO', 'EMPRESA LÍDER EN LA COMERCIALIZACIÓN Y DISTRIBUCIÓN DE ACCESORIOS Y VESTIDURAS EN PIEL PARA AUTOMÓVILES, NUESTROS PRINCIPALES CLIENTES AGENCIAS AUTOMOTRIZ.'),
+(37, 'SPARCO', 'ITALIA', 'EMPRESA ITALIANA DE ACCESORIOS Y PARTES DE AUTOMÓVILES DEPORTIVOS Y DE COMPETICIÓN, ESPECIALIZADA EN PRODUCIR ASIENTOS, VOLANTES, CASCOS DE CARRERAS, CINTURONES DE SEGURIDAD, LLANTAS, BARRAS ANTIVUELCO, PROTECTORES DE SEGUROS ENTRE OTROS. PATROCINAN DISTINTOS DEPORTES DE COMPETICIÓN, COMO RALLIES, FÓRMULA 1, CARRERAS DE MOTOS, EXPO TUNING DE AUTOS DEPORTIVOS,ETC.'),
+(38, 'TOHAYIE', 'CHINA', 'MARCA CHINA DE DIFERENTES ARTICULOS BLUETOOTH'),
+(39, 'MIKEL´S', 'MEXICO', 'MIKELS COMENZÓ SU EXITOSA HISTORIA CON LA FABRICACIÓN DE PARTES AUTOMOTRICES Y PRODUCTOS DE FERRETERÍA. GENERANDO DESDE ENTONCES UNA EVOLUCIÓN CONSTANTE EN EL DESARROLLO DE LA INDUSTRIA AUTOMOTRIZ EN MÉXICO.\r\nDESDE SUS INICIOS EN MIKELS SE HA DESARROLLADO Y CONSOLIDADO UNA AMBICIOSA ESTRATEGIA DE EXPANSIÓN Y DIVERSIFICACIÓN DE NEGOCIO A TRAVÉS DE LA FABRICACIÓN Y COMERCIALIZACIÓN DE PRODUCTOS DIRIGIDOS A DIFERENTES RANGOS DE MERCADO COMO LO SON: AUTOMOTRIZ, INDUSTRIAL, FERRETERO, ELÉCTRICO, MOTOCICLISMO, CICLISMO PRINCIPALMENTE.\r\n'),
+(40, 'TOYOTA', 'JAPON', 'EN 1936 TOYODA, FUNDADORA DE TOYOTA, ORGANIZÓ UN CONCURSO PÚBLICO PARA DISEÑAR EL LOGO DE LA MARCA DE CARA A PROMOCIONAR SUS COCHES. NI LAS MEJORES PREVISIONES ESPERABAN TAL RESPUESTA: 27.000 PERSONAS PRESENTARON SUS IDEAS. EL EMBLEMA GANADOR OBLIGÓ AL CAMBIO DEL NOMBRE DE LA MARCA DE TOYODA A TOYOTA Y SIGUE SIENDO EL LOGOTIPO CORPORATIVO DE LA MARCA, PRESENTE EN EL CUARTEL GENERAL DE AICHI.'),
+(41, 'BREMBO', 'ITALIA', 'BREMBO ES UNA MULTINACIONAL ITALIANA FUNDADA EN 1961 QUE SE DEDICA A FABRICAR DISCOS DE FRENO PARA AUTOMÓVILES DEPORTIVOS DE LUJO Y MOTOCICLETAS. LA ESCUDERÍA FERRARI DE FÓRMULA 1 UTILIZA FRENOS DE ESTA MARCA PARA SUS MONOPLAZAS, AL IGUAL QUE ALGUNOS FABRICANTES DE MOTOCICLETAS COMO BMW, DUCATI Y KTM.'),
+(42, 'MONROE', 'ESTADOS UNIDOS', 'SUSPENSIONES MONROE®, UNA DE LAS MARCAS MÁS RESPETADAS DE LA INDUSTRIA DEL AUTOMÓVIL Y DEL VEHÍCULO COMERCIAL, CELEBRA SU CENTENARIO EN 2016 CON UN AMPLIA AGENDA DE PROGRAMAS, PROMOCIONES Y OTRAS ACTIVIDADES ESPECIALES DISEÑADAS PARA APOYAR A LOS MILES DE PROVEEDORES DE RECAMBIOS Y SERVICIOS ASÍ COMO A LOS MILLONES DE CONSUMIDORES EN EL MUNDO QUE CONFÍAN EN LOS PRODUCTOS MONROE. LOS PRODUCTOS DE SUSPENSIÓN MONROE ESTÁN FABRICADOS POR TENNECO.'),
+(43, 'SYD', 'MEXICO', 'GRUPO DAR ES UNA EMPRESA MEXICANA QUE A LO LARGO DE CINCUENTA Y UN AÑOS SE HA ESTABLECIDO EN EL MERCADO COMO UNA DE LAS EMPRESAS MÁS IMPORTANTES EN LA PRODUCCIÓN, COMERCIALIZACIÓN Y DISTRIBUCIÓN DE PARTES AUTOMOTRICES EN MATERIA DE SUSPENSIÓN Y DIRECCIÓN.\r\nHOY EN DÍA, GRUPO DAR SE HA CONSOLIDADO NO SOLO EN EL MERCADO NACIONAL SINO TAMBIÉN DE MANERA INTERNACIONAL AL ABRIR MERCADOS EN LOS ESTADOS UNIDOS DE NORTEAMÉRICA.'),
+(44, 'DEPO', 'MEXICO', 'DEPO ES EL MAYOR FABRICANTE DE FAROS, CALAVERAS Y CUARTOS, LA CUAL CUENTA CON CERTIFICACIONES POR SER UNA DE LAS MEJORES MARCAS AL FABRICAR SUS PRODUCTOS CON LA MEJOR CALIDAD, ACTUALMENTE EN MI REFACCIÓN SOMOS LOS DISTRIBUIDORES OFICIALES DE DEPO, Y QUE MEJOR QUE NUESTRA COMPAÑÍA TE LOS ENVÍEN HASTA LAS PUERTAS DE TU CASA YA QUE LOS ENVÍOS SE HACEN A NIVEL NACIONAL YA SEA A GUADALAJARA, CIUDAD DE MÉXICO, ESTADO DE MÉXICO Y MONTERREY.'),
+(45, 'OSUN', 'MEXICO', 'SOMOS ESPECIALISTAS EN REFACCIONES Y ACCESORIOS DE LA INDUSTRIA AUTOMOTRIZ. NUESTRO CATÁLOGO INCLUYE AMORTIGUADORES, CALAVERAS, ESPEJOS, AUTOPARTES DE COLISIÓN, MAZAS, FAROS, CLUTCH, BOMBAS DE GASOLINA, SISTEMA DE ENFRIAMIENTO, RADIADORES, BALATAS, DISCOS DE FRENO, CATALIZADORES, FOCOS DE XENÓN, FOCOS Y FAROS DE LED, ENTRE OTROS'),
+(46, 'FRAM', 'ESTADOS UNIDOS', 'HACE MÁS DE 85 AÑOS, NUESTROS QUÍMICOS, FREDERICK FRANKLIN Y T. EDWARD ALDHAM, INVENTARON UN ELEMENTO FILTRANTE DE ACEITE FÁCIL DE REEMPLAZAR EN SU LABORATORIO EN LA PROVINCIA DE RHODE ISLAND. LOS FILTROS DE ACEITE PARA AUTOMÓVILES DE VARIOS TIPOS HABÍAN ESTADO EN EL MERCADO DURANTE CASI 10 AÑOS, PERO ERAN DIFÍCILES DE INSTALAR, CAMBIAR Y LIMPIAR. ASÍ, FRANKLIN Y ALDHAM, CUYOS APELLIDOS SE COMBINARON PARA FORMAR EL NOMBRE DE LA COMPAÑÍA, SE PROPUSIERON RESOLVER ESTOS PROBLEMAS CON SUS REVOLUCIONADOS FILTROS.'),
+(47, 'PORSCHE', 'ALEMANIA', 'PORSCHE, NO SERÍA LO MISMO SIN TODO LO LOGRADO POR FERRY PORSCHE, EL HIJO DEL FUNDADOR FERDINAND PORSCHE, QUE HIZO DE UNA OFICINA DE INGENIERÍA DONDE TRABAJABA SU PADRE, LA MARCA DE DEPORTIVOS (Y OTROS YA NO TANTO) QUE CONOCEMOS HOY.\r\nLA HISTORIA COMIENZA CUANDO EN 1948, FERRY SALIÓ A BUSCAR EL AUTOMÓVIL QUE SIEMPRE HABÍA SOÑADO, NO LO ENCONTRÓ Y DECIDIÓ CONSTRUIRLO. FERRY SE MUESTRA ASÍ COMO UN HOMBRE INQUIETO, VISIONARIO Y UN EMPRENDEDOR IMPRESIONANTE. ASÍ, BAJO SU DIRECCIÓN SE SENTARON LAS BASES DE LO COMENZARÍA A SER UNA DE LAS FÁBRICAS DE AUTOMÓVILES MÁS EXCLUSIVAS DE LA HISTORIA.\r\n\r\n'),
+(48, 'BUGATTI', 'FRANCIA', 'ES UNA MARCA DE AUTOMÓVILES FRANCESA DE GRAN LUJO Y COMPETICIÓN FUNDADA POR ETTORE BUGATTI, (1881-1947) EN EL AÑO 1909 EN MOLSHEIM, LOCALIDAD ACTUALMENTE EN FRANCIA Y POR ENTONCES PERTENECIENTE AL IMPERIO ALEMÁN. PERTENECE AL GRUPO VOLKSWAGEN.\r\nCON EL LEMA DE NADA PUEDE SER DEMASIADO HERMOSO, NADA PUEDE SER DEMASIADO COSTOSO, LA FAMILIA BUGATTI, ETTORE, SU HERMANO REMBRANDT Y SU HIJO DISEÑARON Y CONSTRUYERON DURANTE 30 AÑOS UNA SERIE DE LUJOSOS AUTOMÓVILES QUE DESTACARON TANTO POR SU RENDIMIENTO COMO POR SU DISEÑO.'),
+(49, 'NISSAN', 'JAPON', 'ES UN FABRICANTE JAPONÉS DE AUTOMÓVILES, CON BASE EN YOKOHAMA. SU NOMBRE COMÚN, NISSAN. ESTÁ ENTRE LAS PRINCIPALES COMPAÑÍAS AUTOMOTRICES EN TÉRMINOS DE PRODUCCIÓN ANUAL DE VEHÍCULOS. DESDE 1999 FORMA PARTE DE LA ALIANZA RENAULT-NISSAN-MITSUBISHI DÓNDE RENAULT CONTROLA EL 43,4% DE NISSAN Y ESTA A SU VEZ CONTROLA EL 15% DE RENAULT ASÍ COMO EL 34% DE MITSUBISHI Y EL 100% DEL FABRICANTE RUSO LADA, MANTENIENDO SU AUTONOMÍA.'),
+(50, 'SALEEN', 'ESTADOS UNIDOS', 'ES UNA EMPRESA FUNDADA EN 1983 POR STEVE SALEEN. UBICADA INICIALMENTE EN IRVINE, CALIFORNIA, POSTERIORMENTE FUE TRASLADADA A DETROIT. SALEEN SE DEDICA A LA FABRICACIÓN DE AUTOMÓVILES DEPORTIVOS Y COMPONENTES DE ALTO RENDIMIENTO.\r\n\r\nSALEEN PRODUCE VEHÍCULOS DEPORTIVOS EN EDICIÓN LIMITADA Y COMPONENTES DE ALTO RENDIMIENTO DE FABRICACIÓN PROPIA (OEM). A DIFERENCIA DE LAS EMPRESAS QUE COMERCIALIZAN PRODUCTOS ORIENTADOS AL TUNING DE VEHÍCULOS, SALEEN ESTÁ SUJETA A LAS MISMAS REGULACIONES FEDERALES QUE RIGEN EL DISEÑO Y LAS PRUEBAS DE LOS PRODUCTOS DE LA INDUSTRIA AUTOMOVILÍSTICA, AL IGUAL QUE LOS GRANDES FABRICANTES DE VEHÍCULOS COMO FORD, GENERAL MOTORS O TOYOTA.'),
+(51, 'ACURA', 'JAPON', 'MARCA DE LUJO DEL FABRICANTE JAPONÉS DE AUTOMÓVILES HONDA EN LOS ESTADOS UNIDOS, CANADÁ Y HONG KONG DESDE MARZO DE 1985, PARA POSICIONARSE EN EL MERCADO DE LOS AUTOS DE LUJO. LA MARCA PARA 2004 FUE INTRODUCIDA EN MÉXICO, PARA 2005 SE ESTABLECE EN CHINA Y FINALMENTE EN 2013 EN PANAMÁ. TAMBIÉN SE PLANEA INTRODUCIR ACURA EN EL PROPIO MERCADO JAPONÉS EN 2008.'),
+(52, 'ALFA ROMEO', 'ITALIA', 'ALFA ROMEO NACE ASÍ EN UN VERANO DE HACE MÁS DE 90 AÑOS. NOS ENCONTRAMOS EN PLENA BELLE EPOQUE, GUGLIELMO MARCONI RECIBE EL PREMIO NOBEL DE FÍSICA, LAS MARCAS FIAT Y LANCIA (RIVALES POR AQUEL ENTONCES) TIENEN ONCE Y CUATRO AÑOS, RESPECTIVAMENTE, Y EL RETO DE LA NUEVA EMPRESA SE INICIA CON UN ÉXITO INMEDIATO: EL 24 HP. ÍNTEGRAMENTE DISEÑADO POR GIUSEPPE MEROSI Y OTROS TÉCNICOS ITALIANOS, ESTE COCHE CONQUISTA POR SU MECÁNICA, PRESTACIONES, Y POR EL PLACER DE CONDUCIRLO; UNAS CARACTERÍSTICAS QUE SE CONVERTIRÁN EN SÍMBOLOS DE LA MARCA. '),
+(53, 'NOCO', 'ESTADOS UNIDOS', 'NOCO FUE FUNDADA EN 1914 POR NOOK & O\'NEIL. ESTA COMPAÑIA SE DEDICA PRINCIPALMENTE A CREAR DISPOSITIVOS DE ARRANQUE DE EMERGENCIA'),
+(54, 'SLIME', 'ESTADOS UNIDOS', 'MARCA ESPECIALIZADA EN PRODUCTOS PARA INFLADO DE LLANTAS PROFESIONALES\r\n'),
+(55, 'AUTOTEC', 'MEXICO', 'DISTRIBUIDORES DE EQUIPO DE CONTROL Y AUTOMATIZACIÓN.\r\n\r\n'),
+(56, 'AUTOZONE', 'ESTADOS UNIDOS', 'DURANTE 40 AÑOS EN ESTADOS UNIDOS Y CASI 20 AÑOS EN MÉXICO, AUTOZONE HA MANTENIDO SU COMPROMISO DE BRINDAR LOS MEJORES PRODUCTOS, PRECIOS Y SERVICIO AL CLIENTE EN LA INDUSTRIA AUTOMOTRIZ DE REFACCIONES Y ACCESORIOS. NUESTRO ALTO GRADO DE ENFOQUE EN EL SERVICIO AL CLIENTE Y EL COMPROMISO CON NUESTRA PROMESA Y VALORES SON LO QUE NOS DISTINGUE.'),
+(57, 'AUTOTECH', 'MEXICO', 'IMPORTADOR Y DISTRIBUIDOR EXCLUSIVO A NIVEL NACIONAL DE LAS MARCAS MAS RECONOCIDAS.'),
+(58, 'RUST-OLEUM', 'ESTADOS UNIDOS', 'SI DESEAS PROTEGER UNA SUPERFICIE O LOGRAR UN NUEVO LOOK, HAS VENIDO AL LUGAR INDICADO. TENEMOS PRODUCTOS PARA TODO TIPO DE DESAFÍOS.\r\nBIENVENIDO A RUST-OLEUM, HOGAR DE CALIDAD CONFIABLE Y SOLUCIONES EXITOSAS DESDE 1921.\r\n\r\n'),
+(59, 'TUK', 'MEXICO', 'A ALTA CALIDAD DE NUESTROS PRODUCTOS RESPALDA LA ALTA REPUTACIÓN DE NUESTRAS MARCAS: TUK, EN EL MERCADO DOMÉSTICO, Y HYSTIK EN LOS MERCADOS INTERNACIONALES. ACTUALMENTE, FABRICAMOS Y COMERCIALIZAMOS DIFERENTES TIPOS DE CINTAS PARA SATISFACER DIFERENTES NECESIDADES EN LOS MERCADOS DE CONSUMO, AUTOMOTRIZ E INDUSTRIAL DE CINTAS.'),
+(60, 'TIMBRITE', 'ESTADOS UNIDOS', 'EMPRESA ESTADOUNIDENSE CON ALTA EXPERIENCIA EN PRODUCTOS DE REPARACION Y AUTOMOTRIZ.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `marcaproveedor`
+--
+
+CREATE TABLE `marcaproveedor` (
+  `MarcaId` int(11) NOT NULL,
+  `ProveedorId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `marcaproveedor`
+--
+
+INSERT INTO `marcaproveedor` (`MarcaId`, `ProveedorId`) VALUES
+(1, 7),
+(2, 15),
+(3, 2),
+(4, 5),
+(4, 8),
+(6, 4),
+(6, 12),
+(7, 20),
+(8, 19),
+(9, 18),
+(15, 5),
+(15, 9),
+(17, 4),
+(20, 5),
+(20, 17),
+(21, 10),
+(22, 3),
+(28, 4),
+(29, 4),
+(29, 5),
+(29, 11);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `paqueteria`
+--
+
+CREATE TABLE `paqueteria` (
+  `PaqueteriaId` int(11) NOT NULL,
+  `Nombre` varchar(30) DEFAULT NULL,
+  `Domicilio` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `paqueteria`
+--
+
+INSERT INTO `paqueteria` (`PaqueteriaId`, `Nombre`, `Domicilio`) VALUES
+(1, 'PROVEEDOR1', 'GUADALAJARA'),
+(2, 'MICHELIN', 'AGUASCALIENTES'),
+(3, 'CONTINENTAL', 'GUADALAJARA'),
+(4, 'DHL', 'AGUASCALIENTES'),
+(5, 'FEDEX', 'AGUASCALIENTES'),
+(6, 'UPS', 'AGUASCALIENTES'),
+(7, 'ESTAFETA', 'AGUASCALIENTES'),
+(8, 'MULTIPACK', 'AGUASCALIENTES'),
+(9, 'AMAZON', 'GUADALAJARA'),
+(10, 'ESTRELLA BLANCA', 'AGUASCALIENTES'),
+(11, 'PAQUETERIA EXPRESS', 'AGUASCALIENTES'),
+(12, 'AEROFLASH', 'AGUASCALIENTES'),
+(13, 'CORREOS DE MEXICO', 'AGUASCALIENTES'),
+(14, 'TINY PACK', 'AGUASCALIENTES'),
+(15, 'TRES GUERRAS', 'AGUASCALIENTES'),
+(16, 'VOY', 'AGUASCALIENTES'),
+(17, 'SENDEX', 'GUADALAJARA'),
+(18, 'PAKMAIL', 'GUADALAJARA'),
+(19, 'PRIMERAPLUS', 'AGUASCALIENTES'),
+(20, 'DYPAQ', 'YUCATAN');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prenda`
+--
+
+CREATE TABLE `prenda` (
+  `ProductoId` varchar(10) NOT NULL,
+  `Nombre` varchar(30) DEFAULT NULL,
+  `Precio` decimal(20,2) DEFAULT NULL,
+  `Color` varchar(15) DEFAULT NULL,
+  `Imagen` varchar(255) NOT NULL,
+  `MarcaId` int(11) DEFAULT NULL,
+  `CompraId` int(11) DEFAULT NULL,
+  `Existencias` int(11) NOT NULL,
+  `Descripcion` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `prenda`
+--
+
+INSERT INTO `prenda` (`ProductoId`, `Nombre`, `Precio`, `Color`, `Imagen`, `MarcaId`, `CompraId`, `Existencias`, `Descripcion`) VALUES
+('P1', 'PULSERA', '150.00', 'ROJO', 'images/pulsfer.jpg', 1, 1, 70, 'PULSERA ROJA MARCA FERRARI\r\n'),
+('P10', 'TENIS', '4500.00', 'NEGRO', 'images/TenisFord.jpg', 6, 38, 4, 'TENIS NEGROS MARCA FORD'),
+('P11', 'CALCETINES FERRARI', '800.00', 'ROJO', 'images/CalcetinesFerrari.jpg', 1, 39, 25, 'CALCETINES ROJOS MARCA FERRARI, EXTREMADAMENTE COMODOS.'),
+('P12', 'TENIS FERRARI', '30000.00', 'NEGRO', 'images/TenisFerrari.jpg', 1, 40, 6, 'TENIS NEGROS MARCA FERRARI'),
+('P13', 'RELOJ FERRARI', '15000.00', 'ROJO', 'images/RelojFerrari.jpg', 1, 41, 2, 'RELOJ ROJO MARCA FERRARI'),
+('P14', 'PLAYERA AUDI', '6000.00', 'NEGRO', 'images/PlayeraAudi.jpg', 4, 42, 35, 'PLAYERA NEGRA MARCA AUDI'),
+('P15', 'CHAMARRA BMW', '5000.00', 'BLANCO', 'images/ChamarraBMW.jpg', 3, 43, 7, 'CHAMARRA BLANCA BMW'),
+('P16', 'RELOJ ASTON', '35000.00', 'PLATEADO', 'images/RelojAston.jpg', 2, 44, 2, 'RELOJ PLATEADO MARCA ASTON MARTIN'),
+('P17', 'ZAPATOS RR', '8500.00', 'NEGRO', 'images/zapatosrr.jpg', 19, 45, 4, 'ZAPATOS NEGROS MARCA ROLLS-ROYCE'),
+('P18', 'ZAPATOS ASTONM', '9000.00', 'CAFE', 'images/zapatosaston.jpg', 2, 46, 3, 'ZAPATOS CAFES MARCA ASTON MARTIN'),
+('P19', 'PLAYERA JAGUAR', '3500.00', 'NEGRO', 'images/PlayeraJaguar.jpg', 9, 47, 6, 'PLAYERA NEGRA MARCA JAGUAR'),
+('P2', 'PLAYERA POLO FERRARI', '1800.00', 'ROJO', 'images/PlayeraPoloFerrari.jpg', 1, 3, 4, 'PLAYERA ROJA TIPO POLO MARCA FERRARI'),
+('P20', 'PLAYERA RIVIAN', '2500.00', 'NEGRO', 'images/PlayeraRivian.jpg', 18, 48, 15, 'PLAYERA NEGRA MARCA RIVIAN'),
+('P21', 'GORRA', '280.00', 'NEGRO', 'images/gorravolks.jpg', 27, 121, 15, 'GORRA NEGRA MARCA VOLKSWAGEN'),
+('P22', 'PLAYERA VOLKS', '500.00', 'AZUL MARINO', 'images/PlayeraVolks.jpg', 27, 122, 8, 'PLAYERA COLO AZUL MARINO MARCA VOLKSWAGEN'),
+('P23', 'CHAMARRA VOLKS', '1300.00', 'NEGRO', 'images/ChamarraVolks.jpg', 27, 123, 8, 'CHAMARRA NEGRA MARCA VOLKSWAGEN'),
+('P24', 'CARTERA VOLKS', '1200.00', 'NEGRO', 'images/carteravolks2.jpg', 27, 124, 5, 'CARTERA NEGRA MARCA VOLKSWAGEN'),
+('P25', 'TERMO VOLKSWAGEN', '400.00', 'BLANCO', 'images/TermoVolks.jpg', 27, 125, 15, 'TERMO BLANCO MARCA VOLKSWAGEN'),
+('P26', 'PARAGUAS VOLKSWAGEN', '690.00', 'NEGRO', 'images/paraguasvolks2.jpg', 27, 126, 25, 'PARAGUAS COLO NEGRO MARCA VOLKSWAGEN'),
+('P27', 'GORRA ', '350.00', 'AZUL', 'images/GorraFord.jpg', 6, 127, 9, 'GORRA COLOR AZUL MARCA FORD'),
+('P28', 'CHAMARRA FORD', '350.00', 'AZUL', 'images/ChamarraFord.jpg', 6, 128, 30, 'CHAMARRA COLOR AZUL MARCA FORD'),
+('P29', 'BOTAS FORD', '1100.00', 'NEGRO', 'images/BotasFord.jpg', 6, 129, 7, 'BOTAS COLOR NEGRO MARCA FORD'),
+('P3', 'CHAMARRA FERRARI', '2000.00', 'ROJO', 'images/ChamarraFerrari.jpg', 1, 11, 25, 'CHAMARRA COLOR ROJO MARCA FERRARI'),
+('P30', 'CARTERA FORD', '580.00', 'NEGRO', 'images/CarteraFord.jpg', 6, 130, 5, 'CARTERA COLOR NEGRO MARCA FORD'),
+('P31', 'LENTES FORD', '990.00', 'NEGRO', 'images/LnetesFord.jpg', 6, 131, 20, 'LENTES COLOR NEGRO MARCA FORD'),
+('P32', 'CINTURON FORD MUSTANG', '350.00', 'NEGRO', 'images/cinturonmustang.jpg', 6, 132, 45, 'CINTURON COLOR NEGRO MARCA FORD MUSTANG'),
+('P33', 'BILLETERA AUDI', '260.00', 'NEGRO', 'images/BilleteraAudi.jpg', 4, 133, 9, 'BILLETERA COLOR NEGRO MARCA AUDI'),
+('P34', 'GORRA LAMBORGHINI', '600.00', 'BLANCO', 'images/GorraLambo.jpg', 11, 134, 5, 'GORRA COLOR BLANCO MARCA LAMBORGHINI'),
+('P35', 'PLAYERA LAMBORGHINI', '900.00', 'NEGRO', 'images/PlayeraLambo.jpg', 11, 135, 9, 'PLAYERA COLOR NEGRO MARCA LAMBORGHINI'),
+('P36', 'CHAMARRA LAMBORGHINI', '1400.00', 'NEGRO', 'images/ChamarraLambo.jpg', 11, 136, 15, 'CHAMARRA COLOR NEGRO MARCA LAMBORGHINI'),
+('P37', 'CARTERA LAMBORGHINI', '1500.00', 'NEGRO', 'images/carteralam.jpg', 11, 137, 5, 'CARTERA COLOR NEGRO MARCA LAMBORGHINI'),
+('P38', 'MOCHILA LAMBORGHINI', '1300.00', 'NEGRO', 'images/MochilaLambo.jpg', 11, 138, 5, 'MOCHILA COLOR NEGRO MARCA LAMBORGHINI'),
+('P39', 'FUNDA CELULAR LAMBORGHINI', '850.00', 'NEGRO', 'images/FundaCelularLambo.jpg', 11, 139, 30, 'FUNDA PARA CELULAR COLOR NEGRO MARCA LAMBORGHINI'),
+('P4', 'RELOJ', '15000.00', 'PLATEADO', 'images/Relojmercedes.jpg', 15, 12, 3, 'RELOJ COLOR PLATEADO MARCA MERCEDES-BENZ'),
+('P40', 'TENIS LAMBORGHINI', '1200.00', 'ROJO', 'images/TenisLambo.jpg', 11, 140, 5, 'TENIS COLOR ROJO MARCA LAMBORGHINI'),
+('P41', 'GORRA PORSCHE', '1300.00', 'NEGRO', 'images/GorraPorshe.jpg', 47, 141, 5, 'GORRA COLOR NEGRO MARCA PORSCHE'),
+('P42', 'PLAYERA PORSCHE', '940.00', 'NEGRO', 'images/PlayeraPorshe.jpg', 47, 142, 10, 'PLAYERA COLOR NEGRO MARCA PORSCHE'),
+('P43', 'CHAMARRA PORSCHE', '1620.00', 'NEGRO', 'images/ChamarraPorshe.jpg', 47, 143, 10, 'CHAMARRA COLOR NEGRO MARCA PORSCHE'),
+('P44', 'TENIS PORSCHE', '2700.00', 'NEGRO', 'images/tenisporsche.jpg', 47, 144, 15, 'TENIS COLOR NEGRO MARCA PORSCHE'),
+('P45', 'MOCHILA PORSCHE', '3500.00', 'NEGRO', 'images/mochilaporsche.jpg', 47, 145, 5, 'MOCHILA COLOR NEGRO MARCA PORSCHE'),
+('P46', 'LENTES PORSCHE', '6000.00', 'NEGRO', 'images/lentesporsche.jpg', 47, 146, 5, 'LENTES COLOR NEGRO MARCA PORSCHE'),
+('P47', 'RELOJ PORSCHE', '45000.00', 'NEGRO', 'images/relojporsche.jpg', 47, 147, 3, 'RELOJ COLOR NEGRO MARCA PORSCHE'),
+('P48', 'TENIS BUGATTI', '2300.00', 'GRIS', 'images/TenisBugatti.jpg', 48, 148, 6, 'TENIS COLOR GRIS MARCA BUGATTI'),
+('P49', 'CARTERA BUGATTI', '800.00', 'CAFE', 'images/carterabugg.jpg', 48, 149, 5, 'CARTERA COLOR CAFE MARCA BUGATTI'),
+('P5', 'GORRA', '450.00', 'NEGRO', 'images/GorraAudi.jpg', 4, 13, 25, 'GORRA COLOR NEGRO MARCA AUDI'),
+('P50', 'MOCHILA BUGATTI', '1200.00', 'NEGRO', 'images/MochilaBugatti.jpg', 48, 150, 7, 'MOCHILA COLOR NEGRO MARCA BUGATTI'),
+('P6', 'PANTALON DEPORTIVO', '1200.00', 'NEGRO', 'images/PantalonDeportivoFerrari.jpg', 1, 34, 6, 'PANTALON DEPORTIVO COLOR NEGRO MARCA FERRARI'),
+('P7', 'GORRA', '2500.00', 'AZUL', 'images/GorraBMW.jpg', 3, 35, 10, 'GORRA COLOR AZUL MARCA BMW'),
+('P8', 'CHAMARRA AUDI', '3000.00', 'NEGRO', 'images/ChamarraAudi.jpg', 4, 36, 4, 'CHAMARRA COLOR NEGRO MARCA AUDI'),
+('P9', 'RELOJ RR', '25000.00', 'NEGRO', 'images/RelojRR.jpg', 19, 37, 2, 'RELOJ COLOR NEGRO MARCA ROLLS ROYCE');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prendatalla`
+--
+
+CREATE TABLE `prendatalla` (
+  `ProductoId` varchar(10) NOT NULL,
+  `TallaId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `prendatalla`
+--
+
+INSERT INTO `prendatalla` (`ProductoId`, `TallaId`) VALUES
+('P1', 3),
+('P2', 2),
+('P3', 4),
+('P4', 3),
+('P5', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedor`
+--
+
+CREATE TABLE `proveedor` (
+  `ProveedorId` int(11) NOT NULL,
+  `Nombre` varchar(45) DEFAULT NULL,
+  `Domicilio` varchar(45) DEFAULT NULL,
+  `Telefono` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `proveedor`
+--
+
+INSERT INTO `proveedor` (`ProveedorId`, `Nombre`, `Domicilio`, `Telefono`) VALUES
+(1, 'PROVEEDOR1', 'REINO UNIDO', 789456123),
+(2, 'BMW', 'GUADALAJARA', 5212365989),
+(3, 'PIONEER ACCESORIOS', 'GUANAJUATO', 6325984568),
+(4, 'MICHELIN', 'AGUASCALIENTES', 4496325981),
+(5, 'CONTINENTAL', 'GUADALAJARA', 5578269584),
+(6, 'TESLA', 'GUADALAJARA', 5528642596),
+(7, 'FERRARI', 'CDMX', 5554857682),
+(8, 'AUDI', 'AGUASCALIENTES', 4492635871),
+(9, 'MERCEDES-BENZ', 'GUADALAJARA', 5368459652),
+(10, 'TESLA', 'CDMX', 5558457269),
+(11, 'CHEVROLET', 'AGUASCALIENTES', 5517896258),
+(12, 'FORD', 'GUADALAJARA', 3268594851),
+(13, 'VARIAS REFACCIONES', 'AGUASCALIENTES', 6324587692),
+(14, 'VARIOS ACCESORIOS', 'GUADALAJARA', 8956329685),
+(15, 'VARIAS PRENDAS', 'CDMX', 5558965281),
+(16, 'ROLLS ROYCE', 'CDMX', 5556327582),
+(17, 'SUBARU', 'GUADALAJARA', 6325982146),
+(18, 'JAGUAR', 'CDMX', 5552568571),
+(19, 'HONDA', 'GUADALAJARA', 6235847562),
+(20, 'SEAT', 'AGUASCALIENTES', 4496253825),
+(21, 'THULE', 'GUADALAJARA', 8512369575),
+(22, 'MOMO', 'GUADALAJARA', 3332548652),
+(23, 'TOHAYIE', 'CDMX', 5556235891),
+(24, 'MIKEL´S', 'CDMX', 5553268594),
+(25, 'VOLKSWAGEN', 'GUADALAJARA', 3336589152),
+(26, 'TOYOTA', 'Aguascalientes', 4492635892),
+(27, 'BREMBO', 'CDMX', 5556529581),
+(28, 'MONROE', 'CDMX', 5552536781),
+(29, 'SYD', 'GUADALAJARA', 3336589175),
+(30, 'DEPO', 'CDMX', 5551268594),
+(31, 'OSUN', 'GUADALAJARA', 33362598545),
+(32, 'FRAM', 'CDMX', 55565489235),
+(33, 'LAMBORGHINI', 'CDMX', 5556329585),
+(34, 'PORSCHE', 'CDMX', 5556258214),
+(35, 'BUGATTI', 'CDMX', 5552639851),
+(36, 'ASTON MARTIN', 'CDMX', 5551254896),
+(37, 'NISSAN', 'AGUASCALIENTES', 4493265875),
+(38, 'MAZDA', 'AGUASCALIENTES', 4491586275),
+(39, 'SALEEN', 'CDMX', 5551249682),
+(40, 'ACURA', 'GUADALAJARA', 3335891524),
+(41, 'ALFA ROMEO', 'CDMX', 5554896251),
+(42, 'RIVIAN', 'ESTADOS UNIDOS', 6529518545),
+(43, 'NOCO', 'GUADALAJARA', 3335689215),
+(44, 'SLIME', 'CDMX', 5552634891),
+(45, 'AUTOTEC', 'CDMX', 5558459127),
+(46, 'AUTOZONE', 'AGUASCALIENTES', 4492568239),
+(47, 'AUTOTECH', 'GUADALAJARA', 3335284575),
+(48, 'RUST-OLEUM', 'CDMX', 5551257485),
+(49, 'TUK', 'CDMX', 5553268574),
+(50, 'TIMBRITE', 'CDMX', 5558526485);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `refaccion`
+--
+
+CREATE TABLE `refaccion` (
+  `ProductoId` varchar(10) NOT NULL,
+  `Nombre` varchar(30) DEFAULT NULL,
+  `Precio` decimal(20,2) DEFAULT NULL,
+  `Imagen` varchar(255) NOT NULL,
+  `MarcaId` int(11) NOT NULL,
+  `CompraId` int(11) NOT NULL,
+  `Existencias` int(11) NOT NULL,
+  `Descripcion` varchar(800) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `refaccion`
+--
+
+INSERT INTO `refaccion` (`ProductoId`, `Nombre`, `Precio`, `Imagen`, `MarcaId`, `CompraId`, `Existencias`, `Descripcion`) VALUES
+('R1', 'ALTERNADOR', '50.00', 'images/alterfer.jpg', 1, 2, 50, 'EL ALTERNADOR ES EL ELEMENTO DEL CIRCUITO ELÉCTRICO DEL AUTOMÓVIL QUE TIENE COMO MISIÓN TRANSFORMAR LA ENERGÍA MECÁNICA EN ENERGÍA ELÉCTRICA, PROPORCIONANDO ASÍ UN SUMINISTRO ELÉCTRICO DURANTE LA MARCHA DEL VEHÍCULO.'),
+('R10', 'LIMPIA PARABRISAS BMW', '2000.00', 'images/limbmw.jpg', 3, 52, 15, 'LOS LIMPIAPARABRISAS SON UNO DE LOS ELEMENTOS CLAVE PARA LA SEGURIDAD EN EL AUTOMÓVIL YA QUE ASEGURAN BUENA VISIBILIDAD Y SEGURIDAD. TENER SIEMPRE LAS ESCOBILLAS EN PERFECTO ESTADO ES LA MEJOR GARANTÍA. CON LAS ESCOBILLAS BMW PODRÁS MANTENER SIEMPRE UNA VISIBILIDAD Y SEGURIDAD ÓPTIMAS, INCLUSO EN SITUACIONES CRÍTICAS. TIENEN UN RENDIMIENTO PERFECTO DURANTE EL LIMPIADO GRACIAS A LA DISTRIBUCIÓN UNIFORME DE LAS FUERZAS Y LA ELEVADA PRESIÓN.'),
+('R11', 'LIMPIA PARABRISAS AUDI', '2500.00', 'images/limaudi.jpg', 4, 53, 8, 'LOS PRIMEROS MODELOS DE LIMPIAPARABRISAS DE AUDI FUERON ADOPTADOS HACIA 1920; ESTABAN CONSTITUIDOS POR UNA ESPÁTULA DE CAUCHO (GENERALMENTE DOBLE, PARA FROTAR AMBAS CARAS DEL CRISTAL), QUE ERA DE ACCIONAMIENTO MANUAL.'),
+('R12', 'BATERIA AUDI', '6000.00', 'images/bataudi.jpg', 4, 54, 12, 'LA PRIMERA FUNCIÓN DE LA BATERÍA AUDI ES PROVEER DE ENERGÍA ELÉCTRICA PARA PONER EN MARCHA EL MOTOR DE ARRANQUE DEL AUTOMÓVIL. LA SEGUNDA FUNCIÓN DE LA BATERÍA ES LA DE ACTUAR COMO UN ESTABILIZADOR DE VOLTAJE DEL SISTEMA ELÉCTRICO DEL AUTOMÓVIL.'),
+('R13', 'BUJIA ASTON MARTIN', '5000.00', 'images/bujiaston.jpg', 2, 55, 15, ' ESTE  COMPONENTE DE ASTON MARTIN QUE POSEE LOS MOTORES DE COMBUSTIÓN INTERNA ENCARGADO DE SUMINISTRAR UNA CHISPA A PARTIR DE UNA CORRIENTE ELÉCTRICA, PARA EL ENCENDIDO DE LA MEZCLA AIRE-COMBUSTIBLE DENTRO DE LA CÁMARA DE COMBUSTIÓN DE DICHO MOTOR.'),
+('R14', 'ALTERNADOR FERRARI', '250000.00', 'images/alternador2.jpg', 1, 56, 2, 'FERRARI NOS PROPORCIONA ESTE ALTERNADOR CAPAZ DE TRANSFORMAR ENERGÍA MECÁNICA EN ENERGÍA ELÉCTRICA, GENERANDO UNA CORRIENTE ALTERNA MEDIANTE INDUCCIÓN ELECTROMAGNÉTICA.'),
+('R15', 'FILTRO DE ACEITE', '450.00', 'images/filtro.jpg', 46, 119, 25, 'EL FILTRO DE ACEITE MANTIENE EL CIRCUITO DE LUBRICACIÓN PROTEGIDO DE IMPUREZAS ALARGANDO ASÍ LA VIDA DEL MOTOR. EL FILTRO DE ACEITE ES UN ELEMENTO BÁSICO PARA EL BUEN FUNCIONAMIENTO DEL MOTOR Y TIENE UN COSTE TAN BAJO QUE RECOMENDAMOS SUSTITUIRLO CADA VEZ QUE SEA NECESARIO REEMPLAZAR EL ACEITE LUBRICANTE.'),
+('R16', 'FILTRO DE ACEITE BMW', '550.00', 'images/filtrobmw.jpg', 46, 120, 25, 'EL FILTRO DE ACEITE DE BMW ES UN SISTEMA DE FILTRACIÓN INCREÍBLE PORQUE POR UN LADO IMPIDE QUE ESTAS IMPUREZAS PASEN AL CIRCUITO DE LUBRICACIÓN DAÑANDO ELEMENTOS DEL MOTOR Y POR OTRO LADO NO RESTRINGE EL FLUJO DE ACEITE AL MOTOR, POR LO QUE DURANTE SU FUNCIONAMIENTO EL ACEITE SEGUIRÁ FLUYENDO Y PROTEGIENDO TODOS LOS COMPONENTES MÓVILES FRENTE AL DESGASTE.'),
+('R17', 'FRENOS FERRARI', '300000.00', 'images/frenfer.jpg', 1, 59, 4, 'ES EL CONJUNTO DE INCREÍBLES HERRAMIENTAS QUE NOS PROPORCIONA FERRARI QUE INTERVIENEN EN EL FRENADO Y QUE TIENEN POR FUNCIÓN DISMINUIR O ANULAR PROGRESIVAMENTE LA VELOCIDAD DE UN VEHÍCULO, ESTABILIZAR ESTA VELOCIDAD O MANTENER EL VEHÍCULO INMÓVIL SI SE ENCUENTRA DETENIDO.'),
+('R18', 'AMORTIGUADOR BMW ', '4500.00', 'images/amortigbmw.jpg', 3, 60, 8, 'EL FUNCIONAMIENTO DEL AMORTIGUADOR DE BMW SE BASA EN LA CIRCULACIÓN DE ACEITE ENTRE LOS DISPOSITIVOS INTERNOS A TRAVÉS DE UN CONJUNTO DE VÁLVULAS QUE GENERAN UNA RESISTENCIA AL PASO DEL MISMO ENTRE LAS CÁMARAS DEL AMORTIGUADOR. DE ESTA FORMA SE CONTROLAN LAS OSCILACIONES DE LA SUSPENSIÓN.'),
+('R19', 'AMORTIGUADOR CHEVROLET', '3500.00', 'images/amortigchev.jpg', 29, 61, 14, 'EL AMORTIGUADOR CHEVROLET ES UN DISPOSITIVO CONSTRUIDO CON UN EJE CROMADO Y DOS TUBOS DE ACERO (UNO DENTRO DEL OTRO). EL TUBO EXTERIOR SE DENOMINA TUBO DE RESERVA (LLENO DE ACEITE). EL INTERNO, TUBO DE COMPRESIÓN. EN UN EXTREMO, EL EJE DE ACERO TIENE EL APOYO QUE SE ANCLA AL VEHÍCULO. EN EL OTRO EXTREMO SE MONTA UN PISTÓN, QUE SIEMPRE SE DESPLAZA A LO LARGO DEL TUBO DE COMPRESIÓN, EL CUAL PRESIONA O SUCCIONA ACEITE QUE FLUYE A TRAVÉS DE VÁLVULAS INSTALADAS EN EL TUBO DE COMPRESIÓN.'),
+('R2', 'ESCAPE', '15000.00', 'images/escapefer.jpg', 1, 1, 4, 'EL TUBO DE ESCAPE DE UN MOTOR DE EXPLOSIÓN ES EL TUBO QUE SIRVE PARA EVACUAR LOS GASES DE COMBUSTIÓN DESDE EL SILENCIADOR AL MEDIO AMBIENTE, UNA VEZ QUE YA HAN REALIZADO SU TRABAJO EN EL MOTOR (POR LA COMBUSTIÓN DE LA GASOLINA, GAS BUTANO, ALCOHOL O GASOIL).'),
+('R20', 'FAROS DEPORTIVOS ASTON MARTIN', '30000.00', 'images/farosaston.jpg', 2, 62, 8, 'LOS FAROS DE ASTON MARTIN SON LOS MEJORES PROYECTORES DE LUZ INCANDECENTE QUE SIRVEN PARA ILUMINAR EL CAMINO DE UN VEHÍCULO POR LA NOCHE. TAMBIÉN SIRVEN PARA QUE EL VEHÍCULO SEA MÁS VISIBLE A LOS DEMÁS, CUANDO HAY POCA VISIBILIDAD. '),
+('R21', 'CALAVERA GENERICA HONDA', '880.00', 'images/calaverahon.jpg', 8, 89, 25, 'LA CALAVERA HONDA ES UNA PARTE DEL SISTEMA DE ILUMINACIÓN DEL AUTOMÓVIL, CONSISTENTE EN UNA PLACA DE PLÁSTICO TRANSLÚCIDO O TRANSPARENTE DE COLORES ROJO, BLANCO O AMARILLO QUE CUBRE LAS CAJAS DONDE SE ALOJAN LOS FOCOS DE LAS LUCES DE UN AUTOMÓVIL.'),
+('R22', 'CALAVERA GENERICA VOLKS', '980.00', 'images/calavvol.jpg', 27, 90, 30, 'LAS CALAVERAS VOLKSWAGEN SON UN CONJUNTO DE LAS MICAS DE LAS LUCES AUXILIARES EN LOS AUTOMÓVILES, QUE INCLUYEN LAS LUCES NOCTURNAS AUXILIARES (ROJAS ATRÁS Y AMARILLAS ADELANTE), LUCES DIRECCIONALES (ROJAS O AMARILLAS), LUCES DE REVERSA (BLANCAS), LUCES DE FRENOS (ROJAS) Y LUCES INTERMITENTES (ROJAS O AMARILLAS), PARA DIFERENCIARLAS DE LOS CUARTOS COMO SON CONOCIDAS TAMBIÉN LAS LUCES LATERALES, UBICADAS AL COSTADO DE LOS VEHÍCULOS CUANDO ÉSTAS SE ENCUENTRAN SEPARADAS DE LAS CALAVERAS Y QUE SON GENERALMENTE AMARILLAS EN LA PARTE ANTERIOR Y ROJAS EN LA POSTERIOR.'),
+('R23', 'ESPEJO CORRUGADO', '2050.00', 'images/espejocor.jpg', 40, 91, 15, 'ES UN TIPO FUNCIONAL DE ESPEJO QUE POSEEN LOS AUTOMÓVILES Y OTROS VEHÍCULOS, QUE ESTÁN DISEÑADOS PARA PERMITIRLE AL CONDUCTOR VER EL ÁREA QUE SE ENCUENTRA DETRÁS DEL VEHÍCULO A TRAVÉS DE LA VENTANA POSTERIOR.'),
+('R24', 'BALATAS MERCEDES', '970.00', 'images/BalatasMercedes.jpg', 41, 92, 15, 'LAS BALATAS ESTÁN FORMADAS POR UNA PLACA DE METAL, QUE TIENE UN TIPO DE PASTA, ESTA ÚLTIMA SE VA DESGASTANDO, POCO A POCO, POR LA FRICCIÓN QUE SE CREA AL ROSAR CON EL DISCO DE LA LLANTA.'),
+('R25', 'BALATAS VOLKSWAGEN', '1200.00', 'images/balvolks.jpg', 41, 93, 15, 'LAS BALATAS VOLKSWAGEN SON DISPOSITIVOS DE LOS AUTOMÓVILES, SON UN MATERIAL FORMADO CON FIBRAS DE AMIANTO E HILOS METÁLICOS, QUE SE EMPLEA PRINCIPALMENTE PARA RECUBRIR LAS ZAPATAS, QUE SON UNA PIEZA DEL FRENO QUE DETIENE LAS RUEDAS AL OPRIMIRLAS.'),
+('R26', 'DISCO VENTILADO DELANTERO VLKS', '600.00', 'images/DiscoVentiladoDelanteroVLKS.jpg', 41, 94, 30, 'COMPUESTO DE DOS DISCOS CON SEPARACIÓN MEDIANTE CANALES RADIALES LOS DISCOS VOLKSWAGEN QUE LE AYUDA A SU VENTILACIÓN A TU AUTO. ESTOS SE SITÚAN A AMBOS LADOS DE LA FRICCIÓN EN LA RUEDA DE FORMA QUE AL OCUPARSE, MEDIANTE SUS CANALES, SE ENCUENTRA VENTILACIÓN QUE AYUDAN A DISIPAR EL CALOR OFRECIENDO UN EFECTO VENTILADOR.'),
+('R27', 'DISCO VENTILADO TRASERO CHEV', '1700.00', 'images/discovenchev.jpg', 41, 95, 13, 'ESTOS DISCOS DE CHEVROLET SUELEN MONTARSE ÚNICAMENTE EN EL EJE DELANTERO, YA QUE EN ESTA PARTE SE EJERCE LA MAYOR FUERZA AL MOMENTO DE UN FRENADO BRUSCO. PERO CUANDO LOS VEHÍCULOS SON MUY PESADOS O DEMASIADO POTENTES SUELEN ESTAR DOTADOS DE ELLOS TANTO EN PARTE DELANTERA COMO EN LA TRASERA.'),
+('R28', 'AMORTIGUADOR HIDRAULICO', '850.00', 'images/amortighid.jpg', 42, 96, 15, 'SU FUNCIONAMIENTO SE BASA EN FORZAR LA CIRCULACIÓN DE ACEITE A TRAVÉS DE ORIFICIOS, RANURAS Y RESORTES LOCALIZADOS EN EL PISTÓN Y CABEZA DE COMPRESIÓN DEL AMORTIGUADOR; ASÍ, ES LA RESISTENCIA AL PASO DEL ACEITE LO QUE GENERA LAS FUERZAS DE COMPRESIÓN Y EXPANSIÓN'),
+('R29', 'AMORTIGUADOR DE GAS', '13000.00', 'images/AmortiguadorDeGas.jpg', 42, 97, 4, 'LOS AMORTIGUADORES DE GAS, SON TAMBIÉN HIDRÁULICOS PERO EN VEZ DE CONTENER SÓLO AIRE EN LAS CÁMARAS, TIENEN GAS NITRÓGENO, DE ESTE MODO HACE MÁS EFICIENTE EL REGRESO DEL FLUIDO A LAS CÁMARAS ACELERANDO EL CONTACTO DE LOS NEUMÁTICOS CON EL PAVIMENTO DESPUÉS DE UN REBOTE Y EVITA QUE SE FORMEN BURBUJAS LO QUE GENERA MEJOR RESPUESTA EN TRABAJO DURO.'),
+('R3', 'LLANTAS ', '2500.00', 'images/Llantas.jpg', 25, 6, 20, 'UNA LLANTA ES UNA PIEZA CIRCULAR, GENERALMENTE DE METAL, SITUADA EN EL CENTRO DE UNA RUEDA Y SOBRE LA QUE SE COLOCA UN NEUMÁTICO Y QUE VA UNIDA AL EJE DEL VEHÍCULO.'),
+('R30', 'AMORTIGUADOR DE GAS OESPECTRUM', '1350.00', 'images/AmortiguadorDeGasOespectrum.jpg', 42, 98, 15, 'UNA DE SUS PRINCIPALES VENTAJAS QUE PROPORCIONAN ESTOS DE AMORTIGUADORES OESPECTRUM ES QUE EVITA QUE SE FORMEN BURBUJAS CUANDO EL AMORTIGUADOR TRABAJA CON INTENSIDAD LO QUE LES HACE GANAR EN EFICACIA. QUE COMO VIMOS, ESTE ERA EL PRINCIPAL INCONVENIENTE DE LOS AMORTIGUADORES HIDRÁULICOS.'),
+('R31', 'AMORTIGUADOR 5A PUERTA HONDA', '600.00', 'images/amortiguadorpuhon.jpg', 42, 99, 24, 'ESTE RESORTE DE HONDA ES UN MECANISMO DE LOS VEHÍCULOS Y DE OTRAS MÁQUINAS QUE SIRVE PARA COMPENSAR O DISMINUIR EL EFECTO DE LOS CHOQUES O SACUDIDAS BRUSCAS.'),
+('R32', 'AMORTIGUADOR 5A PUERTA CHEV', '350.00', 'images/Amortiguador5APuertaChev.jpg', 29, 100, 35, 'LOS AMORTIGUADORES Y LOS STRUTS DE CHEVROLET NO SÓLO MEJORAN LA COMODIDAD DE RODAJE, SINO QUE SON NECESARIOS PARA UNA MANIOBRABILIDAD SEGURA.'),
+('R33', 'BASE AMORTIGUADOR CHEV', '850.00', 'images/BaseAmortiguadorChev.jpg', 43, 101, 24, 'LOS SOPORTES DE AMORTIGUADOR DE CHEVROLETSUJETAN EL AMORTIGUADOR DE LA SUSPENSIÓN A LA CARROCERÍA DEL VEHÍCULO. AMORTIGUAN EL IMPACTO ENTRE EL AMORTIGUADOR Y EL VEHÍCULO, Y REDUCEN LOS CHIRRIDOS, LAS VIBRACIONES Y EL RUIDO.'),
+('R34', 'BASE AMORTIGUADOR TOYOTA', '1200.00', 'images/BaseAmortiguadorToyota.jpg', 43, 102, 12, 'LAS BASES PARA AMORTIGUADOR SON UNA PIEZA ESCENCIAL PARA EL PERFECTO DESEMPEÑO DE SUS AMORTIGUADORES, EN CONJUNTO ESTOS PERMITEN TENER UN CONTACTO FIRME CON LA CARRETERA Y TE DARÁN UNA MAYOR ESTABILIDAD Y SEGURIDAD EN EL CAMINO.'),
+('R35', 'BASE AMORTIGUADOR FIAT', '690.00', 'images/BaseAmortiguadorFiat.jpg', 43, 103, 15, 'LOS SOPORTES DE AMORTIGUADOR FIAT APORTAN UNA UNIÓN SUPERIOR QUE RESISTE LA PRESIÓN Y VIBRACIÓN CONSTANTES DURANTE MUCHAS MILLAS MÁS. NUESTRAS PIEZAS TAMBIÉN PROPORCIONAN FLEXIBILIDAD Y FACILITAN LA INSTALACIÓN CON LA POSIBILIDAD DE AJUSTAR EL SOPORTE DE AMORTIGUADOR PARA AYUDAR A LA ALINEACIÓN DE LAS RUEDAS.'),
+('R36', 'FARO VOLKSWAGEN', '1900.00', 'images/FaroVolks.jpg', 44, 104, 10, 'LA CARCASA DE UN FARO DE VOLKSWAGEN DESEMPEÑA LAS SIGUIENTES FUNCIONES:\r\nAÚNA TODOS LOS COMPONENTES DEL FARO (CABLE, REFLECTOR, ETC.), SE FIJA A LA CARROCERÍA DEL VEHÍCULO, LO PROTEGE DE LAS INFLUENCIAS EXTERNAS (HUMEDAD, CALOR, ETC.)\r\n'),
+('R37', 'FARO BMW', '5200.00', 'images/farobmw2.jpg', 44, 105, 8, 'LA PRIMERA FUNCIÓN DE LOS FAROS DE BMW ES CAPTURAR LA MAYOR PARTE POSIBLE DEL FLUJO LUMINOSO EMITIDO POR LA LÁMPARA Y DIRIGIRLO EN DIRECCIÓN HACIA LA CARRETERA. EXISTEN DISTINTOS SISTEMAS DE REFLECTOR QUE DAN FORMA A ESTOS REQUISITOS DE LA MANERA MÁS EFICAZ POSIBLE.'),
+('R38', 'FARO FONDO NEGRO', '5200.00', 'images/FaroFondoNegro.jpg', 44, 106, 8, 'SE TRATA DE LA PARTE ESTÉTICA MÁS IMPORTANTE DEL FRENTE DEL COCHE, VENDRÍAN A SER LOS OJOS DEL VEHÍCULO, ES LÓGICO QUE LO ASOCIEMOS CON EL CARÁCTER DEL COCHE, SU FUNCIÓN TÉCNICA ES SIMPLE PERO MUY IMPORTANTE: PROYECTAR LA LUZ DE LOS FOCOS PARA ILUMINAR EL CAMINO DE ACUERDO A LA NECESIDAD.'),
+('R39', 'KIT FOCOS LED', '450.00', 'images/KitFocosLED.jpg', 45, 107, 25, 'LOS DISPERSORES CON ÓPTICA DE DISPERSIÓN TIENEN LA FUNCIÓN DE DESVIAR, DISPERSAR O CONCENTRAR EL FLUJO LUMINOSO CAPTURADO POR EL REFLECTOR, CON EL PROPÓSITO DE CREAR LA DISTRIBUCIÓN DE LA LUZ DESEADA, P. EJ. EL CORTE DE LUZ VERTICAL. SIN EMBARGO, ESTE ANTIGUO CONCEPTO ESTÁNDAR SE HA VISTO SUSTITUIDO POR SISTEMAS SIN ÓPTICA.'),
+('R4', 'LLANTAS MERCEDES', '5500.00', 'images/LLantasMercedes.jpg', 15, 6, 12, 'LAS LLANTAS MERCEDEZ PROVEEN UNA ALEACIÓN QUE TIENEN UNA ESTÉTICA MÁS AGRACIADA Y SU LIGEREZA PERMITE UNA MENOR MASA SUSPENDIDA, LO QUE REDUNDA EN UN MEJOR COMPORTAMIENTO DEL COCHE. TAMBIÉN DISIPAN MEJOR EL CALOR DE LOS FRENOS, ALGO CLAVE PARA LOS QUE PRACTICAN UNA CONDUCCIÓN MUY DINÁMICA.'),
+('R40', 'KIT LED OSUN', '400.00', 'images/kitosunled.jpg', 45, 108, 30, 'LA ESTRUCTURA PEQUEÑA Y PLANA DE LOS LEDS OFRECE UN GRAN ESPACIO DE LIBRE CONFIGURACIÓN PARA EL FUTURO DISEÑO DE LOS PRODUCTOS, P.EJ. LOS MÓDULOS DE LUZ DE CONDUCCIÓN DIURNA PARA TURISMO, CAMIÓN Y CARAVANA.'),
+('R41', 'KIT BILED OSUN', '485.00', 'images/KitBiledOsun.jpg', 45, 109, 35, 'OSUN HA LANZADO AL MERCADO UN NUEVO MÓDULO DE ILUMINACIÓN CON TECNOLOGÍA BI-LED, ESPECIALMENTE DISEÑADO PARA SU UTILIZACIÓN EN AUTOBUSES, AUTOCARES, VEHÍCULOS INDUSTRIALES, VEHÍCULOS SOBRE RAÍLES, CARAVANAS Y MOTOS. ESTE FARO, DENOMINADO PREMIUM BI-LED DE 90 MM, OFRECE LAS FUNCIONES DE LUZ DE CRUCE Y DE CARRETERA A TRAVÉS DE UNA ÚNICA FUENTE LUMINOSA DISEÑADA EN LED.'),
+('R42', 'KIT HID BIXENON', '390.00', 'images/KitHIDBIXENON.jpg', 45, 110, 40, 'LAS LUCES HID BIXENON  TIENEN UN FUNCIONAMIENTO PARECIDO AL DE LOS FLUORESCENTES, LOS MISMOS QUE USAMOS EN CASA. ESTAS AMPOLLETAS DE CUARZO CONTIENEN EN SU INTERIOR GAS XENÓN (IGUAL QUE LOS FLUORESCENTES) QUE, AL SER QUEMADOS POR LOS ELECTRODOS (NO FILAMENTOS), PRODUCEN UNA LUZ BLANCA SIMILAR A LA LUZ DEL DÍA.'),
+('R43', 'BULBOS D3S XENON', '550.00', 'images/bulbosxenon.jpg', 45, 111, 40, 'LOS BULBOS D3S XENON EN EL SISTEMA DE ENFRIAMIENTO SON COMPONENTES INDISPENSABLES PARA EL CONTROL DE TEMPERATURA QUE PERMITEN EL ÓPTIMO FUNCIONAMIENTO DEL MOTOR.'),
+('R44', 'KIT HID XENON CORRIENTE ALTERN', '550.00', 'images/KitHidXenonCorrienteAlterna.jpg', 45, 112, 25, 'HID XENÓN DE CORRIENTE ALTERNA REBOBINA PARA AUMENTAR LA CORRIENTE DE SALIDA, Y CON ELLO LOGRAR MANTENER LA CORRIENTE Y VOLTAJE PARA QUE LAS HID FUNCIONEN EN BAJAS RPM, SOLO ES NECESARIO EL USO UN RECTIFICADOR PARA PASAR DE AC -> DC , POR ESO TANTAS DUDAS.'),
+('R45', 'BALASTRA SLIM CORRIENTE DIR', '170.00', 'images/BalastraSlimCorrienteDirecta.jpg', 45, 113, 45, 'BALASTRA SLIM ES UN EQUIPO QUE SIRVE PARA MANTENER ESTABLE Y LIMITAR LA INTENSIDAD DE LA CORRIENTE PARA LÁMPARAS CON CORRIENTE DIRECTA, YA SEA UNA LÁMPARA FLUORESCENTE O UNA LÁMPARA DE HALURO METÁLICO. EN SU FORMA CLÁSICA, ES UNA REACTANCIA INDUCTIVA QUE ESTÁ CONSTITUIDO POR UNA BOBINA DE ALAMBRE DE COBRE ESMALTADO ENROLLADA SOBRE UN NÚCLEO DE CHAPAS DE HIERRO O DE ACERO ELÉCTRICO.'),
+('R46', 'KIT DC BAJA Y KIT DUAL', '300.00', 'images/KitDCBajaYKitDual.jpg', 45, 114, 35, 'EL KIT DC BAJA HACE REFERENCIA AL USO DE UNA LÁMPARA DE DESCARGA DE GAS EN LUGAR DE UNA LÁMPARA HALÓGENA PARA LAS LUCES DELANTERAS CORTAS O LARGAS Y EL KIT DUAL  ES UN ARCO ELÉCTRICO QUE ARDE ENTRE DOS ELECTRODOS DE WOLFRAMIO DE LA LÁMPARA DE DESCARGA DE GAS DE XENÓN.'),
+('R47', 'BARRA FAROS LED', '180.00', 'images/BarrasFarosLed.jpg', 45, 115, 40, 'LOS FAROS LED ESTROBO SE UTILIZAN EN TUBOS FLUORESCENTES LED Y EN MÓDULOS LED, EN COMBINACIÓN CON OTROS DIODOS LUMINOSOS SMD'),
+('R48', 'FARO LED ESTROBO', '105.00', 'images/FarosLedEstrobo.jpg', 45, 116, 25, 'LOS FAROS LED ESTROBO SE UTILIZAN EN TUBOS FLUORESCENTES LED Y EN MÓDULOS LED, EN COMBINACIÓN CON OTROS DIODOS LUMINOSOS SMD'),
+('R49', 'TRANSFORMADOR CONV CORRIENTE', '650.00', 'images/TransformadorConvCorriente.jpg', 45, 117, 12, 'El TRANSFORMADOR SE USA YA QUE EL CAMPO MAGNÉTICO VARIABLE SE DA SOLO EN CORRIENTE ALTERNA, EN CORRIENTE CONTINUA EL CAMPO MAGNÉTICO ES TAMBIÉN CONSTANTE.'),
+('R5', 'FAROS NIEBLA', '3000.00', 'images/FarosNiebla.jpg', 3, 14, 8, 'LOS FAROS NORMALES, AL ALUMBRAR CUANDO HAY NIEBLA, LANZAN EL CHORRO DE LUZ HACIA ESAS GOTAS DE AGUA, HAZ DE LUZ QUE REBOTA Y DESLUMBRA AL CONDUCTOR YA QUE SE DIRIGE DIRECTAMENTE A ÉL (POR LA POSICIÓN DE LA LUZ EMITIDA-REBOTADA).'),
+('R50', 'PAQUETE 200 MODULOS LED', '700.00', 'images/Paquete200ModulosLed.jpg', 45, 118, 10, 'ESTE PAQUETE DE 200 MÓDULOS LED DOMINAN CADA FUENTE DIRECTA DE AL MENOS 12 V PARA HACER FUNCIONAR EL MÓDULO. '),
+('R6', 'RINES LUXOTK NMG PRO', '15000.00', 'images/RinesLUXOTKNMGPRO.jpg', 30, 18, 2, 'LOS RINES LUXOTK NMG PRO PARA AUTO SON LOS AROS DE METAL, USUALMENTE ACERO O ALEACIONES DE ALUMINIO, SOBRE LOS CUALES SE MONTAN LOS NEUMÁTICOS O LLANTAS DE LOS AUTOMÓVILES. LOS DIFERENTES DISEÑOS DE LOS RINES PERMITEN A LOS USUARIOS DAR UN TOQUE PERSONALIZADO AL AUTOMÓVIL.'),
+('R7', 'LLANTAS AUDI', '4500.00', 'images/rinesaudi.jpg', 4, 49, 14, 'LAS LLANTAS AUDI TAMBIÉN PROTEGEN LOS RINES Y OFRECEN UNA SUPERFICIE QUE AMORTIGUA. ESTÁN FABRICADAS CON TEJIDOS DE ALAMBRE PARA AUMENTAR LA RESISTENCIA.'),
+('R8', 'LLANTAS RR', '16000.00', 'images/LlantasRR.jpg', 19, 50, 4, 'LA PRINCIPAL FUNCIÓN DE LAS LLANTAS RR ES PROVEER DEL CONTROL NECESARIO MEDIANTE LA FRICCIÓN Y ADHERENCIA AL PAVIMENTO, HACIENDO POSIBLE FRENAR VELOZMENTE, ACELERAR Y DIRIGIR CON PRECISIÓN.'),
+('R9', 'FAROS DEPORTIVOS FERRARI', '15000.00', 'images/farosfer.jpg', 1, 51, 5, 'LOS FAROS DE FERRARI SON PIEZAS DE ELECTRÓNICA FABRICADAS CON MATERIALES SEMICONDUCTORES Y CUYO PROPIEDAD BÁSICA DE UTILIDAD PARA LA ELECTRÓNICA ES LA DE CONDUCIR LA ELECTRICIDAD CUANDO SE LE APLICA LA CORRIENTE EN UN SENTIDO, BLOQUEANDO LA CORRIENTE CUANDO SE LE APLICA EN EL SENTIDO CONTRARIO.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `talla`
+--
+
+CREATE TABLE `talla` (
+  `TallaId` int(11) NOT NULL,
+  `Nombre` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `talla`
+--
+
+INSERT INTO `talla` (`TallaId`, `Nombre`) VALUES
+(1, 'XS'),
+(2, 'S'),
+(3, 'M'),
+(4, 'L'),
+(5, 'XL'),
+(6, '2XL');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `vehiculo`
+--
+
+CREATE TABLE `vehiculo` (
+  `ProductoId` varchar(10) NOT NULL,
+  `Nombre` varchar(30) DEFAULT NULL,
+  `Color` varchar(10) DEFAULT NULL,
+  `Usado` varchar(2) DEFAULT NULL,
+  `Kilometraje` double DEFAULT NULL,
+  `Ano` int(11) DEFAULT NULL,
+  `Precio` decimal(20,2) DEFAULT NULL,
+  `Tipo` varchar(15) DEFAULT NULL,
+  `MarcaId` int(11) NOT NULL,
+  `CompraId` int(11) NOT NULL,
+  `Descripcion` varchar(300) NOT NULL,
+  `TipoMotor` varchar(15) NOT NULL,
+  `Potencia` varchar(20) NOT NULL,
+  `Torque` varchar(20) NOT NULL,
+  `Traccion` varchar(15) NOT NULL,
+  `TipoTransmision` varchar(15) NOT NULL,
+  `Rendimiento` varchar(15) NOT NULL,
+  `Alto` varchar(20) NOT NULL,
+  `Largo` varchar(15) NOT NULL,
+  `Ancho` varchar(15) NOT NULL,
+  `PesoBruto` varchar(15) NOT NULL,
+  `PesoVacio` varchar(15) NOT NULL,
+  `Imagen` varchar(255) NOT NULL,
+  `Existencias` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='		';
+
+--
+-- Volcado de datos para la tabla `vehiculo`
+--
+
+INSERT INTO `vehiculo` (`ProductoId`, `Nombre`, `Color`, `Usado`, `Kilometraje`, `Ano`, `Precio`, `Tipo`, `MarcaId`, `CompraId`, `Descripcion`, `TipoMotor`, `Potencia`, `Torque`, `Traccion`, `TipoTransmision`, `Rendimiento`, `Alto`, `Largo`, `Ancho`, `PesoBruto`, `PesoVacio`, `Imagen`, `Existencias`) VALUES
+('V1', 'FORD GT', 'ROJO', 'NO', 0, 2017, '8218000.00', 'DEPORTIVO', 6, 3, 'CONSUMO 16,8 - 16,\r\n\r\nPLAZAS 2', 'V6 TWIN-TURBO', '647 - 647 CV', '​​550 LB/PIE', 'TRASERA', 'AUTOMATICA', '8L/100KM', '1,11', '4,78', '2', '1460', '0', 'images/Ford-GT.jpg', 2),
+('V10', 'TT', 'ROJO', 'NO', 0, 2020, '906127.00', 'DEPORTIVO', 4, 23, 'CONSUMO 4,2 - 8\r\nPLAZAS 4', '4 CIL', '180 - 400 CV', '295 LB-PIE', 'QUATTRO', 'AUTOMATICA 6VEL', '3L/100KM', '1,343', '4,191', '1.832', '-', '-', 'images/Audi_tt.jpg', 3),
+('V11', 'WRX STI', 'AZUL', 'NO', 0, 2019, '1015530.00', 'DEPORTIVO', 20, 24, 'CARROCERÍA Coupé\r\nPUERTAS 4\r\nPLAZAS 5 \r\nCONSUMO 10,9', '4CIL TURBOCAR', '300 CV', '270 LB-PIE', 'TOTAL', 'MANUAL', '1/100KM', '1,475', '4,595', '1,795', '0', '0', 'images/subaru2.jpg', 5),
+('V12', 'JAGUAR F-TYPE', 'BLANCO', 'NO', 0, 2019, '1988740.00', 'BERLINA', 9, 25, 'CARROCERÍA BERLINA\r\nPUERTAS 4\r\nPLAZAS 5\r\nCONSUMO 7 ', '6 CIL', '360 CV', '400 a 700N·m', 'TRASERA', 'AUTOMATICA', '1/100KM', '1,311', '4,482', '1,923', '0', '0', 'images/Jaguar proudly unveils F-TYPE Chequered Flag Edition model!.jpg', 3),
+('V13', 'ACCORD', 'NEGRO', 'NO', 0, 2019, '475000.00', 'SEDAN', 8, 26, 'CILINDROS 4 EN LÍNEA\r\nMOTOR - TRACCIÓN DELANTERO - DELANTERA\r\nTRANSMISIÓN AUTOMÁTICA 10 VELOCIDADES\r\n', '4 CIL', '247/6500 HP/RPM', '273/1500-4000 LB-PIE', 'DELANTERA', 'AUTOMATICA', '12,7 KM/L', '1440', '4725', '1840', '1935', '1428', 'images/honda2.jpg', 3),
+('V14', 'IBIZA BEATS', 'GRIS', 'NO', 0, 2019, '315900.00', 'COMPACTO', 7, 27, 'NÚMERO DE CILINDROS: 4\r\nALIMENTACIÓN DE COMBUSTIBLE: INYECCIÓN MULTIPUNTO\r\nPOTENCIA (SAE) HP/RPM: 110/(5800)\r\nTORQUE LB-FT / (RPM): 114/(3800-4000)\r\nVELOCIDAD MÁXIMA (KM/H): 190\r\n', '4 CIL', 'HP/RPM:110/(5800)', 'RPM:114/(3800-4000)', 'DELANTERA', 'MANUAL', '15,6 KM/L', '1444 ', '4059 ', '1780 ', '1123 ', '0', 'images/Ibiza.jpg', 3),
+('V15', 'MODEL3', 'ROJO', 'NO', 0, 2019, '929900.00', 'FASTBACK', 21, 28, ' EL MODEL 3 OFRECE LA OPCIÓN DE MOTOR DUAL. ADEMÁS, UN ALERÓN DE FIBRA DE CARBONO MEJORA LA ESTABILIDAD A ALTAS VELOCIDADES, LO QUE PERMITE QUE EL MODEL 3 ACELERE DE 0 A 100 KM/H EN TAN SOLO 3.4 SEGUNDOS.', 'DUAL', '250 o 270 CABALLOS', '300LB-PIE', 'AWD', 'AUTOMATICA', '518 KM', '1,443 ', '4,694 ', '1,849 ', '', '0', 'images/tesla-model-3.jpg', 2),
+('V16', 'M4 COUPE', 'NEGRO', 'NO', 0, 2020, '919900.00', 'COUPE', 3, 29, 'EL BMW M4 COUPÉ ABARCA TODO LO QUE DISTINGUE AL BMW M: MÁS DE CUATRO DÉCADAS DE EXPERIENCIA EN EL DESARROLLO DE AUTOMÓVILES DE ALTO DESEMPEÑO QUE HAN LLEVADO A LA PERFECCIÓN A DETALLE DE LA INTERACCIÓN ENTRE TRACCIÓN, CHASIS, TRANSMISIÓN Y DIRECCIÓN.', '6 CIL', '431 CV', '', '', 'MANUAL', '9,3-10 L/100KM', '1,392 ', '1,849 ', '1,825 ', '0', '0', 'images/M4-Coupe.jpg', 4),
+('V17', 'R8', 'NEGRO', 'NO', 0, 2020, '33269900.00', 'DEPORTIVO', 4, 30, 'EL NUEVO AUDI R8 COUPÉ V10 PERFORMANCE QUATTRO LLEVA LA DEPORTIVIDAD EN SUS GENES. SU PODER SE HACE PATENTE EN EL EXTERIOR A TRAVÉS LAS PODEROSAS TOMAS DE AIRE SITUADAS JUNTO A LA AMPLIA PARRILLA\r\n', 'CENTRAL 10 CIL', '610 HP', '560 NM / 6,500 RPM', 'QUATTRO', 'S TRONIC', '15,3L/100KM', '1,236 ', '4,429 ', '1,940 ', '0', '', 'images/R8.jpg', 2),
+('V18', 'A6', 'PLATEADO', 'NO', 0, 2020, '1229900.00', 'SEDAN', 4, 31, 'EL NUEVO AUDI A6 AHORA CUENTA CON UN ELEGANTE E INNOVADOR DISEÑO, TANTO INTERIOR COMO EXTERIOR. EQUIPADO CON TECNOLOGÍA MILD-HYBRID PARA UN MEJOR RENDIMIENTO DE COMBUSTIBLE Y OPCIÓN DE DOS MOTORIZACIONES DE 4 Y 6 CILINDROS.', '6 CIL', '340HP/5000-6400RPM', '500NM/1370-4500RPM', 'QUATTRO', 'S TRONIC 7VEL', '13.1 KM/L', '1,467 ', '4,939 ', '1,886 ', '0', '', 'images/A6.jpg', 5),
+('V19', 'A8', 'NEGRO', 'NO', 0, 2020, '1739900.00', 'SEDAN', 4, 32, 'EL NUEVO AUDI A8 SUPONE EL COMIENZO DE UN NUEVO LENGUAJE EN DISEÑO, UNA NUEVA IDEA DE CONDUCCIÓN Y UN NUEVO NIVEL DE CALIDAD.', '6 CIL. V,TFSI', '340HP/5,000-6,400RPM', '500NM/1,370-4,500RPM', 'QUATTRO', 'TIPTRONIC 8 VEL', '10.7 KM/L', '1291', '5120', '1,886', '0', '2,070', 'images/A8.jpg', 4),
+('V2', 'A3', 'NEGRO', 'NO', 0, 2020, '834900.00', 'SEDAN', 4, 15, 'COMBUSTIBLE	GASOLINA\r\nCILINDRADA	1984 CC\r\nPOTENCIA	290/6500 HP/RPM\r\nTORQUE	280/1850-5500 LB•PIE\r\nCILINDROS	4 EN LÍNEA\r\nVÁLVULAS	16\r\nALIMENTACIÓN	INYECCIÓN DIRECTA TURBO\r\nSISTEMA START / STOP	SI\r\n', '4 CIL', '290/6500 HP/RPM', '280/1850-5500 LB·PIE', 'QUATTRO', 'AUTOMATICA', '16.40KM/L', '1,409 ', '4,423', '1,793 ', '0', '0', 'images/A3.jpg', 3),
+('V20', 'Q8', 'NARANJA', 'NO', 0, 2020, '1419900.00', 'SUV', 4, 33, 'ESTE NUEVO SUV TE OFRECE LA COMBINACIÓN DE UN EXPRESIVO EXTERIOR COMBINADO CON UN SOFISTICADO DISEÑO INTERIOR. EQUIPADO CON TECNOLOGÍA TFSI, TRACCIÓN QUATTRO Y TECNOLOGÍA MILD-HYBRID PARA UN MAYOR RENDIMIENTO DE COMBUSTIBLE.', '6 CIL. V,TFSI', '340HP/5500-6500RPM', '500NM/2900-5300RPM', 'QUATTRO', 'TIPTRONIC 8 VEL', '10.3 KM/L', '1,705 ', '4,986  ', '1,995 ', '0', '', 'images/Q8.jpg', 4),
+('V21', 'SERIE 3', 'NEGRO', 'NO', 0, 2020, '679900.00', 'SEDAN', 3, 77, 'EL NUEVO BMW SERIE 3 MUESTRA CÓMO ES POSIBLE REINVENTARSE. DESPUÉS DE TODO, CON SU LENGUAJE DE DISEÑO PIONERO, REPRESENTA EL COMIENZO DE UNA NUEVA ERA. ESTE SEDÁN DEPORTIVO AHORA SE MUEVE CON MOTORES AÚN MÁS POTENTES Y EFICIENTES. ', '4 CIL', '250 CV', '184 HP5,000–6,500RPM', 'TRASERA', 'AUTOMÁTICA 8VEL', '15.9KM/L/144G/K', '1435', '4709', '1604', '', '', 'images/bmws3p.jpg', 8),
+('V22', 'SERIE 5', 'BLANCO', 'NO', 0, 2020, '829900.00', 'SEDAN', 3, 78, 'EL BMW SERIE 5 ES LA PERSONIFICACIÓN DEL COLECTIVO EMPRESARIAL MODERNO. CUMPLE DE MANERA CONVINCENTE CON LAS EXPECTATIVAS QUE SE PONEN HOY EN DÍA EN UN VEHÍCULO DE SU CLASE: ATLETISMO ESTÉTICO Y PLACER DE CONDUCCIÓN CON TECNOLOGÍA VANGUARDISTA.', '4 CIL', '450 CV', '184HP 5,000–6,500RPM', 'TRASERA', 'AUTOMATICA 8VEL', '16.7KM140.2G/K', '4,936', '4,936', '1,868 ', '', '', 'images/bmws5p.jpg', 6),
+('V23', 'SERIE 7', 'GRIS', 'NO', 0, 2020, '1904900.00', 'SEDAN', 3, 79, 'EL BMW SERIE 7 SEDÁN REPRESENTA UNA PRESENCIA CONFIADA. DEBIDO A QUE EL BMW 750LI ES IMPULSADO POR UN RECIENTEMENTE DESARROLLADO MOTOR DE GASOLINA DE 8 CILINDROS BMW TWINPOWER TURBO Y CON XDRIVE COMO ESTÁNDAR, ESTÁ CREADO SIMPLEMENTE PARA ASUMIR LA POSICIÓN DE LIDERAZGO', '6 CIL', '250 CV', '340HP 5,500–6,500RPM', 'TRASERA', 'AUTOMATICA 8CIL', '14.1 KM/L 166.3', '1467', '5120', '2169', '', '', 'images/bmws7p.jpg', 3),
+('V24', 'SERIE 8', 'PLATEADO', 'NO', 0, 2020, '2104900.00', 'COUPE', 3, 80, ' EL BMW SERIE 8 COUPÉ ELEVA LAS REVOLUCIONES COMO EL NIVEL DE ADRENALINA. COMBINADO CON LAS CARACTERÍSTICAS EXCLUSIVAS, ESTE LUJOSO AUTO DEPORTIVO ES LA FUSIÓN PERFECTA DE LA MEJOR CALIDAD Y EL MÁXIMO RENDIMIENTO.', '8 CIL', '250 CV', '530HP(5,500–6,000RPM', 'INTEGRAL', 'AUTOMATICA 8VEL', '11.0KM/L/213.2', '1346', '4651', '2137', '', '', 'images/bmws8p.jpg', 5),
+('V25', 'M8', 'AZUL', 'NO', 0, 2020, '2300900.00', 'COUPE', 3, 81, 'EL BMW M8 COUPÉ CON M XDRIVE OFRECE UN AMBIENTE DE LUJO CON LA MÁXIMA SENSACIÓN DEL DEPORTE MOTOR, DISEÑADO PARA LLEVAR MÁS ALLÁ LOS LÍMITES DEL RENDIMIENTO DINÁMICO.', '8 CIL', '250 CV', '530HP(5,500-6,000RPM', 'INTEGRAL', 'AUTOMATICA 8VEL', '11.0KML213.2', '1362', '4867', '2137', '', '', 'images/bmwm8p.jpg', 5),
+('V26', 'Z4', 'NEGRO', 'NO', 0, 2020, '1199900.00', 'COUPE', 3, 82, 'EL COMPLETAMENTE NUEVO BMW Z4. UN ROADSTER QUE NO PUDO SER MEJOR: ABIERTO, DEPORTIVO E INFLEXIBLE. CON UNA POTENTE DINÁMICA DE CONDUCCIÓN Y UN DISEÑO PROGRESIVO, SÓLO TIENE UN OBJETIVO: LA LIBERTAD ENTRE EL CAMINO Y EL CIELO ABIERTO.', '4 CIL', '340 CV', '197HP(4,500-6,500RPM', 'TRASERA', 'AUTOMATICA 8VEL', '16.6KM/L/141.3', '1304', '4324', '2024', '', '', 'images/bmwz4.jpg', 7),
+('V27', 'I8', 'BLANCO', 'NO', 0, 2020, '2899900.00', 'COUPE', 3, 83, 'ENERGÉTICO, FASCINANTE Y LISTO PARA UNA MOVILIDAD REDEFINIDA; PARA DISFRUTAR AL MÁXIMO DEL PLACER DE CONDUCIR EN LA CARRETERA. NO SOLO LA ADRENALINA SE DISPARA AL INSTANTE CON SU ICÓNICO DISEÑO, SINO TAMBIÉN EL VELOCÍMETRO CON EL INNOVADOR MOTOR DE ESTE HÍBRIDO ENCHUFABLE QUE GENERA 374 CV Y 570 NM.', 'DUAL', '380 CV', '250 NM', 'TOTAL', 'AUTOMATICA 6VEL', '22.0km/l/106.9', '1291', '4689', '2218', '', '', 'images/bmwi8.jpg', 3),
+('V28', 'EDGE ', 'GRIS', 'NO', 0, 2019, '754800.00', 'SUV', 6, 151, 'DISEÑADA PARA BRINDAR MAYOR CONTROL Y ESTABILIDAD DE LA CAMIONETA SUV, YA QUE PERMITE QUE LAS RUEDAS GIREN DE FORMA AUTÓNOMA, ENTREGANDO UNA EXPERIENCIA DE CONDUCCIÓN MÁS DINÁMICA Y SEGURA.', '4 CIL', '250 CV', '373 NM', 'DELANTERA', 'AUTOMATICA 8VEL', '12-14 KM/L', '1742', '4777', '1930', '1796', '', 'images/edge2.jpg', 4),
+('V29', 'ESCAPE', 'ROJO', 'NO', 0, 2019, '632400.00', 'SUV', 6, 152, 'REDISEÑADA POR DENTRO Y POR FUERA, LA NUEVA FORD ESCAPE 2020 POSEE UNA ATRACTIVA APARIENCIA DE ELEGANCIA Y SOFISTICACIÓN TOTAL, SIN SACRIFICAR EL GRAN DESEMPEÑO Y DEPORTIVIDAD QUE BUSCAS EN UNA CAMIONETA SUV.', '4 CIL', '198 CV', '373NM', 'DELANTERA', 'AUTOMATICA 8CIL', '13 KM/L', '1689', '4524', '2000', '1542', '', 'images/ESCAPE2.jpg', 8),
+('V3', 'MUSTANG', 'NARANJA', 'NO', 0, 2019, '677100.00', 'MUSCLE CAR', 6, 16, 'EQUIPADO CON EL MOTOR 2.3L ECOBOOST® (TURBO) CON 310HP Y 350 LB/PIE DE TORQUE Y TRANSMISIÓN AUTOMÁTICA DE 10 VELOCIDADES, LA VERSIÓN ECOBOOST® DE FORD MUSTANG 2019 NO SÓLO ES UN POTENTE MUSCLE CAR, TAMBIÉN ES DINÁMICO Y EFICIENTE.', '2.3LECOBOOSTT', '450 CV', '310HP Y 350LB', 'TRASERA', 'AUTOMATICA', '8-14 KM/L', '1,394 ', '4,789 ', '1,916 ', '0', '0', 'images/Mustang19.jpg', 8),
+('V30', 'EXPLORER', 'ROJO', 'NO', 0, 2019, '726000.00', 'SUV', 6, 153, 'LA DIRECCIÓN ELÉCTRICA ASISTIDA DE FORD EXPLORER 2019 TE BRINDA UN MAYOR CONTROL DE LA CAMIONETA SUV, ENTREGANDO SUAVIDAD O FIRMEZA DEPENDIENDO DEL CAMINO QUE TRANSITES.', '4 CIL', '290 CV', '346 NM', 'TRASERA', 'AUTOMATICA 6VEL', '10-11 KM/L', '5036', '1778', '2000', '20150 ', '', 'images/explorer2.jpg', 5),
+('V31', 'PILOT', 'TINTO', 'NO', 0, 2020, '754900.00', 'SUV', 8, 154, 'HONDA PILOT PRESENTA UN DISEÑO RENOVADO, MUCHO MÁS IMPONENTE, AVENTURERO Y COMO SIEMPRE, SOFISTICADO.\r\nY PORQUE SABEMOS QUE EN TU VIDA TE GUSTA LA AVENTURA. ', '4 CIL', '280 CV', '355 NM', 'DELANTERA', 'AUTOMATICA 6VEL', '12 KM/L', '1846', '4848', '1993', '1854', '', 'images/pilot2.jpg', 7),
+('V32', 'CRV', 'AZUL', 'NO', 0, 2019, '501900.00', 'SUV', 8, 155, 'UNA LÍNEA CON RASGOS MÁS AGRESIVOS, LE DAN A LA INCOMPARABLE CR-V UNA ACTITUD IMPONENTE. SU INCREÍBLE DISEÑO FUSIONA VANGUARDIA, FUNCIONALIDAD Y AERODINÁMICA PARA UNA CONDUCCIÓN DINÁMICA Y EMOCIONAN. ', '4 CIL', '188 CV', '243 NM', 'DELANTERA', 'CVT', '18 KM/L', '1685', '4600', '1855', '1517', '', 'images/crv2.jpg', 0),
+('V33', 'CRZ', 'NEGRO', 'NO', 0, 2019, '350000.00', 'COUPE', 8, 156, 'HABER APOSTADO POR UN DISEÑO ATREVIDO FUE LA MEJOR DECISIÓN QUE PUDO TOMAR HONDA SI NO TENÍA CONSIDERADA UNA NUEVA GENERACIÓN DEL CR-Z PARA LOS PRÓXIMOS AÑOS. SU HÍBRIDO DEPORTIVO YA LLEVA CASI CINCO AÑOS EN EL MERCADO.', '6 CIL', '137 CV', '240 NM', 'DELANTERA', 'VARIABLE CONT', '23 KM/L', '1689', '4350', '1855', '1236', '', 'images/crz2.jpg', 3),
+('V34', 'DB11', 'GRIS', 'NO', 0, 2019, '4792863.00', 'DEPORTIVO', 2, 157, 'EL ASTON MARTIN DB11 ES EL MODELO MEDIO DE ASTON MARTIN, UN GRAN TURISMO DE ALTAS PRESTACIONES, HEREDERO DEL MÍTICO ASTON MARTIN DB9 QUE TANTAS ALEGRÍAS LE DIERON AL FABRICANTE BRITÁNICO.', '6 CIL', '608 CV', '700 NM', 'TRASERA', 'AUTOMATICA 8VEL', '141 L/100 km', '1290', '4750', '1940', '1875', '', 'images/db112.jpg', 2),
+('V35', 'VANQUISH', 'GRIS', 'NO', 0, 2020, '5416600.00', 'DEPORTIVO', 2, 158, 'EL ASTON MARTIN VANQUISH OFRECE 573CV DE POTENCIA E INCORPORA MASIVAMENTE LA FIBRA DE CARBONO EN LA CARROCERÍA Y PANELES INTERIORES. EL HEREDERO DEL DBS OFRECE COMO NOVEDAD UN HABITÁCULO QUE PUEDE CONFIGURARSE PARA ACOGER A DOS O A CUATRO OCUPANTES.', '6 CIL', '574 CV', '620 NM', 'TRASERA', 'AUTOMÁTICA ZF', '4.6 km/L', '1294', '4728', '1912', '1835', '', 'images/vanquish2.jpg', 1),
+('V36', 'SUPRA', 'ROJO', 'NO', 0, 2020, '1149900.00', 'DEPORTIVO', 40, 159, 'ESTE ICONO DEPORTIVO FUE CREADO POR TOYOTA GAZOO RACING CON TRACCIÓN TRASERA, UNA ESTRUCTURA AVANZADA Y LIGERA, CON UN INTERIOR CENTRADO EN LA COMPETICIÓN Y EL CONFORT.', '4 CIL', '335 CV', '495 NM', 'TRASERA', 'AUTOMATICA 8VEL', '0-100 KM/H', '1292', '4379', '1854', '1570', '', 'images/supra2.jpg', 4),
+('V37', 'COROLLA', 'NEGRO', 'NO', 0, 2020, '315100.00', 'SEDAN', 40, 160, 'TOYOTA COROLLA. NO HAY PRETEXTO PARA NO ADMIRAR ESTA LEYENDA. COOL POR DENTRO Y POR FUERA MÁS DEPORTIVO QUE NUNCA; UN DISEÑO RENOVADO QUE CAPTA MIRADAS.', '4 CIL', '121 CV', '170 NM', 'DELANTERA', 'AUTOMATICA 6VEL', '16-20 KM/L', '1435', '4370', '1790', '1295', '', 'images/corolla2.jpg', 5),
+('V38', 'DIVO', 'GRIS', 'NO', 0, 2020, '10693041.00', 'DEPORTIVO', 48, 161, 'ENTRE LOS COLECCIONISTAS DE COCHES EXÓTICOS EXISTE CIERTO INTERÉS POR PIEZAS TAN EXCLUSIVAS COMO LA QUE PROPONE EL BUGATTI DIVO, AÚN CON PRECIOS QUE LLEGUEN A LOS 5 MILLONES DE EUROS.', '6 CIL', '1500 CV', '1600 NM', 'DELANTERA', 'DOBLE EMBRAGUE', '0-400 KM/H', '1212', '4641', '2018', '1961', '', 'images/divo2.jpg', 1),
+('V39', 'GTR', 'BLANCO', 'NO', 0, 2019, '2792000.00', 'DEPORTIVO', 49, 162, 'DOMINAR EL CAMINO CON IMPONENTE PERSONALIDAD Y PODER, ESTÁ EN LA NATURALEZA DE NISSAN GT-R. LA LEGENDARIA ESENCIA DEPORTIVA QUE LO DEFINE LLEVARÁ TUS SENTIDOS AL LÍMITE.', '4 CIL', '565 CV', '633 NM', 'DELANTERO', 'MANUAL 6VEL', '10 KM/L', '1370', '4670', '1895', '1785', '', 'images/gtr2.jpg', 2),
+('V4', 'MODEL X', 'NEGRO', 'NO', 0, 2019, '1929900.00', 'SUV', 21, 17, 'CARROCERÍA SUV Grande.\r\nPUERTAS 5.\r\nPLAZAS 5 - 7.\r\nPOTENCIA 333 - 612 cv.', 'ELECTRICO', '333 - 612 CV', '660 N·M', 'TRASERA', 'AUTOMATICA', '542 KM', '1,684 ', '5,052 ', '1,999 ', '0', '0', 'images/ModelX.jpg', 3),
+('V40', 'VEYRON', 'NEGRO', 'NO', 0, 2019, '1641280.00', 'DEPORTIVO', 48, 163, 'EL BUGATTI VEYRON FUE EL SUPERDEPORTIVO QUE FIRMÓ EL REGRESO DE BUGATTI COMO FABRICANTE, PERTENECIENDO YA AL GRUPO VOLKSWAGEN Y CONVIRTIÉNDOSE EN EL COCHE HALO DE TODO EL GRUPO AUTOMOVILÍSTICO AL EMPLEAR LA SOLUCIONES MÁS AVANZADAS DEL MOMENTO.', '4 CIL', '1200 CV', '1500 NM', 'TRASERA', 'MANUAL 7VEL', '0-350 KM/H.', '1212', '4554', '2038', '1888', '', 'images/veyron2.jpg', 1),
+('V41', 'MX5', 'ROJO', 'SI', 1500, 2019, '338900.00', 'DEPORTIVO', 14, 164, 'DOMINA TODOS LOS CAMINOS CON TU MAZDA MX-5 2019 Y EXPERIMENTA UNA INCREÍBLE SENSACIÓN  ESPECIFICACIONES, PRECIOS, SERVICIOS, DISTRIBUIDORES, TÉRMINOS, CONDICIONES Y TODO LO NECESITES CON MAZDA.', '4 CIL', '181 CV', '205 NM', 'TRASERA', 'MANUAL 6VEL', '15-17 KM/L', '1236', '3915', '1735', '1060', '', 'images/mx52.jpg', 2),
+('V42', 'SHELBY', 'AZUL', 'NO', 0, 2020, '2300000.00', 'MUSCLE CAR', 6, 165, 'HA PASADO YA MUCHO TIEMPO A LA ESPERA DE LA LLEGADA DEL FORD MUSTANG SHELBY GT500 2020 A MÉXICO Y FINALMENTE AYER EL ESPERADO SUCESO TUVO LUGAR TUVO LUGAR EN UN CENTRO DE ESPECTÁCULOS LOCALIZADO EN EL CORAZÓN DE LA COLONIA CONDESA.', '4 CIL', '500 CV', '847 NM', 'TRASERA', 'MANUAL 7VEL', '0-250 KM/H.', '1394', '4789', '1916', '1916', '', 'images/shelby2.jpg', 7),
+('V43', 'S7', 'BLANCO', 'Si', 1000, 2009, '1477656.00', 'DEPORTIVO', 50, 166, 'LOS SALEEN S7 TWIN TURBO FUERON UNA EVOLUCIÓN DEL SALEEN S7 ATMOSFÉRICO QUE FUE DESVELADA A MEDIADOS DE LA DÉCADA PASADA Y QUE INCLUÍAN UNA NUEVA CONFIGURACIÓN DE MOTOR SOBREALIMENTADO QUE ELEVABA CONSIDERABLEMENTE LA POTENCIA DEL MODELO.', '8 CIL', '500 CV', '949 NM', 'TRASERA', 'MANUAL 6VEL', '0–100 KM/H', '1041', '4775', '1981', '1247', '', 'images/s72.jpg', 1),
+('V44', 'NSX', 'GRIS', 'NO', 0, 2018, '3750000.00', 'DEPORTIVO', 51, 167, 'El NSX es en muchos sentidos como un líder técnico de la marca: Es el primer coche de producción que se construía con un chasis monocasco construido totalmente en aluminio, a la vez tiene una dirección asistida totalmente electrónica.', '6 CIL', '450 CV', '750 NM', 'DELANTERA', 'MANUAL 6VEL', '10.6 KM/L', '1215', '4329', '2217', '1773', '', 'images/nsx2.jpg', 2),
+('V45', 'CHIRON', 'NEGRO', 'NO', 0, 2019, '3500000.00', 'DEPORTIVO', 48, 168, 'EL BUGATTI CHIRON ES UN HIPERDEPORTIVO DE BUGATTI, QUE REEMPLAZÓ AL BUGATTI VEYRON EN 2016. EL BUGATTI CHIRON SE CARACTERIZA POR SER EL VEHÍCULO MÁS RÁPIDO DEL MUNDO.', '6 CIL', '1000CV', '1600 NM', 'TRASERA', 'MANUAL 6VEL', '0-350 KM/H', '1200', '4320', '2000', '1995', '', 'images/chiron2.jpg', 1),
+('V46', 'GIULIA', 'ROJO', 'NO', 0, 2019, '974900.00', 'SEDAN', 52, 169, 'PRESUME SU DISEÑO INNOVADOR CON TODO EL ADN DE LA MARCA INTEGRANDO UN MOTOR TURBO DE 2.0 L. DISEÑADO CON UN PROPÓSITO DE ELEGANCIA Y SOBRIEDAD SIN COMPROMETER EL DESEMPEÑO ¡CONÓCELO! PROMOCIONES DISPONIBLES. 8 VELOCIDADES. TRACCIÓN TRASERA.', '4 CIL', '510 CV', '330 NM', 'TRASERA', 'MANUAL 6VEL', '14.00 KM/L', '1436', '4643', '1860', '1450', '', 'images/alfarom2.jpg', 3),
+('V47', 'STELVIO', 'ROJO', 'NO', 0, 2019, '1500000.00', 'SUV', 52, 170, 'CADA UNA DE LAS LÍNEAS DE STELVIO ES UNA MUESTRA DE LA METICULOSA INVESTIGACIÓN DE ALFA ROMEO PARA CREAR LA “BELLEZA NECESARIA”, ES DECIR, UN DISEÑO MOTIVADO.', '6 CIL', '290 CV', '600 NM', 'TRASERA', 'AUTOMATICA 8VEL', '10-13 KM/L', '1671', '4678', '1903', '1979', '', 'images/stel2.jpg', 2),
+('V48', '4C', 'ROJO', 'NO', 0, 2019, '1090000.00', 'DEPORTIVO', 52, 171, 'EL ALFA ROMEO 4C ES EL MODELO MÁS DEPORTIVO DE ALFA ROMEO CON PERMISO DE LOS ALFA ROMEO GIULIA Y ALFA ROMEO STELVIO EN SUS VERSIONES QUADRIFOGLIO DE 510.', '6 CIL', '240 CV', '350 NM', 'TRASERA', 'AUTOMATICA 5VEL', '6.8 L/100 KM', '1184', '2380', '1868', '895', '', 'images/c42.jpg', 3),
+('V49', 'R1T', 'GRIS', 'NO', 0, 2019, '1161840.00', 'PICKUP', 18, 172, 'EL COCHE ELÉCTRICO ESTÁ LLEGANDO A TODOS LOS NICHOS DE MERCADO EN EL ÁMBITO DE LA AUTOMOCIÓN. LO QUE COMENZÓ COMO UNA APUESTA EN DETERMINADOS SEGMENTOS MUY CONCRETOS, SE HA TERMINANDO EXPANDIENDO EN TODA LA INDUSTRIA. ', 'ELECTRICO', '750 CV', '3500 NM', 'TRASERA', 'AUTOMATICA 8VEL', '480 KM', '1900', '5001', '1800', '', '', 'images/riv2.jpg', 6),
+('V5', '488 GTB', 'ROJO', 'SI', 25000, 2015, '6418000.00', 'DEPORTIVO', 1, 2, 'MOTOR DE 670 CV COLOCADO EN POSICIÓN CENTRAL POSTERIOR.\r\nMOTOR ES DE OCHO CILINDROS EN V DE 3.9 LITROS DE CILINDRADA.\r\nPOTENCIA MÁXIMA A 8000 RPM.\r\n', '8 CIL', '485 CV', '760NM', 'TRASERA', 'AUTOMATICA', '11,4 L/100 KM.', '1,213 ', '4,568 ', '1,937 ', '0', '0', 'images/488-GTB.jpg', 2),
+('V50', '370Z', 'BLANCO', 'NO', 0, 2019, '732604.00', 'DEPORTIVO', 49, 173, 'DESDE EL RUGIDO DE SU MOTOR HASTA EL DINAMISMO DE SU LÍNEA QUE REÚNE LA HERENCIA DE UN CONCEPTO AUTOMOTRIZ QUE SE HA DISTINGUIDO POR DÉCADAS, NISSAN 370Z ES LA MEJOR OPCION SI DE AUTOS DEPORTIVOS NOS REFERIMOS.', '4 CIL', '333 CV', '270 LB-FT', 'TRASERA', 'AUTOMATICA 8VEL', '7.7 KM/L', '1312', '4333', '1800', '1454', '', 'images/nis2.jpg', 1),
+('V6', 'X6', 'CAFE', 'NO', 0, 2019, '1250000.00', 'SUV', 3, 19, 'POTENCIA MÁXIMA EN HP A RPM\r\n306/5,800–6,400\r\nACELERACIÓN 0-100 KM/H EN S\r\n6.4\r\nRENDIMIENTO DE COMBUSTIBLE COMBINADO EN KM/L* 11.7\r\nCAPACIDAD DEL COMPARTIMIENTO DE CARGA 580\r\n', '6 CIL', 'RPM 306/5,800–6,400', '650 N·M', 'TOTAL', 'AUTOMATICA', 'KM/L* 11.7', '1,696 ', '4,935', '2,004 ', '-', '-', 'images/BMW-X6M.jpg', 3),
+('V7', 'PHANTOM', 'NEGRO', 'NO', 0, 2018, '10200000.00', 'SEDAN', 19, 20, 'Es un sedán que supera con creces los 5 metros de longitud, y se acerca a los 6 metros según la versión.', '12 CIL', '460 CV', '0-62MPH', 'TRASERA', 'AUTOMATICA', '1/100KM', '1,646 ', '5,762 ', '2,018 ', '0', '0', 'images/rollsroyce_Phantom.jpg', 2),
+('V8', 'MODEL S', 'BLANCO', 'NO', 0, 2019, '1819900.00', 'LIFTBACK', 21, 21, 'CARROCERÍA Berlina\r\nPUERTAS 5\r\nPLAZAS 5\r\nPOTENCIA 333 - 612 cv', 'ELECTRICO', '333 - 612 CV', '660 N·M', 'TRASERA', 'AUTOMATICA', '560 A 600 KM', '1,445 ', '4,979 ', '1,964 ', '0', '0', 'images/Model_S.jpg', 4),
+('V9', 'CAMARO', 'AZUL', 'NO', 0, 2019, '988100.00', 'MUSCLE CAR', 29, 22, 'MOTOR V6 DE 3.6 LITROS\r\nV8 LT1 DE 455 HP\r\nTRANSMISIÓN AUTOMÁTICA DE 10 VELOCIDADES CON CAMBIOS AL VOLANTE\r\n', 'V6', '455 HP @6,000RPM', '455 LB-PIE', 'TRASERA', 'AUTOMATICA', ' 10-13 KM/L', '1,360 ', '4,836 ', '1,917 ', '0', '0', 'images/Camaro2019.jpg', 9);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `venta`
+--
+
+CREATE TABLE `venta` (
+  `VentaId` int(11) NOT NULL,
+  `Fecha` date DEFAULT NULL,
+  `Importe` float DEFAULT NULL,
+  `ClientesId` int(11) NOT NULL,
+  `ProductoId` varchar(10) NOT NULL,
+  `PaqueteriaId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `venta`
+--
+
+INSERT INTO `venta` (`VentaId`, `Fecha`, `Importe`, `ClientesId`, `ProductoId`, `PaqueteriaId`) VALUES
+(1, '2019-10-09', 12, 8, 'A1', 1),
+(2, '2019-09-28', 3000, 13, 'A4', 3),
+(3, '2019-09-25', 4000, 9, 'P3', 1),
+(15, '2019-12-02', 1419900, 59, 'V20', 5);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `accesorio`
+--
+ALTER TABLE `accesorio`
+  ADD PRIMARY KEY (`ProductoId`),
+  ADD KEY `fk_Accesorios_Marcas1` (`MarcaId`),
+  ADD KEY `fk_Accesorios_Compras1` (`CompraId`);
+
+--
+-- Indices de la tabla `bitacoracliente`
+--
+ALTER TABLE `bitacoracliente`
+  ADD PRIMARY KEY (`BitacoraClienteId`);
+
+--
+-- Indices de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD PRIMARY KEY (`CarritoId`),
+  ADD KEY `fk_Carrito_Clientes1` (`ClienteId`);
+
+--
+-- Indices de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`ClienteId`),
+  ADD KEY `fk_Usuarios_Bitacora_cliente` (`BitacoraClienteId`),
+  ADD KEY `fk_Clientes_Empleados1` (`EmpleadoId`),
+  ADD KEY `fk_Cliente_ListaDeseos1` (`ListaDeseosId`);
+
+--
+-- Indices de la tabla `compra`
+--
+ALTER TABLE `compra`
+  ADD PRIMARY KEY (`CompraId`),
+  ADD KEY `fk_Compras_Proveedores1` (`ProveedorId`);
+
+--
+-- Indices de la tabla `empleado`
+--
+ALTER TABLE `empleado`
+  ADD PRIMARY KEY (`EmpleadoId`);
+
+--
+-- Indices de la tabla `listadeseos`
+--
+ALTER TABLE `listadeseos`
+  ADD PRIMARY KEY (`ListaDeseosId`);
+
+--
+-- Indices de la tabla `marca`
+--
+ALTER TABLE `marca`
+  ADD PRIMARY KEY (`MarcaId`);
+
+--
+-- Indices de la tabla `marcaproveedor`
+--
+ALTER TABLE `marcaproveedor`
+  ADD PRIMARY KEY (`MarcaId`,`ProveedorId`),
+  ADD KEY `fk_Marcas_has_Proveedores_Proveedores1` (`ProveedorId`);
+
+--
+-- Indices de la tabla `paqueteria`
+--
+ALTER TABLE `paqueteria`
+  ADD PRIMARY KEY (`PaqueteriaId`);
+
+--
+-- Indices de la tabla `prenda`
+--
+ALTER TABLE `prenda`
+  ADD PRIMARY KEY (`ProductoId`),
+  ADD KEY `fk_Prendas_Marcas1` (`MarcaId`),
+  ADD KEY `fk_Prendas_Compras1` (`CompraId`);
+
+--
+-- Indices de la tabla `prendatalla`
+--
+ALTER TABLE `prendatalla`
+  ADD PRIMARY KEY (`ProductoId`,`TallaId`),
+  ADD KEY `fk_Prendas_has_Tallas_Tallas1` (`TallaId`);
+
+--
+-- Indices de la tabla `proveedor`
+--
+ALTER TABLE `proveedor`
+  ADD PRIMARY KEY (`ProveedorId`);
+
+--
+-- Indices de la tabla `refaccion`
+--
+ALTER TABLE `refaccion`
+  ADD PRIMARY KEY (`ProductoId`),
+  ADD KEY `fk_Refacciones_Marcas1` (`MarcaId`),
+  ADD KEY `fk_Refacciones_Compras1` (`CompraId`);
+
+--
+-- Indices de la tabla `talla`
+--
+ALTER TABLE `talla`
+  ADD PRIMARY KEY (`TallaId`);
+
+--
+-- Indices de la tabla `vehiculo`
+--
+ALTER TABLE `vehiculo`
+  ADD PRIMARY KEY (`ProductoId`),
+  ADD KEY `fk_Automoviles_Marcas1` (`MarcaId`),
+  ADD KEY `fk_Automoviles_Compras1` (`CompraId`);
+
+--
+-- Indices de la tabla `venta`
+--
+ALTER TABLE `venta`
+  ADD PRIMARY KEY (`VentaId`),
+  ADD KEY `fk_Venta_Clientes1` (`ClientesId`),
+  ADD KEY `fk_Ventas_Proveedores_servicios1` (`PaqueteriaId`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `bitacoracliente`
+--
+ALTER TABLE `bitacoracliente`
+  MODIFY `BitacoraClienteId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  MODIFY `CarritoId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  MODIFY `ClienteId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT de la tabla `compra`
+--
+ALTER TABLE `compra`
+  MODIFY `CompraId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
+
+--
+-- AUTO_INCREMENT de la tabla `empleado`
+--
+ALTER TABLE `empleado`
+  MODIFY `EmpleadoId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT de la tabla `listadeseos`
+--
+ALTER TABLE `listadeseos`
+  MODIFY `ListaDeseosId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `marca`
+--
+ALTER TABLE `marca`
+  MODIFY `MarcaId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
+--
+-- AUTO_INCREMENT de la tabla `paqueteria`
+--
+ALTER TABLE `paqueteria`
+  MODIFY `PaqueteriaId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedor`
+--
+ALTER TABLE `proveedor`
+  MODIFY `ProveedorId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT de la tabla `talla`
+--
+ALTER TABLE `talla`
+  MODIFY `TallaId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `venta`
+--
+ALTER TABLE `venta`
+  MODIFY `VentaId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `accesorio`
+--
+ALTER TABLE `accesorio`
+  ADD CONSTRAINT `fk_Accesorios_Compras1` FOREIGN KEY (`CompraId`) REFERENCES `compra` (`CompraId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Accesorios_Marcas1` FOREIGN KEY (`MarcaId`) REFERENCES `marca` (`MarcaId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD CONSTRAINT `fk_Carrito_Clientes1` FOREIGN KEY (`ClienteId`) REFERENCES `cliente` (`ClienteId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  ADD CONSTRAINT `fk_Cliente_ListaDeseos1` FOREIGN KEY (`ListaDeseosId`) REFERENCES `listadeseos` (`ListaDeseosId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Clientes_Empleados1` FOREIGN KEY (`EmpleadoId`) REFERENCES `empleado` (`EmpleadoId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Usuarios_Bitacora_cliente` FOREIGN KEY (`BitacoraClienteId`) REFERENCES `bitacoracliente` (`BitacoraClienteId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `compra`
+--
+ALTER TABLE `compra`
+  ADD CONSTRAINT `fk_Compras_Proveedores1` FOREIGN KEY (`ProveedorId`) REFERENCES `proveedor` (`ProveedorId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `marcaproveedor`
+--
+ALTER TABLE `marcaproveedor`
+  ADD CONSTRAINT `fk_Marcas_has_Proveedores_Marcas1` FOREIGN KEY (`MarcaId`) REFERENCES `marca` (`MarcaId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Marcas_has_Proveedores_Proveedores1` FOREIGN KEY (`ProveedorId`) REFERENCES `proveedor` (`ProveedorId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `prenda`
+--
+ALTER TABLE `prenda`
+  ADD CONSTRAINT `fk_Prendas_Compras1` FOREIGN KEY (`CompraId`) REFERENCES `compra` (`CompraId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Prendas_Marcas1` FOREIGN KEY (`MarcaId`) REFERENCES `marca` (`MarcaId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `prendatalla`
+--
+ALTER TABLE `prendatalla`
+  ADD CONSTRAINT `fk_Prendas_has_Tallas_Prendas1` FOREIGN KEY (`ProductoId`) REFERENCES `prenda` (`ProductoId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Prendas_has_Tallas_Tallas1` FOREIGN KEY (`TallaId`) REFERENCES `talla` (`TallaId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `refaccion`
+--
+ALTER TABLE `refaccion`
+  ADD CONSTRAINT `fk_Refacciones_Compras1` FOREIGN KEY (`CompraId`) REFERENCES `compra` (`CompraId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Refacciones_Marcas1` FOREIGN KEY (`MarcaId`) REFERENCES `marca` (`MarcaId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `vehiculo`
+--
+ALTER TABLE `vehiculo`
+  ADD CONSTRAINT `fk_Automoviles_Compras1` FOREIGN KEY (`CompraId`) REFERENCES `compra` (`CompraId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Automoviles_Marcas1` FOREIGN KEY (`MarcaId`) REFERENCES `marca` (`MarcaId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `venta`
+--
+ALTER TABLE `venta`
+  ADD CONSTRAINT `fk_Venta_Clientes1` FOREIGN KEY (`ClientesId`) REFERENCES `cliente` (`ClienteId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Ventas_Proveedores_servicios1` FOREIGN KEY (`PaqueteriaId`) REFERENCES `paqueteria` (`PaqueteriaId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

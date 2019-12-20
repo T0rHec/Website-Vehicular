@@ -25,7 +25,7 @@
 		}
 
 	}elseif (isset($_POST['entrar'])) { //verifica si la variable entrar está definida
-		$cliente=$crud->obtenerCliente($_POST['name'],$_POST['email'],$_POST['password']);
+		$cliente=$crud->obtenerCliente($_POST['email'],$_POST['password']);
 		// si el id del objeto retornado no es null, quiere decir que encontro un registro en la base
 		if ($cliente->getClienteId()!=NULL) {
 			$usuario = array(

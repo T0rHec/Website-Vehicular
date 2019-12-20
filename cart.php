@@ -197,8 +197,46 @@
 
             <?php if (!isset($_SESSION['usuario'])) { ?>
                 <p class="text-center"><a href="login.html" class="btn btn-primary py-3 px-4">Inicia sesión para continuar >></a></p>
-              <?php }else { ?>
-                <p class="text-center"><a href="pagar.php" class="btn btn-primary py-3 px-4">Proceder al pago</a></p>
+            <?php }else { ?>
+              <!-- Set up a container element for the button -->
+              <div id="paypal-button-container"></div>
+
+              <!-- Include the PayPal JavaScript SDK -->
+              <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+
+              <script>
+                  // Render the PayPal button into #paypal-button-container
+                  paypal.Buttons({
+
+                      // Set up the transaction
+                      createOrder: function(data, actions) {
+                          return actions.order.create({
+                              purchase_units: [{
+                                  amount: {
+                                      value: '<?php echo $total+100;?>'
+                                  }
+                              }]
+                          });
+                      },
+
+                      // Finalize the transaction
+                      onApprove: function(data, actions) {
+                          return actions.order.capture().then(function(details) {
+                              // Show a success message to the buyer
+                              alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                          });
+                      },
+                      
+                      style: {
+                          color:  'gold',
+                          shape:  'pill',
+                          label:  'pay',
+                          height: 40
+                      }
+
+
+                  }).render('#paypal-button-container');
+              </script>
             <?php }?>
 
           </div>

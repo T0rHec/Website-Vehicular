@@ -1,9 +1,7 @@
 <?php
 
 	class Cliente{
-		private $EmpleadoId;
 		private $Nombre;
-		private $Apellidos;
 		private $Email;
 		private $Telefono;
 		private $Domicilio;
